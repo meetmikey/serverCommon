@@ -23,5 +23,6 @@ module.exports = {
     , bucket: awsBucket
     , accountID: '315865265008'
     , sqsMailReadingQueue: 'mailReader'
+    , sqsMailDownloadQueue : 'mailDownload'
   }
 }
