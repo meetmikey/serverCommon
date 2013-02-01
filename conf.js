@@ -16,13 +16,31 @@ if (environment == 'production') {
   awsBucket = 'mikeymaildev'
 }
 
+var awsBucket = 'mikeymaillocal'
+var sqsMailDownloadQueue = 'mailDownloadLocal'
+var sqsMailReadingQueue = 'mailReadLocal'
+
+if (environment == 'production') {
+  awsBucket = 'mikeymail';
+  sqsMailDownloadQueue = 'mailDownload'
+  sqsMailReadingQueue = 'mailRead'
+} else if (environment == 'development') {
+  awsBucket = 'mikeymaildev'
+  sqsMailDownloadQueue = 'mailDownloadDev'
+  sqsMailReadingQueue = 'mailReadDev'
+}
+
+
+
 module.exports = {
   aws : {
       key: 'AKIAJL2PLJ3JSVHBZD5Q' 
     , secret: '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'
     , bucket: awsBucket
     , accountID: '315865265008'
-    , sqsMailReadingQueue: 'mailReader'
-    , sqsMailDownloadQueue : 'mailDownload'
+    , sqsMailReadingQueue: sqsMailReadingQueue
+    , sqsMailDownloadQueue : sqsMailDownloadQueue
   }
 }
+
+
