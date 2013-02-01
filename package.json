@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "aws-lib" : "0.2.0",
-    "winston" : "0.6.2" 
+    "winston" : "0.6.2",
+    "knox": ">=0.5.x"
   },
   "engines": {
     "node": "0.8.x"
