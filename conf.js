@@ -18,16 +18,16 @@ if (environment == 'production') {
 
 var awsBucket = 'mikeymaillocal'
 var sqsMailDownloadQueue = 'mailDownloadLocal'
-var sqsMailReadingQueue = 'mailReadLocal'
+var sqsMailReadingQueue = 'mailReaderLocal'
 
 if (environment == 'production') {
   awsBucket = 'mikeymail';
   sqsMailDownloadQueue = 'mailDownload'
-  sqsMailReadingQueue = 'mailRead'
+  sqsMailReadingQueue = 'mailReader'
 } else if (environment == 'development') {
   awsBucket = 'mikeymaildev'
   sqsMailDownloadQueue = 'mailDownloadDev'
-  sqsMailReadingQueue = 'mailReadDev'
+  sqsMailReadingQueue = 'mailReaderDev'
 }
 
 
