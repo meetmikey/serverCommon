@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require('../lib/mongooseConnect').mongoose;
 var Schema = mongoose.Schema;
 
 var EmailUser = {
