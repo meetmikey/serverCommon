@@ -30,8 +30,6 @@ if (environment == 'production') {
   sqsMailReadingQueue = 'mailReaderDev'
 }
 
-
-
 module.exports = {
   aws : {
       key: 'AKIAJL2PLJ3JSVHBZD5Q' 
@@ -40,6 +38,28 @@ module.exports = {
     , accountID: '315865265008'
     , sqsMailReadingQueue: sqsMailReadingQueue
     , sqsMailDownloadQueue : sqsMailDownloadQueue
+  }
+  , mongo: {
+    local: {
+      host: 'localhost',
+      db: 'mikeyDB',
+      user: 'mikey',
+      port: 27017,
+    },
+    prod: {
+      host: 'linus.mongohq.com',
+      db: 'mikeyDB_prod',
+      user: 'mikey',
+      pass: 'delos123pass',
+      port: 10027,
+    },
+    prod_repl: {
+      hosts: ['ip-10-70-78-218.ec2.internal', 'ip-10-191-77-128.ec2.internal', 'domU-12-31-39-06-8E-8C.compute-1.internal'],
+      db: 'mikeyDB',
+      user: 'mikeyprod',
+      pass: 'delos33pass',
+      ports: [27017, 27017, 27017],
+    }
   }
 }
 
