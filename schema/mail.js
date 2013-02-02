@@ -25,3 +25,4 @@ var Mail = new Schema({
 });
 
 mongoose.model('Mail', Mail);
+exports.MailModel = mongoose.model('Mail');
