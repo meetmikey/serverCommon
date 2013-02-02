@@ -19,3 +19,4 @@ var Attachment = new Schema({
 });
 
 mongoose.model('Attachment', Attachment);
+exports.AttachmentModel = mongoose.model('Attachment')
