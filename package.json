@@ -7,6 +7,9 @@
     "winston" : "0.6.2",
     "knox": ">=0.5.x"
   },
+  "bundleDependencies": [
+    "knox"
+  ],
   "engines": {
     "node": "0.8.x"
   },
