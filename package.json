@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "aws-lib" : "0.2.0",
-    "winston" : "0.6.2",
-    "knox": ">=0.5.x"
+      "aws-lib" : "0.2.0"
+    , "winston" : "0.6.2"
+    , "knox": ">=0.5.x"
+    , "mongoose": "3.x"
   },
   "engines": {
     "node": "0.8.x"
