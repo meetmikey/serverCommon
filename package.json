@@ -8,6 +8,9 @@
     , "knox": ">=0.5.x"
     , "mongoose": "3.x"
   },
+  "bundleDependencies": [
+    "knox"
+  ],
   "engines": {
     "node": "0.8.x"
   },
