@@ -9,10 +9,12 @@ var User = new Schema({
   displayName: {type: String},
   firstName: {type: String},
   lastName: {type: String},
-  email: {type: String},
+  email: {type: String, index: true},
   gender: {type: String},
   locale: {type: String},
   hostedDomain: {type: String},
+  attachmentsExtracted : {type : Boolean, default : false},
+  linksExtracted : {type : Boolean, default : false},
   timestamp: {type: Date, 'default': Date.now}
 });
 
