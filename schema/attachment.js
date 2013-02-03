@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require('../lib/mongooseConnect').mongoose;
 var Schema = mongoose.Schema;
 
 var EmailUser = {
@@ -15,6 +15,7 @@ var Attachment = new Schema({
   , sentDate: {type: Date, default: Date.now}
   , sender: EmailUser
   , image: {type: String}
+  , signedURL: {type: String} //Dummy val
   , timestamp: {type: Date, default: Date.now}
 });
 
