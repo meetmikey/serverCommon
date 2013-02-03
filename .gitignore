@@ -1,2 +1,3 @@
 node_modules/aws-lib
 node_modules/winston
+node_modules/mongoose

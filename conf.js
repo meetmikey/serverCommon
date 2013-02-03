@@ -38,6 +38,9 @@ module.exports = {
     , accountID: '315865265008'
     , sqsMailReadingQueue: sqsMailReadingQueue
     , sqsMailDownloadQueue : sqsMailDownloadQueue
+    , s3Folders: {
+      attachments: '/attachments'
+    }
   }
   , mongo: {
     local: {
