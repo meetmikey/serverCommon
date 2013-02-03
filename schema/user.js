@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 
 var User = new Schema({
   googleID: {type: String, index: true},
-  authToken: {type: String},
+  accessToken: {type: String},
   refreshToken: {type: String},
   displayName: {type: String},
   firstName: {type: String},
