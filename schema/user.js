@@ -4,15 +4,17 @@ var mongoose = require('mongoose'),
 
 var User = new Schema({
   googleID: {type: String, index: true},
-  authToken: {type: String},
+  accessToken: {type: String},
   refreshToken: {type: String},
   displayName: {type: String},
   firstName: {type: String},
   lastName: {type: String},
-  email: {type: String},
+  email: {type: String, index: true},
   gender: {type: String},
   locale: {type: String},
   hostedDomain: {type: String},
+  attachmentsExtracted : {type : Boolean, default : false},
+  linksExtracted : {type : Boolean, default : false},
   timestamp: {type: Date, 'default': Date.now}
 });
 
