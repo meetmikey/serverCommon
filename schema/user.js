@@ -13,6 +13,7 @@ var User = new Schema({
   gender: {type: String},
   locale: {type: String},
   hostedDomain: {type: String},
+  gmailScrapeRequested : {type : Boolean, default: false},
   attachmentsExtracted : {type : Boolean, default : false},
   linksExtracted : {type : Boolean, default : false},
   timestamp: {type: Date, 'default': Date.now}

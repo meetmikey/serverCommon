@@ -64,6 +64,9 @@ module.exports = {
       ports: [27017, 27017, 27017],
     }
   }
+  , express: {
+      secret: 'IITYWYBAD4487'
+  }
 }
 
 
