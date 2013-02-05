@@ -6,25 +6,18 @@
 var environment = process.env.NODE_ENV
 var base = process.env.MAGIC_SERVER_BASE
 
-
-//local (by default)
-var awsBucket = 'mikeymaillocal'
-
-if (environment == 'production') {
-  awsBucket = 'mikeymail';
-} else if (environment == 'development') {
-  awsBucket = 'mikeymaildev'
-}
-
-var awsBucket = 'mikeymaillocal'
-var sqsMailDownloadQueue = 'mailDownloadLocal'
-var sqsMailReadingQueue = 'mailReaderLocal'
+var domain = 'local.meetmikey.com';
+var awsBucket = 'mikeymaillocal';
+var sqsMailDownloadQueue = 'mailDownloadLocal';
+var sqsMailReadingQueue = 'mailReaderLocal';
 
 if (environment == 'production') {
+  domain = 'www.meetmikey.com';
   awsBucket = 'mikeymail';
   sqsMailDownloadQueue = 'mailDownload'
   sqsMailReadingQueue = 'mailReader'
 } else if (environment == 'development') {
+  domain = 'dev.meetmikey.com';
   awsBucket = 'mikeymaildev'
   sqsMailDownloadQueue = 'mailDownloadDev'
   sqsMailReadingQueue = 'mailReaderDev'
@@ -71,4 +64,5 @@ module.exports = {
     appId : '1020629660865.apps.googleusercontent.com',
     appSecret : 'pFvM2J42oBnUFD9sI1ZwITFE'
   }
+  , domain: domain
 }
