@@ -1,6 +1,11 @@
 var mongoose = require('../lib/mongooseConnect').mongoose;
 var Schema = mongoose.Schema;
 
+var EmailUserSchema = new Schema({
+    name: {type: String}
+  , email: {type: String}
+});
+
 var EmailUser = {
     name: {type: String}
   , email: {type: String}
@@ -14,6 +19,7 @@ var Link = new Schema({
   , hasBeenDiffboted: {type: Boolean, default: false}
   , sentDate: {type: Date, default: Date.now}
   , sender: EmailUser
+  , recipients: {type: [EmailUserSchema]}
   , image: {type: String}
   , timestamp: {type: Date, default: Date.now}
 });
