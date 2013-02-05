@@ -67,6 +67,8 @@ module.exports = {
   , express: {
       secret: 'IITYWYBAD4487'
   }
+  , google : {
+    appId : '1020629660865.apps.googleusercontent.com',
+    appSecret : 'pFvM2J42oBnUFD9sI1ZwITFE'
+  }
 }
-
-
