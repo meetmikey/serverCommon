@@ -22,7 +22,7 @@ var Mail = new Schema({
   , numAttachments: {type: Number}
   , sentDate: {type: Date}
   , timestamp: {type: Date, default: Date.now}
-  , uid : {type : Number, required : true}
+  , uid : {type : Number, required : true, index: true}
   , seqNo : {type : Number}
   , mailboxId : {type : Schema.ObjectId}
   , s3Path : {type : String}
