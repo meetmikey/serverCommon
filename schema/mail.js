@@ -1,4 +1,4 @@
-var mongoose = require('../lib/mongooseConnect').mongoose;
+var mongoose = require ('mongoose')
 var Schema = mongoose.Schema;
 
 var EmailUserSchema = new Schema({
@@ -22,7 +22,17 @@ var Mail = new Schema({
   , numAttachments: {type: Number}
   , sentDate: {type: Date, default: Date.now}
   , timestamp: {type: Date, default: Date.now}
+  , uid : {type : String}
+  , s3Path : {type : String}
 });
 
+var MailBox = new Schema ({
+    userId : {type : Schema.ObjectId, index : true, required : true}
+  , uidValidity : {type : String, required : true}
+  , name : {type : String, required : true}
+  , uidNext : {type : String, required : true}
+})
+
+mongoose.model ('MailBox', MailBox)
 mongoose.model('Mail', Mail);
 exports.MailModel = mongoose.model('Mail');
