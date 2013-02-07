@@ -26,6 +26,7 @@ var Mail = new Schema({
   , seqNo : {type : Number}
   , mailboxId : {type : Schema.ObjectId}
   , s3Path : {type : String}
+  , size : {type : Number}
   , gmDate : {type: Date}
   , gmThreadId : {type : String}
   , gmMsgId : {type : String}
