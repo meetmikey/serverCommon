@@ -17,6 +17,7 @@ var Link = new Schema({
   , url: {type: String, required: true}
   , isPromoted: {type: Boolean, index: true, default: false}
   , hasBeenDiffboted: {type: Boolean, default: false}
+  , diffbotResponse: {}
   , sentDate: {type: Date, default: Date.now}
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}

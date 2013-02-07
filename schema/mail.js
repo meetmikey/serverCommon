@@ -1,4 +1,4 @@
-var mongoose = require ('mongoose')
+var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var EmailUserSchema = new Schema({
@@ -17,6 +17,7 @@ var Mail = new Schema({
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
   , subject: {type: String}
+  , cleanSubject: {type: String}
   , bodyText: {type: String}
   , bodyHTML: {type: String}
   , numAttachments: {type: Number}
@@ -27,6 +28,7 @@ var Mail = new Schema({
   , mailboxId : {type : Schema.ObjectId}
   , s3Path : {type : String}
   , size : {type : Number}
+  , mailReaderState: {type: String, enum: ['none', 'started', 'softFail', 'hardFail', 'done'], default: 'none'}
   , gmDate : {type: Date}
   , gmThreadId : {type : String}
   , gmMsgId : {type : String}
