@@ -1,7 +1,6 @@
 var mongoose = require('mongoose'),
     Schema   = mongoose.Schema;
 
-
 var User = new Schema({
   googleID: {type: String, index: true},
   accessToken: {type: String},
