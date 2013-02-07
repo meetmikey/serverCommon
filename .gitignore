@@ -2,3 +2,6 @@ node_modules/aws-lib
 node_modules/winston
 node_modules/mongoose
 node_modules/url
+node_modules/crypto
+node_modules/fs
+node_modules/request
