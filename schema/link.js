@@ -22,6 +22,9 @@ var Link = new Schema({
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
   , image: {type: String}
+  , mailCleanSubject: {type: String}
+  , mailBodyText: {type: String}
+  , mailBodyHTML: {type: String}
   , timestamp: {type: Date, default: Date.now}
 });
 
