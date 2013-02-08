@@ -13,10 +13,24 @@ var User = new Schema({
   locale: {type: String},
   hostedDomain: {type: String},
   gmailScrapeRequested : {type : Boolean, default: false},
-  attachmentsExtracted : {type : Boolean, default : false},
-  linksExtracted : {type : Boolean, default : false},
   timestamp: {type: Date, 'default': Date.now}
 });
 
+var UserOnboardingState = new Schema({
+  userId : {type : Schema.ObjectId, index : true},
+  lastCompleted : {type : String, 
+    enum : ['gmailScrapeDequeued', 
+            'createMailbox', 
+            'retrieveHeaders', 
+            'createTempDirectoryForEmails', 
+            'retrieveAttachments', 
+            'retrieveEmailsNoAttachments', 
+            'markStoppingPoint', 
+            'closeMailbox']},
+  errorMsg : {type : String},
+  hasError : {type : Boolean, default : false}
+})
+
 mongoose.model('User', User);
+mongoose.model ('UserOnboardingState', UserOnboardingState);
 module.exports = mongoose.model('User');
