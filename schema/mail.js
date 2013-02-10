@@ -36,7 +36,7 @@ var Mail = new Schema({
   , hasAttachment : {type : Boolean, index: true}
 });
 
-// should i index hasAttachment, uid jointly for efficient sort?
+// TODO: should i index hasAttachment, uid jointly for efficient sort?
 
 var MailBox = new Schema ({
     userId : {type : Schema.ObjectId, index : true, required : true}
