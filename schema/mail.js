@@ -33,10 +33,17 @@ var Mail = new Schema({
   , gmThreadId : {type : String}
   , gmMsgId : {type : String}
   , gmLabels : {type : [String]}
-  , hasAttachment : {type : Boolean, index: true}
+  , hasAttachment : {type : Boolean}
+  , hasMarketingFrom : {type : Boolean}
+  , hasMarketingText : {type : Boolean}
 });
 
-// should i index hasAttachment, uid jointly for efficient sort?
+// for querying for attachments or no attachments + user and sorting by uid descending
+Mail.index( { "hasAttachment": 1, "userId": 1, "uid" : -1 } )
+
+// for ensuring we don't duplicate in failure state
+Mail.index( { "uid": 1, "userId": 1 }, {unique : true} )
+
 
 var MailBox = new Schema ({
     userId : {type : Schema.ObjectId, index : true, required : true}
