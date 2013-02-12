@@ -14,10 +14,9 @@ var EmailUser = {
 var Link = new Schema({
     userId: {type: Schema.ObjectId, index: true, required: true}
   , mailId: {type: Schema.ObjectId, index: true, required: true}
+  , linkInfoId: {type: Schema.ObjectId, required: true}
   , url: {type: String, required: true}
   , isPromoted: {type: Boolean, index: true, default: false}
-  , hasBeenDiffboted: {type: Boolean, default: false}
-  , diffbotResponse: {}
   , sentDate: {type: Date, default: Date.now}
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
