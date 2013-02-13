@@ -24,6 +24,7 @@ var Attachment = new Schema({
   , mailCleanSubject: {type: String}
   , mailBodyText: {type: String}
   , mailBodyHTML: {type: String}
+  , hash: {type: String, required: true, index: true}
   , signedURL: {type: String} //Dummy val
   , timestamp: {type: Date, default: Date.now}
 });
