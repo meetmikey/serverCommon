@@ -59,4 +59,15 @@ module.exports = {
     appSecret : 'pFvM2J42oBnUFD9sI1ZwITFE'
   }
   , domain: domain
+  , elasticSearch: {
+      host: 'localhost'
+    , port: 9200
+    , indexName: 'mail'
+    , mappingConfigs: [
+      {
+          mappingName: 'attachment'
+        , configFile: 'config/elasticSearch/attachmentMapping.json'
+      }
+    ]
+  }
 }
