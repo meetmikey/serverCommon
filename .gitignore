@@ -5,3 +5,5 @@ node_modules/url
 node_modules/crypto
 node_modules/fs
 node_modules/request
+node_modules/async
+node_modules/elasticsearchclient
