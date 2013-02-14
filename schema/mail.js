@@ -29,6 +29,7 @@ var Mail = new Schema({
   , s3Path : {type : String}
   , size : {type : Number}
   , mailReaderState: {type: String, enum: ['none', 'started', 'softFail', 'hardFail', 'done'], default: 'none'}
+  , linkExtractorState: {type: String, enum: ['none', 'ignored', 'noLinks', 'started', 'done'], default: 'none'}
   , gmDate : {type: Date}
   , gmThreadId : {type : String}
   , gmMsgId : {type : String}

@@ -16,7 +16,7 @@ var Attachment = new Schema({
   , mailId: {type: Schema.ObjectId, index: true, required: true}
   , filename: {type: String}
   , contentType: {type: String}
-  , size: {type: Number}
+  , fileSize: {type: Number}
   , sentDate: {type: Date, default: Date.now}
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
@@ -25,6 +25,7 @@ var Attachment = new Schema({
   , mailBodyText: {type: String}
   , mailBodyHTML: {type: String}
   , hash: {type: String, required: true, index: true}
+  , gmThreadId: {type: String}
   , signedURL: {type: String} //Dummy val
   , timestamp: {type: Date, default: Date.now}
 });
