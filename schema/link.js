@@ -16,7 +16,7 @@ var Link = new Schema({
   , mailId: {type: Schema.ObjectId, index: true, required: true}
   , linkInfoId: {type: Schema.ObjectId, required: true}
   , url: {type: String, required: true}
-  , isPromoted: {type: Boolean, index: true, default: false}
+  , isPromoted: {type: Boolean, default: false}
   , sentDate: {type: Date, default: Date.now}
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
@@ -24,8 +24,12 @@ var Link = new Schema({
   , mailCleanSubject: {type: String}
   , mailBodyText: {type: String}
   , mailBodyHTML: {type: String}
+  , gmThreadId: {type: String}
   , timestamp: {type: Date, default: Date.now}
 });
+
+Link.index({ userId: 1, gmThreadId: 1 });
+Link.index({ userId: 1, isPromoted: 1 });
 
 mongoose.model('Link', Link);
 exports.LinkModel = mongoose.model('Link')

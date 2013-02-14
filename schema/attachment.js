@@ -30,5 +30,8 @@ var Attachment = new Schema({
   , timestamp: {type: Date, default: Date.now}
 });
 
+Attachment.index({ userId: 1, gmThreadId: 1 });
+Attachment.index({ hash: 1, fileSize: 1 });
+
 mongoose.model('Attachment', Attachment);
 exports.AttachmentModel = mongoose.model('Attachment')
