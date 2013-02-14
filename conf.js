@@ -10,17 +10,20 @@ var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
 var sqsMailDownloadQueue = 'mailDownloadLocal';
 var sqsMailReadingQueue = 'mailReaderLocal';
+var sqsMailUpdateQueue = 'mailUpdaterLocal'
 
 if (environment == 'production') {
   domain = 'www.meetmikey.com';
   awsBucket = 'mikeymail';
   sqsMailDownloadQueue = 'mailDownload'
   sqsMailReadingQueue = 'mailReader'
+  sqsMailUpdateQueue = 'mailUpdater'
 } else if (environment == 'development') {
   domain = 'dev.meetmikey.com';
   awsBucket = 'mikeymaildev'
   sqsMailDownloadQueue = 'mailDownloadDev'
   sqsMailReadingQueue = 'mailReaderDev'
+  sqsMailUpdateQueue = 'mailUpdaterDev'
 }
 
 module.exports = {
@@ -31,6 +34,7 @@ module.exports = {
     , accountID: '315865265008'
     , sqsMailReadingQueue: sqsMailReadingQueue
     , sqsMailDownloadQueue : sqsMailDownloadQueue
+    , sqsMailUpdateQueue : sqsMailUpdateQueue
     , s3Folders: {
         attachments: '/attachments'
       , static: '/static'
