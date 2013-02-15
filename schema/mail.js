@@ -12,8 +12,8 @@ var EmailUser = {
 };
 
 var Mail = new Schema({
-    userId: {type: Schema.ObjectId, index: true, required: true}
-  , messageId: {type: String, index: true}
+    userId: {type: Schema.ObjectId, required: true}
+  , messageId: {type: String}
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
   , subject: {type: String}
@@ -23,7 +23,7 @@ var Mail = new Schema({
   , numAttachments: {type: Number}
   , sentDate: {type: Date}
   , timestamp: {type: Date, default: Date.now}
-  , uid : {type : Number, required : true, index: true}
+  , uid : {type : Number, required : true}
   , seqNo : {type : Number}
   , mailboxId : {type : Schema.ObjectId}
   , s3Path : {type : String}
@@ -40,10 +40,10 @@ var Mail = new Schema({
 });
 
 // for querying for attachments or no attachments + user and sorting by uid descending
-Mail.index( { "hasAttachment": 1, "userId": 1, "uid" : -1 } )
+Mail.index( {  "userId": 1, "hasAttachment": 1, "uid" : -1 } )
 
 // for ensuring we don't duplicate in failure state
-Mail.index( { "uid": 1, "userId": 1 }, {unique : true} )
+Mail.index( { "userId": 1, "uid": 1 }, {unique : true} )
 
 
 var MailBox = new Schema ({

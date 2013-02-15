@@ -12,7 +12,7 @@ var EmailUser = {
 };
 
 var Link = new Schema({
-    userId: {type: Schema.ObjectId, index: true, required: true}
+    userId: {type: Schema.ObjectId, required: true}
   , mailId: {type: Schema.ObjectId, index: true, required: true}
   , linkInfoId: {type: Schema.ObjectId}
   , url: {type: String, required: true}
@@ -28,6 +28,7 @@ var Link = new Schema({
   , mailBodyText: {type: String}
   , mailBodyHTML: {type: String}
   , gmThreadId: {type: String}
+  , gmMsgId : {type : String}
   , timestamp: {type: Date, default: Date.now}
 });
 
