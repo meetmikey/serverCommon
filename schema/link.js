@@ -14,13 +14,16 @@ var EmailUser = {
 var Link = new Schema({
     userId: {type: Schema.ObjectId, index: true, required: true}
   , mailId: {type: Schema.ObjectId, index: true, required: true}
-  , linkInfoId: {type: Schema.ObjectId, required: true}
+  , linkInfoId: {type: Schema.ObjectId}
   , url: {type: String, required: true}
+  , comparableURLHash: {type: String, required: true}
   , isPromoted: {type: Boolean, default: false}
+  , image: {type: String}
+  , title: {type: String}
+  , text: {type: String}
   , sentDate: {type: Date, default: Date.now}
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
-  , image: {type: String}
   , mailCleanSubject: {type: String}
   , mailBodyText: {type: String}
   , mailBodyHTML: {type: String}
