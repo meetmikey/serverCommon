@@ -12,7 +12,7 @@ var EmailUser = {
 };
 
 var Attachment = new Schema({
-    userId: {type: Schema.ObjectId, index: true, required: true}
+    userId: {type: Schema.ObjectId, required: true}
   , mailId: {type: Schema.ObjectId, index: true, required: true}
   , filename: {type: String}
   , contentType: {type: String}
@@ -24,8 +24,9 @@ var Attachment = new Schema({
   , mailCleanSubject: {type: String}
   , mailBodyText: {type: String}
   , mailBodyHTML: {type: String}
-  , hash: {type: String, required: true, index: true}
+  , hash: {type: String, required: true}
   , gmThreadId: {type: String}
+  , gmMsgId : {type : String}
   , signedURL: {type: String} //Dummy val
   , timestamp: {type: Date, default: Date.now}
 });
