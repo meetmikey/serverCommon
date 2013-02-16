@@ -9,9 +9,11 @@ var ReceiveMR = new Schema ({
   value : {type: Number}
 })
 
-
 var SentAndCoReceiveMR = new Schema ({
-  _id : {type : {}},
+  _id : {
+      email: {type: String}
+    , userId : {type: Schema.ObjectId}
+  },
   value : {
     sent : {type : Number},
     corecipient : {type : Number}
