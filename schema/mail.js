@@ -11,6 +11,11 @@ var EmailUser = {
   , email: {type: String}
 };
 
+var ContactData = {
+    sent: {type: Number}
+  , corecipient: {type: Number}
+}
+
 var Mail = new Schema({
     userId: {type: Schema.ObjectId, required: true}
   , messageId: {type: String}
@@ -37,6 +42,7 @@ var Mail = new Schema({
   , hasAttachment : {type : Boolean}
   , hasMarketingFrom : {type : Boolean}
   , hasMarketingText : {type : Boolean}
+  , senderContactData: ContactData //dummy val
 });
 
 // for querying for attachments or no attachments + user and sorting by uid descending
