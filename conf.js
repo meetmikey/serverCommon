@@ -4,7 +4,6 @@
  */
 
 var environment = process.env.NODE_ENV
-var base = process.env.MAGIC_SERVER_BASE
 
 var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
@@ -53,6 +52,13 @@ module.exports = {
       user: 'mikey',
       pass: 'delospass',
       port: 10025
+    },
+    dev : {
+      host : 'linus.mongohq.com',
+      db: 'meetmikey_dev',
+      user: 'mikey',
+      pass: 'delospass',
+      port: 10031
     }
   }
   , express: {
