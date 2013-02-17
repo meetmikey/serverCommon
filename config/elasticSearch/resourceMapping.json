@@ -1,0 +1,21 @@
+{
+  "resource" : {
+    "_source" : { "compress" : true},
+    "properties" : {
+      "file" : { 
+        "type" : "attachment", 
+        "fields" : {
+          "title" : {"store" : "yes"},
+          "file" : {"analyzer" : "default_analyzer", "term_vector":"with_positions_offsets", "store":"yes" },
+          "date" : {"store" : "yes", "index" :"not_analyzed"},
+          "name" : {"store" : "yes", "index" :"not_analyzed"},
+          "author" : {"store" : "yes", "index" :"not_analyzed"},
+          "content_type" : {"store" : "yes", "index" :"not_analyzed"}
+        }
+      },
+      "isLink"  : {"type" : "boolean"},
+      "size" : {"type" : "long"},
+      "normContentType" : {"type" : "string"}
+    }
+  }
+}

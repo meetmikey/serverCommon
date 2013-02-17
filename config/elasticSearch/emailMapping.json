@@ -1,0 +1,14 @@
+{
+  "email" : {
+    "_parent": {"type": "resource"},
+    "_source" : { "compress" : true},
+    "properties" : {
+      "filename" : { "type" : "string", "analyzer" : "url"},
+      "url" : { "type" : "string", "analyzer" : "url"},
+      "authorName" : {"type" : "string", "analyzer" : "simple"},
+      "authorEmail" : {"type" : "string", "analyzer" : "email"},
+      "userId" : {"type" : "string", "index" : "not_analyzed"},
+      "emailBody" : {"type" : "string", "analyzer" : "html_analyzer"}
+    }
+  }
+}

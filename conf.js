@@ -4,7 +4,7 @@
  */
 
 var environment = process.env.NODE_ENV
-var base = process.env.MAGIC_SERVER_BASE
+var serverCommon = process.env.SERVER_COMMON
 
 var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
@@ -69,8 +69,12 @@ module.exports = {
     , indexName: 'mail'
     , mappingConfigs: [
       {
-          mappingName: 'attachment'
-        , configFile: 'config/elasticSearch/attachmentMapping.json'
+          mappingName: 'resource'
+        , configFile: serverCommon + '/config/elasticSearch/resourceMapping.json'
+      },
+      {
+          mappingName: 'email'
+        , configFile: serverCommon + '/config/elasticSearch/emailMapping.json'
       }
     ]
   }
