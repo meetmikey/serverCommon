@@ -29,7 +29,6 @@ var Link = new Schema({
   , mailBodyHTML: {type: String}
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
-  , gmDate : {type : Date}
   , isIndexed: {type : Boolean}
   , timestamp: {type: Date, default: Date.now}
 });
