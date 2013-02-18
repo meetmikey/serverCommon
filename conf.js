@@ -53,6 +53,13 @@ module.exports = {
       user: 'mikey',
       pass: 'delospass',
       port: 10025
+    },
+    dev : {
+      host : 'linus.mongohq.com',
+      db: 'meetmikey_dev',
+      user: 'mikey',
+      pass: 'delospass',
+      port: 10031
     }
   }
   , express: {
