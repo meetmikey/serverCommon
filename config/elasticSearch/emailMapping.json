@@ -8,7 +8,8 @@
       "authorName" : {"type" : "string", "analyzer" : "simple"},
       "authorEmail" : {"type" : "string", "analyzer" : "email"},
       "userId" : {"type" : "string", "index" : "not_analyzed"},
-      "emailBody" : {"type" : "string", "analyzer" : "html_analyzer"}
+      "emailBody" : {"type" : "string", "analyzer" : "html_analyzer"},
+      "emailSubjcet" : {"type" : "string", "analyzer" : "default_analyzer"}
     }
   }
 }
