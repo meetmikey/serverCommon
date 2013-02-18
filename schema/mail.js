@@ -42,7 +42,6 @@ var Mail = new Schema({
   , hasAttachment : {type : Boolean}
   , hasMarketingFrom : {type : Boolean}
   , hasMarketingText : {type : Boolean}
-  , isIndexed : {type: Boolean}
   , senderContactData: ContactData //dummy val
 });
 

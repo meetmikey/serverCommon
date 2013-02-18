@@ -80,8 +80,8 @@ module.exports = {
         , configFile: serverCommon + '/config/elasticSearch/resourceMapping.json'
       },
       {
-          mappingName: 'email'
-        , configFile: serverCommon + '/config/elasticSearch/emailMapping.json'
+          mappingName: 'resourceMeta'
+        , configFile: serverCommon + '/config/elasticSearch/resourceMetaMapping.json'
       }
     ]
   }

@@ -5,11 +5,11 @@
       "file" : { 
         "type" : "attachment", 
         "fields" : {
-          "title" : {"store" : "yes"},
+          "title" : {"store" : "yes", "analyzer" : "default_analyzer"},
           "file" : {"analyzer" : "default_analyzer", "term_vector":"with_positions_offsets", "store":"yes" },
-          "date" : {"store" : "yes", "index" :"not_analyzed"},
-          "name" : {"store" : "yes", "index" :"not_analyzed"},
-          "author" : {"store" : "yes", "index" :"not_analyzed"},
+          "date" : {"store" : "yes", "index" :"no"},
+          "name" : {"store" : "yes", "index" :"no"},
+          "author" : {"store" : "yes", "index" :"no"},
           "content_type" : {"store" : "yes", "index" :"not_analyzed"}
         }
       },

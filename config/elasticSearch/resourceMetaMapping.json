@@ -1,0 +1,21 @@
+{
+  "resourceMeta" : {
+    "_parent": {"type": "resource"},
+    "_source" : { "compress" : true},
+    "properties" : {
+      "filename" : { "type" : "string", "analyzer" : "url"},
+      "url" : { "type" : "string", "analyzer" : "url"},
+      "authorName" : {"type" : "string", "analyzer" : "simple"},
+      "authorEmail" : {"type" : "string", "analyzer" : "email"},
+      "recipientNames" : {"type" : "string", "index_name" : "recipientName", "analyzer" : "simple"},
+      "recipientEmails" : {"type" : "string", "index_name" : "recipientEmail", "analyzer" : "email"},
+      "emailBody" : {"type" : "string", "analyzer" : "html_analyzer"},
+      "emailSubject" : {"type" : "string", "analyzer" : "default_analyzer"},
+      "isLink"  : {"type" : "boolean", "index" : "not_analyzed"},
+      "userId" : {"type" : "string", "index" : "not_analyzed"},
+      "mailId"  : {"type" : "string", "index" : "not_analyzed"},
+      "date" : {"type" : "date", "index": "not_analyzed"},
+      "fromMe" : {"type" : "boolean", "index" : "not_analyzed"}
+    }
+  }
+}
