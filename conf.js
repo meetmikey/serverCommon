@@ -86,4 +86,5 @@ module.exports = {
       }
     ]
   }
+  , logDir: '/var/log/mikey'
 }
