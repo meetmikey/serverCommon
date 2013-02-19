@@ -2,16 +2,15 @@ var mongoose = require ('mongoose')
 var Schema = mongoose.Schema;
 
 var LinkInfo = new Schema({
-    comparableURLHash: {type: String, index: true, required: true}
+    comparableURLHash: {type: String, required: true, unique: true}
   , rawURL: {type: String, required: true}
   , comparableURL: {type: String, required: true}
   , resolvedURL: {type: String}
-  , diffbotResponse: {}
-  , lastDiffbotDate: {type: Date}
   , image: {type: String}
   , title: {type: String}
-  , text: {type: String}
+  , summary: {type: String}
   , lastFollowDate: {type: Date}
+  , followType: {type: String, enum: ['fail', 'diffbot', 'pdf', 'googleDoc', 'direct']}
   , timestamp: {type: Date, default: Date.now}
 });
 

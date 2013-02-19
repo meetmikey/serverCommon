@@ -20,7 +20,7 @@ var Link = new Schema({
   , isPromoted: {type: Boolean, default: false}
   , image: {type: String}
   , title: {type: String}
-  , text: {type: String}
+  , summary: {type: String}
   , sentDate: {type: Date, default: Date.now}
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
