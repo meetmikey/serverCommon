@@ -36,8 +36,9 @@ module.exports = {
     , sqsMailDownloadQueue : sqsMailDownloadQueue
     , sqsMailUpdateQueue : sqsMailUpdateQueue
     , s3Folders: {
-        attachments: '/attachments'
+        attachment: '/attachment'
       , static: '/static'
+      , linkInfo: '/linkInfo'
     }
   }
   , mongo: {
