@@ -36,8 +36,9 @@ module.exports = {
     , sqsMailDownloadQueue : sqsMailDownloadQueue
     , sqsMailUpdateQueue : sqsMailUpdateQueue
     , s3Folders: {
-        attachments: '/attachments'
+        attachment: '/attachment'
       , static: '/static'
+      , linkInfo: '/linkInfo'
     }
   }
   , mongo: {
@@ -56,10 +57,10 @@ module.exports = {
     },
     dev : {
       host : 'linus.mongohq.com',
-      db: 'meetmikey_dev',
+      db: 'mikeyDBDev',
       user: 'mikey',
       pass: 'delospass',
-      port: 10031
+      port: 10096
     }
   }
   , express: {
@@ -85,4 +86,5 @@ module.exports = {
       }
     ]
   }
+  , logDir: '/var/log/mikey'
 }
