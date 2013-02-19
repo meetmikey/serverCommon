@@ -1,0 +1,20 @@
+{
+  "fields": ["file"],
+  "query" : {
+    bool : {
+      must : [
+        {
+          "has_child" : {
+            "type" : "resourceMeta",
+            "query" : {
+              "term" : {
+                "userId" : "51105236d50c88ebe8ef30cc"
+              }
+            }
+          }
+        }
+      ],
+      should : []
+    }
+  }
+}
