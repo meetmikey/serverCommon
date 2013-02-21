@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+  , constants = require('../constants')
+
 var Schema = mongoose.Schema;
 
 var ActiveConnection = new Schema({
