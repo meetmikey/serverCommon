@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
   , constants = require('../constants')
 
 var Schema = mongoose.Schema;
