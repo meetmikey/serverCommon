@@ -8,3 +8,6 @@ function define(name, value) {
 
 define('DEFAULT_RESPONSE_MESSAGE', 'internal error')
 define('DEFAULT_RESPONSE_CODE', 500)
+
+// in seconds
+define('ACTIVE_CONNECTION_TTL', 300)
