@@ -1,5 +1,6 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var constants = require ('../constants')
+    , mongoose = require('mongoose')
+    , Schema = mongoose.Schema;
 
 var ActiveConnection = new Schema({
     userId: {type: Schema.ObjectId, required: true, index : true}
