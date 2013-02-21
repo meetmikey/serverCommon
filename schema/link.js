@@ -16,6 +16,7 @@ var Link = new Schema({
   , mailId: {type: Schema.ObjectId, index: true, required: true}
   , linkInfoId: {type: Schema.ObjectId}
   , url: {type: String, required: true}
+  , resolvedURL: {type: String}
   , comparableURLHash: {type: String, required: true}
   , isPromoted: {type: Boolean, default: false}
   , image: {type: String}
