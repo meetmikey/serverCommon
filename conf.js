@@ -3,27 +3,30 @@
  *
  */
 
-var environment = process.env.NODE_ENV
-var serverCommon = process.env.SERVER_COMMON
+var environment = process.env.NODE_ENV;
+var serverCommon = process.env.SERVER_COMMON;
 
 var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
 var sqsMailDownloadQueue = 'mailDownloadLocal';
 var sqsMailReadingQueue = 'mailReaderLocal';
-var sqsMailUpdateQueue = 'mailUpdaterLocal'
+var sqsMailReadingQuickQueue = 'mailReaderQuickLocal';
+var sqsMailUpdateQueue = 'mailUpdaterLocal';
 
 if (environment == 'production') {
   domain = 'www.meetmikey.com';
   awsBucket = 'mikeymail';
-  sqsMailDownloadQueue = 'mailDownload'
-  sqsMailReadingQueue = 'mailReader'
-  sqsMailUpdateQueue = 'mailUpdater'
+  sqsMailDownloadQueue = 'mailDownload';
+  sqsMailReadingQueue = 'mailReader';
+  sqsMailUpdateQueue = 'mailUpdater';
+  sqsMailReadingQuickQueue = 'mailReaderQuick';
 } else if (environment == 'development') {
   domain = 'dev.meetmikey.com';
-  awsBucket = 'mikeymaildev'
-  sqsMailDownloadQueue = 'mailDownloadDev'
-  sqsMailReadingQueue = 'mailReaderDev'
-  sqsMailUpdateQueue = 'mailUpdaterDev'
+  awsBucket = 'mikeymaildev';
+  sqsMailDownloadQueue = 'mailDownloadDev';
+  sqsMailReadingQueue = 'mailReaderDev';
+  sqsMailUpdateQueue = 'mailUpdaterDev';
+  sqsMailReadingQuickQueue = 'mailReaderQuick';
 }
 
 module.exports = {
@@ -33,6 +36,7 @@ module.exports = {
     , bucket: awsBucket
     , accountID: '315865265008'
     , sqsMailReadingQueue: sqsMailReadingQueue
+    , sqsMailReadingQuickQueue : sqsMailReadingQuickQueue
     , sqsMailDownloadQueue : sqsMailDownloadQueue
     , sqsMailUpdateQueue : sqsMailUpdateQueue
     , s3Folders: {
