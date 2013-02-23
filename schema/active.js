@@ -3,7 +3,7 @@ var constants = require ('../constants')
     , Schema = mongoose.Schema;
 
 var ActiveConnection = new Schema({
-    userId: {type: Schema.ObjectId, required: true, index : true}
+    _id: {type: Schema.ObjectId}
   , lastPoll: {type: Date, default : Date.now}
   , nodeId : {type : String, index : true}  // uniquely identifies which node process is handling the connection
 });
