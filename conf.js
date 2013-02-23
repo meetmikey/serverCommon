@@ -46,26 +46,33 @@ module.exports = {
     }
   }
   , mongo: {
-    local: {
-      host: 'localhost',
-      db: 'mikeyDB',
-      user: 'mikey',
-      port: 27017,
-    },
-    mongohqLocal : {
-      host : 'linus.mongohq.com',
-      db: 'mikeyDBLocal',
-      user: 'mikey',
-      pass: 'delospass',
-      port: 10025
-    },
-    dev : {
-      host : 'linus.mongohq.com',
-      db: 'mikeyDBDev',
-      user: 'mikey',
-      pass: 'delospass',
-      port: 10096
-    }
+      local: {
+          host: 'localhost'
+        , db: 'mikeyDB'
+        , user: 'mikey'
+        , port: 27017
+      }
+    , mongoHQLocal : {
+          host : 'linus.mongohq.com'
+        , db: 'mikeyDBLocal'
+        , user: 'mikey'
+        , pass: 'delospass'
+        , port: 10025
+      }
+    , mongoHQDev : {
+          host : 'linus.mongohq.com'
+        , db: 'mikeyDBDev'
+        , user: 'mikey'
+        , pass: 'delospass'
+        , port: 10096
+      }
+    , objectRocketDev : {
+          host : 'e-mongos0.objectrocket.com'
+        , db: 'mikeyDBDev'
+        , user: 'mikey'
+        , pass: 'delospass'
+        , port: 10065
+      }
   }
   , express: {
       secret: 'IITYWYBAD4487'
