@@ -27,7 +27,6 @@ var Attachment = new Schema({
   , hash: {type: String, required: true}
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
-  , signedURL: {type: String} //Dummy val
   , isIndexed : {type : Boolean}
   , timestamp: {type: Date, default: Date.now}
 });
