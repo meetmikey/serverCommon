@@ -10,4 +10,4 @@ define('DEFAULT_RESPONSE_MESSAGE', 'internal error')
 define('DEFAULT_RESPONSE_CODE', 500)
 
 // in seconds
-define('ACTIVE_CONNECTION_TTL', 300)
+define('ACTIVE_CONNECTION_TTL', 60*5) // 5 minutes
