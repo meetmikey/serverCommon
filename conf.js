@@ -12,6 +12,7 @@ var sqsMailDownloadQueue = 'mailDownloadLocal';
 var sqsMailReadingQueue = 'mailReaderLocal';
 var sqsMailReadingQuickQueue = 'mailReaderQuickLocal';
 var sqsMailUpdateQueue = 'mailUpdaterLocal';
+var sqsMailActiveConnectionQueue = 'mailActiveConnectionLocal';
 
 if (environment == 'production') {
   domain = 'www.meetmikey.com';
@@ -20,13 +21,15 @@ if (environment == 'production') {
   sqsMailReadingQueue = 'mailReader';
   sqsMailUpdateQueue = 'mailUpdater';
   sqsMailReadingQuickQueue = 'mailReaderQuick';
+  sqsMailActiveConnectionQueue = 'mailActiveConnection';
 } else if (environment == 'development') {
   domain = 'dev.meetmikey.com';
   awsBucket = 'mikeymaildev';
   sqsMailDownloadQueue = 'mailDownloadDev';
   sqsMailReadingQueue = 'mailReaderDev';
   sqsMailUpdateQueue = 'mailUpdaterDev';
-  sqsMailReadingQuickQueue = 'mailReaderQuick';
+  sqsMailReadingQuickQueue = 'mailReaderQuickDev';
+  sqsMailActiveConnectionQueue = 'mailActiveConnectionDev';
 }
 
 module.exports = {
@@ -39,6 +42,7 @@ module.exports = {
     , sqsMailReadingQuickQueue : sqsMailReadingQuickQueue
     , sqsMailDownloadQueue : sqsMailDownloadQueue
     , sqsMailUpdateQueue : sqsMailUpdateQueue
+    , sqsMailActiveConnectionQueue : sqsMailActiveConnectionQueue
     , s3Folders: {
         attachment: '/attachment'
       , static: '/static'
