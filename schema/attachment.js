@@ -29,6 +29,7 @@ var Attachment = new Schema({
   , gmMsgId : {type : String}
   , isIndexed : {type : Boolean}
   , timestamp: {type: Date, default: Date.now}
+  , isDeleted: {type : Boolean}
 });
 
 Attachment.index({ userId: 1, gmThreadId: 1 });

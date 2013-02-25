@@ -32,6 +32,7 @@ var Link = new Schema({
   , gmMsgId : {type : String}
   , isIndexed: {type : Boolean}
   , timestamp: {type: Date, default: Date.now}
+  , isDeleted : {type : Boolean}
 });
 
 Link.index({ userId: 1, gmThreadId: 1 });
