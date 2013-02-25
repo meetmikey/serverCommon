@@ -16,6 +16,7 @@ var Link = new Schema({
   , mailId: {type: Schema.ObjectId, index: true, required: true}
   , linkInfoId: {type: Schema.ObjectId}
   , url: {type: String, required: true}
+  , resolvedURL: {type: String}
   , comparableURLHash: {type: String, required: true}
   , isPromoted: {type: Boolean, default: false}
   , image: {type: String}
@@ -31,10 +32,12 @@ var Link = new Schema({
   , gmMsgId : {type : String}
   , isIndexed: {type : Boolean}
   , timestamp: {type: Date, default: Date.now}
+  , isDeleted : {type : Boolean}
 });
 
 Link.index({ userId: 1, gmThreadId: 1 });
 Link.index({ userId: 1, isPromoted: 1 });
+Link.index({ userId: 1, sentDate: -1 });
 
 mongoose.model('Link', Link);
 exports.LinkModel = mongoose.model('Link')
