@@ -27,13 +27,14 @@ var Attachment = new Schema({
   , hash: {type: String, required: true}
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
-  , signedURL: {type: String} //Dummy val
   , isIndexed : {type : Boolean}
   , timestamp: {type: Date, default: Date.now}
+  , isDeleted: {type : Boolean}
 });
 
 Attachment.index({ userId: 1, gmThreadId: 1 });
 Attachment.index({ hash: 1, fileSize: 1 });
+Attachment.index({ userId: 1, sentDate: -1 });
 
 mongoose.model('Attachment', Attachment);
 exports.AttachmentModel = mongoose.model('Attachment')

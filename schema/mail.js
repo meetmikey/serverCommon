@@ -39,6 +39,7 @@ var Mail = new Schema({
   , gmThreadId : {type : String}
   , gmMsgId : {type : String}
   , gmLabels : {type : [String]}
+  , isDeleted : {type : Boolean}
   , hasAttachment : {type : Boolean}
   , hasMarketingFrom : {type : Boolean}
   , hasMarketingText : {type : Boolean}

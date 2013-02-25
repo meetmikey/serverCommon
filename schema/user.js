@@ -34,5 +34,7 @@ var UserOnboardingState = new Schema({
 })
 
 mongoose.model('User', User);
-mongoose.model ('UserOnboardingState', UserOnboardingState);
-module.exports = mongoose.model('User');
+exports.UserModel = mongoose.model('User')
+
+mongoose.model('UserOnboardingState', UserOnboardingState);
+exports.UserOnboardingStateModel = mongoose.model('UserOnboardingState')
