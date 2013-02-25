@@ -1,7 +1,7 @@
 {
   "resourceMeta" : {
     "_parent": {"type": "resource"},
-    "_source" : { "compress" : true},
+    "_source" : {"enabled" : false},
     "properties" : {
       "filename" : { "type" : "string", "analyzer" : "url"},
       "url" : { "type" : "string", "analyzer" : "url"},
@@ -14,8 +14,7 @@
       "isLink"  : {"type" : "boolean", "index" : "not_analyzed"},
       "userId" : {"type" : "string", "index" : "not_analyzed"},
       "mailId"  : {"type" : "string", "index" : "not_analyzed"},
-      "date" : {"type" : "date", "index": "not_analyzed"},
-      "fromMe" : {"type" : "boolean", "index" : "not_analyzed"}
+      "date" : {"type" : "date", "index": "not_analyzed"}
     }
   }
 }
