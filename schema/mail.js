@@ -59,6 +59,7 @@ var MailBox = new Schema ({
   , name : {type : String, required : true}
   , uidNext : {type : Number, required : true}
   , totalMessages : {type : Number, required: true}
+  , lastUpdate : {type : Date, default : Date.now, index: true}
 })
 
 mongoose.model ('MailBox', MailBox)
