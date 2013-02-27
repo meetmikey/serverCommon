@@ -4,7 +4,6 @@ curl -XPUT 'http://localhost:9200/mail/' -d '
     "number_of_replicas": 1,
     "analysis": {
       "analyzer" : {
-
         "email" : {
           "type": "pattern",
           "pattern":"[\\.@]"
