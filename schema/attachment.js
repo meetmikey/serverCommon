@@ -27,7 +27,8 @@ var Attachment = new Schema({
   , hash: {type: String, required: true}
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
-  , isIndexed : {type : Boolean}
+  , indexState: {type : String, enum : ['done', 'error']}
+  , indexError : {type : String}
   , timestamp: {type: Date, default: Date.now}
   , isPromoted: {type : Boolean}
   , isDeleted: {type : Boolean}
