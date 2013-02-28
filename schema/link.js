@@ -30,7 +30,7 @@ var Link = new Schema({
   , mailBodyHTML: {type: String}
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
-  , indexedState: {type : String, enum : ['done', 'error']}
+  , indexState: {type : String, enum : ['done', 'error']}
   , indexError : {type : String}
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean}
