@@ -18,7 +18,7 @@ var Link = new Schema({
   , url: {type: String, required: true}
   , resolvedURL: {type: String}
   , comparableURLHash: {type: String, required: true}
-  , isPromoted: {type: Boolean, default: false}
+  , isPromoted: {type: Boolean}
   , image: {type: String}
   , title: {type: String}
   , summary: {type: String}
