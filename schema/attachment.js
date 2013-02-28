@@ -30,6 +30,7 @@ var Attachment = new Schema({
   , indexState: {type : String, enum : ['done', 'error']}
   , indexError : {type : String}
   , timestamp: {type: Date, default: Date.now}
+  , isPromoted: {type : Boolean}
   , isDeleted: {type : Boolean}
 });
 
