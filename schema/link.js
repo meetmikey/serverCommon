@@ -17,7 +17,7 @@ var Link = new Schema({
   , linkInfoId: {type: Schema.ObjectId}
   , url: {type: String, required: true}
   , resolvedURL: {type: String}
-  , comparableURLHash: {type: String, required: true}
+  , comparableURLHash: {type: String, index : true, required: true}
   , isPromoted: {type: Boolean, default: false}
   , image: {type: String}
   , title: {type: String}
@@ -30,7 +30,8 @@ var Link = new Schema({
   , mailBodyHTML: {type: String}
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
-  , isIndexed: {type : Boolean}
+  , indexedState: {type : String, enum : ['done', 'error']}
+  , indexError : {type : String}
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean}
 });
