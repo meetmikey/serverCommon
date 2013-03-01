@@ -14,7 +14,11 @@ mongoPath += '@' + mongoConf.host + ':' + port + '/' + mongoConf.db;
 
 winston.info('mongooseConnect: mongoPath: ' + mongoPath)
 
-mongoose.connect(mongoPath, function (err) {
+var con = mongoose.createConnection(mongoPath, {server: {ssl:true}});
+console.log('con: ', con)
+
+/*
+mongoose.connect(mongoPath, {server: {ssl:true}}, function (err) {
   if (err) {
     winston.doMongoError(err);
     process.exit(1);
@@ -26,3 +30,5 @@ mongoose.connect(mongoPath, function (err) {
 setTimeout( function() {
   mongoose.disconnect();
 }, 3000);
+
+*/
