@@ -1,12 +1,17 @@
 var mongoose = require('mongoose'),
     Schema   = mongoose.Schema;
 
+var headerBatch = new Schema ({
+  minUid : Number,
+  maxUid : Number
+});
+
 var UserOnboardingState = new Schema({
   userId : {type : Schema.ObjectId, index : true},
   lastCompleted : {type : String,
     enum : ['gmailScrapeDequeued',
             'createOrLookupMailbox',
-            'retrieveHeaders',
+            'retrieveHeadersInBatch',
             'mapReduceContacts',
             'mapReduceReceiveCounts',
             'createTempDirectoryForEmails',
@@ -15,7 +20,7 @@ var UserOnboardingState = new Schema({
             'retrieveAttachments',
             'retrieveEmailsNoAttachments',
             'markStoppingPoint']},
-  maxHeaderBatchCompleted : {type : Number},
+  headerBatchesComplete : {type : [headerBatch]},
   errorMsg : {type : String},
   hasError : {type : Boolean, default : false},
   listenTS : {type : Date, default : Date.now}, // the last time a mailDownload daemon indicated it's still working on the download
