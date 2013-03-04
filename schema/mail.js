@@ -55,7 +55,7 @@ Mail.index( { "userId": 1, "uid": 1 }, {unique : true} )
 
 
 var MailBox = new Schema ({
-    userId : {type : Schema.ObjectId, index : true, required : true}
+    userId : {type : Schema.ObjectId, unique : true, required : true}
   , uidValidity : {type : Number, required : true}
   , name : {type : String, required : true}
   , uidNext : {type : Number, required : true}
