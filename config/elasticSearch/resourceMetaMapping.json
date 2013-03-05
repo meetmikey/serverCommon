@@ -1,6 +1,6 @@
 {
   "resourceMeta" : {
-    "_parent": {"type": "resources"},
+    "_parent": {"type": "resource"},
     "_source" : {"enabled" : false},
     "properties" : {
       "filename" : { "type" : "string", "analyzer" : "url"},
