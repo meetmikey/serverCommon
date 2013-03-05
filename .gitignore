@@ -7,3 +7,4 @@ node_modules/fs
 node_modules/request
 node_modules/async
 node_modules/elasticsearchclient
+node_modules/azure
