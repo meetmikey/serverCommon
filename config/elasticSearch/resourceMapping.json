@@ -1,12 +1,12 @@
 {
-  "resource" : {
+  "resources" : {
     "_source" : {"enabled" : false},
     "properties" : {
       "file" : { 
         "type" : "attachment", 
         "fields" : {
           "title" : {"store" : "yes", "analyzer" : "default_analyzer"},
-          "file" : {"analyzer" : "default_analyzer"},
+          "file" : {"store": "yes", "analyzer" : "default_analyzer"},
           "date" : {"store" : "yes", "index" :"no"},
           "name" : {"store" : "yes", "index" :"no"},
           "author" : {"store" : "yes", "index" :"no"},

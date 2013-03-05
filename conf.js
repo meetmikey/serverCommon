@@ -7,7 +7,8 @@ var environment = process.env.NODE_ENV;
 var serverCommon = process.env.SERVER_COMMON;
 
 var domain = 'local.meetmikey.com';
-var awsBucket = 'mikeymaillocal';
+//var awsBucket = 'mikeymaillocal';
+var awsBucket = 'mikeymaildev'; //TODO: switch back
 var sqsMailDownloadQueue = 'mailDownloadLocal';
 var sqsMailReadingQueue = 'mailReaderLocal';
 var sqsMailReadingQuickQueue = 'mailReaderQuickLocal';
