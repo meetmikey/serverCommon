@@ -35,7 +35,7 @@ if (environment == 'production') {
 
 module.exports = {
   aws : {
-      key: 'AKIAJL2PLJ3JSVHBZD5Q' 
+      key: 'AKIAJL2PLJ3JSVHBZD5Q'
     , secret: '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'
     , bucket: awsBucket
     , accountID: '315865265008'
