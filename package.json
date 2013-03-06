@@ -10,7 +10,7 @@
     , "crypto": ">=0.0.3"
     , "request": ">=2.12.0"
     , "elasticsearchclient": ">=0.3.0"
-    , "async": ">=0.2.5"
+    , "async": ">=0.2.6"
     , "azure" : "https://github.com/svmehta/azure-sdk-for-node/archive/master.tar.gz"
   },
   "bundleDependencies": [
