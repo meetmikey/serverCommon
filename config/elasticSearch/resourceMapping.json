@@ -15,7 +15,7 @@
       },
       "isLink"  : {"type" : "boolean"},
       "size" : {"type" : "long"},
-      "normContentType" : {"type" : "string"}
+      "docType" : {"type" : "string"}
     }
   }
 }

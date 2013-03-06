@@ -21,3 +21,31 @@ define ('MAIL_DOWNLOAD_CHECK_INTERVAL', 1000*5);
 define ('MAIL_UPDATE_CHECK_INTERVAL', 1000*5);
 
 define ('ACTIVE_CONNECTIONS_CHECK_INTERVAL', 1000*3);
+
+
+define ('DOC_TYPE_MAPPING', {
+  'pdf' : ['application/pdf'],
+  'presentation' : ['ms-powerpoint', 'presentation', 'keynote'],
+  'music' : ['audio/'],
+  'image' : ['image/'],
+  'video' : ['video/'],
+  'archive' : ['zip',
+      'x-compressed',
+      'application/x-tar',
+      'gzip',
+      'compressed'],
+  'spreadsheet' : ['spreadsheet', 'excel'],
+  'document' : ['msword', 'ms-word', 'text/plain', 'text/richtext', 'opendocument.text'],
+  'code' : ['html', 
+      'python', 
+      'java', 
+      'fortran', 
+      '/x-c', 
+      'css', 
+      'xml', 
+      'json', 
+      'mathematica', 
+      'matlab',  
+      '/x-src', 
+      'x-latex']
+})
