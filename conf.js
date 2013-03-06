@@ -102,6 +102,7 @@ module.exports = {
       host: 'localhost'
     , port: 9200
     , indexName: 'mail'
+    , indexAlias : 'mail'
     , mappingConfigs: [
       {
           mappingName: 'resource'
