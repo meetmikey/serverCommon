@@ -1,5 +1,5 @@
 curl -XPOST localhost:9200/mail/resource/_search?pretty -d '{
-  "fields": ["file","title"],
+  "fields": ["file","title", "content-type"],
   "query" : {
     bool : {
       must : [
@@ -8,7 +8,7 @@ curl -XPOST localhost:9200/mail/resource/_search?pretty -d '{
         {
           queryString: {
             "fields": ["file", "title"],
-            "query": "spreadsheet"
+            "query": "sagar mehta"
           }
         },  
         {
