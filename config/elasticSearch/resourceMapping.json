@@ -5,11 +5,11 @@
       "file" : { 
         "type" : "attachment", 
         "fields" : {
-          "title" : {"store" : "yes", "analyzer" : "default_analyzer"},
+          "title" : {"analyzer" : "default_analyzer"},
           "file" : {"analyzer" : "default_analyzer"},
-          "date" : {"store" : "yes", "index" :"no"},
-          "name" : {"store" : "yes", "index" :"no"},
-          "author" : {"store" : "yes", "index" :"no"},
+          "date" : {"index" :"no"},
+          "name" : {"index" :"no"},
+          "author" : {"index" :"no"},
           "content_type" : {"store" : "yes", "index" :"not_analyzed"}
         }
       },

@@ -3,16 +3,6 @@ curl -XPOST localhost:9200/mail/resource/_search?pretty -d '{
   "query" : {
     bool : {
       must : [
-        {
-          "has_child" : {
-            "type" : "resourceMeta",
-            "query" : {
-              "term" : {
-                "userId" : "51105236d50c88ebe8ef30cc"
-              }
-            }
-          }
-        }
       ],
       should : [
         {
