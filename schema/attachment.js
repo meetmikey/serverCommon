@@ -21,6 +21,7 @@ var Attachment = new Schema({
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
   , image: {type: String}
+  , isImage: {type: Boolean}
   , mailCleanSubject: {type: String}
   , mailBodyText: {type: String}
   , mailBodyHTML: {type: String}
