@@ -7,8 +7,8 @@ var environment = process.env.NODE_ENV;
 var serverCommon = process.env.SERVER_COMMON;
 
 var domain = 'local.meetmikey.com';
-//var awsBucket = 'mikeymaillocal';
-var awsBucket = 'mikeymaildev'; //TODO: switch back
+var awsBucket = 'mikeymaillocal';
+
 var sqsMailDownloadQueue = 'mailDownloadLocal';
 var sqsMailReadingQueue = 'mailReaderLocal';
 var sqsMailReadingQuickQueue = 'mailReaderQuickLocal';
@@ -35,7 +35,7 @@ if (environment == 'production') {
 
 module.exports = {
   aws : {
-      key: 'AKIAJL2PLJ3JSVHBZD5Q' 
+      key: 'AKIAJL2PLJ3JSVHBZD5Q'
     , secret: '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'
     , bucket: awsBucket
     , accountID: '315865265008'
@@ -102,7 +102,7 @@ module.exports = {
   , elasticSearch: {
       host: 'localhost'
     , port: 9200
-    , indexName: 'mail_v1'
+    , indexName: 'mail' // TODO: switch to mail_v1
     , indexAlias : 'mail'
     , mappingConfigs: [
       {
