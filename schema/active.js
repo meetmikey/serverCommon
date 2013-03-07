@@ -5,7 +5,7 @@ var constants = require ('../constants')
 var ActiveConnection = new Schema({
     _id: {type: Schema.ObjectId} // use userId in this field
   , lastPoll: {type: Date, default : Date.now}
-  , mailListenTS : {type : Date, default : Date.now} // the last time the mailListen daemon indicated it's still managing this connection
+  , mikeyMailTS : {type : Date, default : Date.now} // the last time the mailListen daemon indicated it's still managing this connection
   , nodeId : {type : String, index : true}  // uniquely identifies which node process is handling the connection
 });
 
