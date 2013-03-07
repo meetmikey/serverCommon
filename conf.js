@@ -55,9 +55,9 @@ module.exports = {
       storageAccessKey : '+83U9Cnm0m/iG4zvcWL53eewbBkETFNVCVhSruu+D21MCXu/pso1hb+QBaaRC0204SfJ78vLw8el+Zi+gqdWcA==',
       container : environment,
       blobFolders: {
-          attachment: '/attachment'
-        , static: '/static'
-        , linkInfo: '/linkInfo'
+          attachment: 'attachment'
+        , static: 'static'
+        , linkInfo: 'linkInfo'
       },
       sharedSecret : '40e807a00561eff916c10bcfa39183043ad8f632a458'
   }
