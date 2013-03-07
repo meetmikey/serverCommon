@@ -23,6 +23,9 @@ define ('MAIL_UPDATE_CHECK_INTERVAL', 1000*5);
 define ('ACTIVE_CONNECTIONS_CHECK_INTERVAL', 1000*3);
 
 
+define ('CLOUD_STORAGE_DEFAULT', 'azure')
+
+
 define ('DOC_TYPE_MAPPING', {
   'pdf' : ['application/pdf'],
   'presentation' : ['ms-powerpoint', 'presentation', 'keynote'],

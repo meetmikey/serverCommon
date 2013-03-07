@@ -43,6 +43,7 @@ var Attachment = new Schema({
   , timestamp: {type: Date, default: Date.now}
   , isPromoted: {type : Boolean}
   , isDeleted: {type : Boolean}
+  , inAzure : {type : Boolean}
 });
 
 Attachment.index({ userId: 1, gmThreadId: 1 });

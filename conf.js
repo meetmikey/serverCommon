@@ -46,8 +46,9 @@ module.exports = {
     , sqsMailActiveConnectionQueue : sqsMailActiveConnectionQueue
     , s3Folders: {
         attachment: 'attachment'
-      , static: 'static'
+      , static: 'images'
       , linkInfo: 'linkInfo'
+      , mailBody : 'mailBody'
     }
   }
   , azure : {
@@ -56,9 +57,9 @@ module.exports = {
       container : environment,
       blobFolders: {
           attachment: 'attachment'
-        , static: 'static'
+        , static: 'images'
         , linkInfo: 'linkInfo'
-          attachment: '/attachment'
+        , mailBody : 'mailBody'
       },
       sharedSecret : '40e807a00561eff916c10bcfa39183043ad8f632a458'
   }
