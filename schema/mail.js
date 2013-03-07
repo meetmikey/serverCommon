@@ -40,7 +40,7 @@ var Mail = new Schema({
   , gmMsgId : {type : String}
   , gmLabels : {type : [String]}
   , isDeleted : {type : Boolean}
-  , indexState : {type : String, enum : ['done', 'error']}
+  , indexState : {type : String, enum : ['none', 'started', 'done', 'error'], default: 'none'}
   , hasAttachment : {type : Boolean}
   , hasMarketingFrom : {type : Boolean}
   , hasMarketingText : {type : Boolean}
