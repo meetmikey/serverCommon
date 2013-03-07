@@ -58,6 +58,7 @@ module.exports = {
           attachment: 'attachment'
         , static: 'static'
         , linkInfo: 'linkInfo'
+          attachment: '/attachment'
       },
       sharedSecret : '40e807a00561eff916c10bcfa39183043ad8f632a458'
   }
