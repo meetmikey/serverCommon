@@ -7,7 +7,6 @@ azureUtils.getFile ('blobzip', true, function (err, res) {
   console.log ('getfile register event listeners');
 
   res.on('data', function (chunk) {
-    console.log ('ondata getAzureFile', chunk.length)
     buffer += chunk.toString ('binary');
   });
 
@@ -25,3 +24,19 @@ azureUtils.getFile ('blobzip', true, function (err, res) {
 /*
 azureUtils.getFile2 ('blobzip')
 */
+
+azureUtils.getFileBlueSky ('blobzip', true, function (err, res) {
+  var buffer = '';
+
+  console.log ('getfile register event listeners');
+
+  res.on('data', function (chunk) {
+    buffer += chunk.toString ('binary');
+  });
+
+  res.on('end', function () {
+    console.log (buffer.length);
+    fs.writeFile ('BLUE_SKY', buffer, 'binary')
+  });
+
+});
