@@ -14,6 +14,7 @@
     , "bufferedstream" : ">=1.5.0"
     , "bigdecimal" : ">=0.6.1"
     , "azure" : "https://github.com/svmehta/azure-sdk-for-node/archive/master.tar.gz"
+    , "bluesky" : ">=0.6.6"
   },
   "bundleDependencies": [
     "knox"
