@@ -13,9 +13,9 @@
           "content_type" : {"store" : "yes", "index" :"not_analyzed"}
         }
       },
-      "isLink"  : {"type" : "boolean"},
+      "isLink"  : {"type" : "boolean", "store" : "yes"},
       "size" : {"type" : "long"},
-      "docType" : {"type" : "string"}
+      "docType" : {"type" : "string", "store" : "yes"}
     }
   }
 }

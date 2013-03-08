@@ -38,6 +38,7 @@ var Attachment = new Schema({
   , hash: {type: String, required: true}
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
+  , gmMsgHex : {type : String}
   , indexState: {type : String, enum : ['done', 'error']}
   , indexError : {type : String}
   , timestamp: {type: Date, default: Date.now}
