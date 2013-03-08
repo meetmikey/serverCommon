@@ -6,6 +6,13 @@
 var environment = process.env.NODE_ENV;
 var serverCommon = process.env.SERVER_COMMON;
 
+// set maxsockets
+var http = require('http');
+var https = require('https');
+
+http.globalAgent.maxSockets = 1024;
+https.globalAgent.maxSockets = 1024;
+
 var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
 
