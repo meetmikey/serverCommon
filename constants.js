@@ -22,9 +22,11 @@ define ('MAIL_UPDATE_CHECK_INTERVAL', 1000*5);
 
 define ('ACTIVE_CONNECTIONS_CHECK_INTERVAL', 1000*3);
 
+define ('CLOUD_STORAGE_DEFAULT', 'aws');
 
-define ('CLOUD_STORAGE_DEFAULT', 'azure')
+define ('S3_RETRIES', 3);
 
+define ('ERROR_UPLOADS_DIR', '/tmp/errors');
 
 define ('DOC_TYPE_MAPPING', {
   'pdf' : ['application/pdf'],
