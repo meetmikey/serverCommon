@@ -1,4 +1,5 @@
-var mongoose = require ('mongoose')
+var mongoose = require ('mongoose');
+
 var Schema = mongoose.Schema;
 
 var EmailUserSchema = new Schema({
@@ -31,6 +32,7 @@ var Link = new Schema({
   , mailBodyHTML: {type: String}
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
+  , gmMsgHex : {type : String}
   , indexState: {type : String, enum : ['done', 'error']}
   , indexError : {type : String}
   , timestamp: {type: Date, default: Date.now}
@@ -42,4 +44,4 @@ Link.index({ userId: 1, isPromoted: 1 });
 Link.index({ userId: 1, sentDate: -1 });
 
 mongoose.model('Link', Link);
-exports.LinkModel = mongoose.model('Link')
+exports.LinkModel = mongoose.model('Link');

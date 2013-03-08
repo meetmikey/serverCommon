@@ -11,7 +11,7 @@
       "recipientEmails" : {"type" : "string", "index_name" : "recipientEmail", "analyzer" : "email"},
       "emailBody" : {"type" : "string", "analyzer" : "html_analyzer"},
       "emailSubject" : {"type" : "string", "analyzer" : "default_analyzer"},
-      "isLink"  : {"type" : "boolean", "index" : "not_analyzed"},
+      "isLink"  : {"type" : "boolean", "store" : "yes"},
       "userId" : {"type" : "string", "index" : "not_analyzed"},
       "mailId"  : {"type" : "string", "index" : "not_analyzed"},
       "date" : {"type" : "date", "index": "not_analyzed"}
