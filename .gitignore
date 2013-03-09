@@ -10,3 +10,5 @@ node_modules/elasticsearchclient
 node_modules/azure
 node_modules/bigdecimal
 node_modules/bluesky
+node_modules/bufferedstream
+node_modules/.bin
