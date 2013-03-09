@@ -1,0 +1,2 @@
+curl -XPUT 'http://localhost:9200/mail_v1/resource/_mapping' -d @../config/elasticSearch/resourceMapping.json
+curl -XPUT 'http://localhost:9200/mail_v1/resourceMeta/_mapping' -d @../config/elasticSearch/resourceMetaMapping.json
