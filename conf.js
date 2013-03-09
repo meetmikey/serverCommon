@@ -98,6 +98,13 @@ module.exports = {
         , pass: 'delospass'
         , port: 10065
       }
+    , objectRocketProd : { //This data left blank here and populated in production.
+          host : ''
+        , db: ''
+        , user: ''
+        , pass: ''
+        , port: ''
+      }
   }
   , express: {
       secret: 'IITYWYBAD4487'
