@@ -10,6 +10,6 @@ then
   echo -e "\n"
   ./putMapping.sh
   echo -e "\n"
-  echo -e "Goddamnit leeroy."
+  echo -e "God damnit leeroy."
   exit 1
 fi
