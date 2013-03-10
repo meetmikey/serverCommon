@@ -56,6 +56,7 @@ module.exports = {
       , static: 'images'
       , linkInfo: 'linkInfo'
       , mailBody : 'mailBody'
+      , rawEmail : 'rawEmail'
     }
   }
   , azure : {
@@ -67,6 +68,7 @@ module.exports = {
         , static: 'images'
         , linkInfo: 'linkInfo'
         , mailBody : 'mailBody'
+        , rawEmail : 'rawEmail'
       },
       sharedSecret : '40e807a00561eff916c10bcfa39183043ad8f632a458'
   }
