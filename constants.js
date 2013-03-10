@@ -26,7 +26,7 @@ define ('CLOUD_STORAGE_DEFAULT', 'aws');
 
 define ('S3_RETRIES', 3);
 
-define ('ERROR_UPLOADS_DIR', '/tmp/errors');
+define ('ERROR_UPLOADS_DIR', '/tmp/upload_errors/');
 
 define ('DOC_TYPE_MAPPING', {
   'pdf' : ['application/pdf'],
