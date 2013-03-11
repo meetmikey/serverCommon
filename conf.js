@@ -15,6 +15,7 @@ https.globalAgent.maxSockets = 1024;
 
 var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
+var elasticSearchHost = 'localhost';
 
 var sqsMailDownloadQueue = 'mailDownloadLocal';
 var sqsMailReadingQueue = 'mailReaderLocal';
@@ -24,6 +25,7 @@ var sqsMailActiveConnectionQueue = 'mailActiveConnectionLocal';
 
 if (environment == 'production') {
   domain = 'www.meetmikey.com';
+  elasticSearchHost = 'es.meetmikey.com'
   awsBucket = 'mikeymail';
   sqsMailDownloadQueue = 'mailDownload';
   sqsMailReadingQueue = 'mailReader';
@@ -117,7 +119,7 @@ module.exports = {
   }
   , domain: domain
   , elasticSearch: {
-      host: 'localhost'
+      host: elasticSearchHost
     , port: 9200
     , indexName: 'mail_v1' // TODO: switch to mail_v1
     , indexAlias : 'mail'
