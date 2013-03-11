@@ -1,6 +1,6 @@
 curl -XPUT 'http://localhost:9200/mail_v1/' -d '
 {
-    "number_of_shards": 5,
+    "number_of_shards": 50,
     "number_of_replicas": 1,
     "analysis": {
       "analyzer" : {
