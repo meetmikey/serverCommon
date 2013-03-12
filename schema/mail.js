@@ -47,6 +47,7 @@ var Mail = new Schema({
   , hasMarketingFrom : {type : Boolean}
   , hasMarketingText : {type : Boolean}
   , senderContactData: ContactData //dummy val
+  , shardKey: {type : String}
 });
 
 // for querying for attachments or no attachments + user and sorting by uid descending
