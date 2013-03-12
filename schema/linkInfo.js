@@ -12,6 +12,10 @@ var LinkInfo = new Schema({
   , lastFollowDate: {type: Date}
   , followType: {type: String, enum: ['fail', 'diffbot', 'pdf', 'googleDoc', 'direct']}
   , timestamp: {type: Date, default: Date.now}
+}, {
+  shardKey: {
+    comparableURLHash: 1
+  }
 });
 
 mongoose.model('LinkInfo', LinkInfo);
