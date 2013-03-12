@@ -58,7 +58,7 @@ Mail.index( {  "userId": 1, "hasAttachment": 1, "uid" : -1 } )
 
 // For ensuring we don't duplicate in failure state.
 // Needs to include shardKey so mongo knows it can enforce uniqueness in each shard.
-Mail.index( { "userId": 1, "uid": 1, "shardKey": 1 }, {unique : true} )
+Mail.index( { "shardKey": 1, "userId": 1, "uid": 1 }, {unique : true} )
 
 
 var MailBox = new Schema ({
