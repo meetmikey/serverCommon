@@ -9,6 +9,8 @@ function define(name, value) {
 define('DEFAULT_RESPONSE_MESSAGE', 'internal error')
 define('DEFAULT_RESPONSE_CODE', 500)
 
+define('LOG_BREAK', '\n\n\n\n\n\n\n\n');
+
 // in seconds
 define('ACTIVE_CONNECTION_TTL', 60*5) // 5 minutes
 
