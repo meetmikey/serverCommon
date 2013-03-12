@@ -24,7 +24,7 @@ var sqsMailUpdateQueue = 'mailUpdaterLocal';
 var sqsMailActiveConnectionQueue = 'mailActiveConnectionLocal';
 
 if (environment == 'production') {
-  domain = 'www.meetmikey.com';
+  domain = 'api.meetmikey.com';
   elasticSearchHost = 'es.meetmikey.com'
   awsBucket = 'mikeymail';
   sqsMailDownloadQueue = 'mailDownload';

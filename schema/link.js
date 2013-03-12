@@ -37,6 +37,7 @@ var Link = new Schema({
   , indexError : {type : String}
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean}
+  , shardKey: {type : String}
 });
 
 Link.index({ userId: 1, gmThreadId: 1 });
