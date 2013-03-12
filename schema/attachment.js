@@ -44,6 +44,7 @@ var Attachment = new Schema({
   , timestamp: {type: Date, default: Date.now}
   , isPromoted: {type : Boolean}
   , isDeleted: {type : Boolean}
+  , shardKey: {type : String}
 });
 
 Attachment.index({ userId: 1, gmThreadId: 1 });
