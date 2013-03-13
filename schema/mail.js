@@ -35,14 +35,14 @@ var Mail = new Schema({
   , failUpload : {type : Boolean}
   , failUploadBody : {type : Boolean}
   , size : {type : Number}
-  , mailReaderState: {type: String, enum: ['none', 'started', 'softFail', 'hardFail', 'done'], default: 'none'}
-  , linkExtractorState: {type: String, enum: ['none', 'ignored', 'noLinks', 'started', 'done'], default: 'none'}
+  , mailReaderState: {type: String, enum: ['started', 'softFail', 'hardFail', 'done']}
+  , linkExtractorState: {type: String, enum: ['ignored', 'noLinks', 'started', 'done']}
   , gmDate : {type: Date}
   , gmThreadId : {type : String}
   , gmMsgId : {type : String}
   , gmLabels : {type : [String]}
   , isDeleted : {type : Boolean}
-  , indexState : {type : String, enum : ['none', 'started', 'done', 'error'], default: 'none'}
+  , indexState : {type : String, enum : ['started', 'done', 'error']}
   , hasAttachment : {type : Boolean}
   , hasMarketingFrom : {type : Boolean}
   , hasMarketingText : {type : Boolean}
