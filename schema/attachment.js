@@ -28,7 +28,7 @@ var Attachment = new Schema({
                                       'spreadsheet', 
                                       'document', 
                                       'music', 
-                                      'movie',
+                                      'video',
                                       'code',
                                       'archive',
                                       'other']}
