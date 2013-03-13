@@ -11,12 +11,11 @@ define('DEFAULT_RESPONSE_CODE', 500)
 
 define('LOG_BREAK', '\n\n\n\n\n\n\n\n');
 
-// in seconds
-define('ACTIVE_CONNECTION_TTL', 60*3) // 5 minutes
+define('ACTIVE_CONNECTION_TTL', 60*2)
 
-define ('MAIL_READER_CHECK_INTERVAL', 1000*5);
+define ('MAIL_READER_CHECK_INTERVAL', 1000*3);
 
-define ('MAIL_READER_QUICK_CHECK_INTERVAL', 1000*5);
+define ('MAIL_READER_QUICK_CHECK_INTERVAL', 1000*3);
 
 define ('MAIL_DOWNLOAD_CHECK_INTERVAL', 1000*5);
 
