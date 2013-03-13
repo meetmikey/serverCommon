@@ -113,6 +113,13 @@ module.exports = {
         , pass: ''
         , port: ''
       }
+    , mongoHQProd : { //This data left blank here and populated in production.
+          host : ''
+        , db: ''
+        , user: ''
+        , pass: ''
+        , port: ''
+      }
   }
   , express: {
       secret: 'IITYWYBAD4487'
