@@ -22,7 +22,7 @@ define ('MAIL_DOWNLOAD_CHECK_INTERVAL', 1000*5);
 
 define ('MAIL_UPDATE_CHECK_INTERVAL', 1000*5);
 
-define ('ACTIVE_CONNECTIONS_CHECK_INTERVAL', 1000*3);
+define ('ACTIVE_CONNECTIONS_CHECK_INTERVAL', 1000*2); // 2 minutes, we poll every minute so this should suffice
 
 define ('CLOUD_STORAGE_DEFAULT', 'aws');
 
