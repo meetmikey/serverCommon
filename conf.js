@@ -5,6 +5,10 @@
 
 var environment = process.env.NODE_ENV;
 var serverCommon = process.env.SERVER_COMMON;
+var localQueueSuffix = '';
+if ( process.env.LOCAL_QUEUE_SUFFIX ) {
+  localQueueSuffix = process.env.LOCAL_QUEUE_SUFFIX;
+}
 
 // set maxsockets
 var http = require('http');
@@ -17,11 +21,11 @@ var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
 var elasticSearchHost = 'localhost';
 
-var sqsMailDownloadQueue = 'mailDownloadLocal';
-var sqsMailReadingQueue = 'mailReaderLocal';
-var sqsMailReadingQuickQueue = 'mailReaderQuickLocal';
-var sqsMailUpdateQueue = 'mailUpdaterLocal';
-var sqsMailActiveConnectionQueue = 'mailActiveConnectionLocal';
+var sqsMailDownloadQueue = 'mailDownloadLocal' + localQueueSuffix;
+var sqsMailReadingQueue = 'mailReaderLocal' + localQueueSuffix;
+var sqsMailReadingQuickQueue = 'mailReaderQuickLocal' + localQueueSuffix;
+var sqsMailUpdateQueue = 'mailUpdaterLocal' + localQueueSuffix;
+var sqsMailActiveConnectionQueue = 'mailActiveConnectionLocal' + localQueueSuffix;
 
 if (environment == 'production') {
   domain = 'api.meetmikey.com';
