@@ -6,6 +6,8 @@
 var environment = process.env.NODE_ENV;
 var serverCommon = process.env.SERVER_COMMON;
 
+var winston = require('./lib/winstonWrapper').winston
+
 // set maxsockets
 var http = require('http');
 var https = require('https');
