@@ -1,10 +1,16 @@
 var azureUtils = require ('../lib/azureUtils')
     , fs = require ('fs');
 
-azureUtils.getFile ('blobzip', true, function (err, res) {
+var file = "rawEmail/513d1d5ec7e0c441280000sdf05/11-body.txt"
+
+azureUtils.getFile (file, false, function (err, res) {
   var buffer = '';
 
   console.log ('getfile register event listeners');
+
+  if (!res.properties.blobType) {
+    azureUtils.printAzureResponse (res);
+  }
 
   res.on('data', function (chunk) {
     buffer += chunk.toString ('binary');
@@ -12,6 +18,7 @@ azureUtils.getFile ('blobzip', true, function (err, res) {
 
   res.on('end', function () {
     console.log (buffer.length);
+    console.log (buffer);
     fs.writeFile ('NEW_METHOD', buffer, 'binary')
   });
 
@@ -21,22 +28,3 @@ azureUtils.getFile ('blobzip', true, function (err, res) {
   });*/
 });
 
-/*
-azureUtils.getFile2 ('blobzip')
-*/
-
-azureUtils.getFileBlueSky ('blobzip', true, function (err, res) {
-  var buffer = '';
-
-  console.log ('getfile register event listeners');
-
-  res.on('data', function (chunk) {
-    buffer += chunk.toString ('binary');
-  });
-
-  res.on('end', function () {
-    console.log (buffer.length);
-    fs.writeFile ('BLUE_SKY', buffer, 'binary')
-  });
-
-});
