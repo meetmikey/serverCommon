@@ -33,7 +33,7 @@ var Mail = new Schema({
   , mailboxId : {type : Schema.ObjectId}
   , s3Path : {type : String}
   , failUpload : {type : Boolean}
-  , failUploadBody : {type : Boolean}
+  , bodyInS3 : {type : String, enum : ['success', 'fail']}
   , size : {type : Number}
   , mailReaderState: {type: String, enum: ['started', 'softFail', 'hardFail', 'done']}
   , linkExtractorState: {type: String, enum: ['ignored', 'noLinks', 'started', 'done']}
