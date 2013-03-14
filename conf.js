@@ -37,7 +37,6 @@ if (environment == 'production') {
 var sqsMailDownloadQueue = queuePrefix + 'MailDownload';
 var sqsMailReadingQueue = queuePrefix + 'MailReader';
 var sqsMailReadingQuickQueue = queuePrefix + 'MailReaderQuick';
-var sqsMailUpdateQueue = queuePrefix + 'MailUpdater';
 var sqsMailActiveConnectionQueue = queuePrefix + 'MailActiveConnection';
 
 module.exports = {
@@ -49,7 +48,6 @@ module.exports = {
     , sqsMailReadingQueue: sqsMailReadingQueue
     , sqsMailReadingQuickQueue : sqsMailReadingQuickQueue
     , sqsMailDownloadQueue : sqsMailDownloadQueue
-    , sqsMailUpdateQueue : sqsMailUpdateQueue
     , sqsMailActiveConnectionQueue : sqsMailActiveConnectionQueue
     , s3Folders: {
         attachment: 'attachment'
