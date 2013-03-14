@@ -12,6 +12,8 @@ var LinkInfo = new Schema({
   , lastFollowDate: {type: Date}
   , followType: {type: String, enum: ['fail', 'diffbot', 'pdf', 'googleDoc', 'direct']}
   , timestamp: {type: Date, default: Date.now}
+  , indexState: {type : String, enum : ['done', 'error']}
+  , indexError : {type : String}
 }, {
   shardKey: {
     comparableURLHash: 1
