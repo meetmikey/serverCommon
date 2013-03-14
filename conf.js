@@ -5,10 +5,6 @@
 
 var environment = process.env.NODE_ENV;
 var serverCommon = process.env.SERVER_COMMON;
-var localQueueSuffix = '';
-if ( process.env.LOCAL_QUEUE_SUFFIX ) {
-  localQueueSuffix = process.env.LOCAL_QUEUE_SUFFIX;
-}
 
 // set maxsockets
 var http = require('http');
@@ -21,30 +17,28 @@ var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
 var elasticSearchHost = 'localhost';
 
-var sqsMailDownloadQueue = 'mailDownloadLocal' + localQueueSuffix;
-var sqsMailReadingQueue = 'mailReaderLocal' + localQueueSuffix;
-var sqsMailReadingQuickQueue = 'mailReaderQuickLocal' + localQueueSuffix;
-var sqsMailUpdateQueue = 'mailUpdaterLocal' + localQueueSuffix;
-var sqsMailActiveConnectionQueue = 'mailActiveConnectionLocal' + localQueueSuffix;
+
+var queuePrefix = 'local';
+if ( process.env.LOCAL_QUEUE_PREFIX ) {
+  queuePrefix = process.env.LOCAL_QUEUE_PREFIX + 'Local';
+}
 
 if (environment == 'production') {
   domain = 'api.meetmikey.com';
   elasticSearchHost = 'es.meetmikey.com'
   awsBucket = 'mikeymail';
-  sqsMailDownloadQueue = 'mailDownload';
-  sqsMailReadingQueue = 'mailReader';
-  sqsMailUpdateQueue = 'mailUpdater';
-  sqsMailReadingQuickQueue = 'mailReaderQuick';
-  sqsMailActiveConnectionQueue = 'mailActiveConnection';
+  queuePrefix = 'prod';
 } else if (environment == 'development') {
   domain = 'dev.meetmikey.com';
   awsBucket = 'mikeymaildev';
-  sqsMailDownloadQueue = 'mailDownloadDev';
-  sqsMailReadingQueue = 'mailReaderDev';
-  sqsMailUpdateQueue = 'mailUpdaterDev';
-  sqsMailReadingQuickQueue = 'mailReaderQuickDev';
-  sqsMailActiveConnectionQueue = 'mailActiveConnectionDev';
+  queuePrefix = 'dev';
 }
+
+var sqsMailDownloadQueue = queuePrefix + 'MailDownload';
+var sqsMailReadingQueue = queuePrefix + 'MailReader';
+var sqsMailReadingQuickQueue = queuePrefix + 'MailReaderQuick';
+var sqsMailUpdateQueue = queuePrefix + 'MailUpdater';
+var sqsMailActiveConnectionQueue = queuePrefix + 'MailActiveConnection';
 
 module.exports = {
   aws : {
