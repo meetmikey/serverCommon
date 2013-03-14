@@ -3,8 +3,8 @@
     "_parent": {"type": "resource"},
     "_source" : {"enabled" : false},
     "properties" : {
-      "filename" : { "type" : "string", "analyzer" : "url"},
-      "url" : { "type" : "string", "analyzer" : "url"},
+      "filename" : { "type" : "string", "analyzer" : "url", "store": "yes"},
+      "url" : { "type" : "string", "analyzer" : "url", "store" : "yes"},
       "authorName" : {"type" : "string", "analyzer" : "simple"},
       "authorEmail" : {"type" : "string", "analyzer" : "email"},
       "recipientNames" : {"type" : "string", "index_name" : "recipientName", "analyzer" : "simple"},
