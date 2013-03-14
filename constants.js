@@ -56,4 +56,6 @@ define ('DOC_TYPE_MAPPING', {
       'matlab',  
       '/x-src', 
       'x-latex']
-})
+});
+
+define ('ACCESS_TOKEN_UPDATE_TIME_BUFFER', 3*1000*60); // 3 mins
