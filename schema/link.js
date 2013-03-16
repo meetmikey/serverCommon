@@ -33,8 +33,8 @@ var Link = new Schema({
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
   , gmMsgHex : {type : String}
-  , indexState: {type : String, enum : ['done', 'error']}
-  , indexError : {type : String}
+  , metaIndexState : {type : String, enum : ['done', 'error']}
+  , metaIndexError : {type : String}
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean}
   , shardKey: {type : String}

@@ -45,7 +45,7 @@ module.exports = {
   aws : {
       key: 'AKIAJL2PLJ3JSVHBZD5Q'
     , secret: '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'
-    , bucket: awsBucket
+    , bucket: 'mikeymail' //TODO: CAHNGE This bakc?~!!~!!!
     , accountID: '315865265008'
     , sqsMailReadingQueue: sqsMailReadingQueue
     , sqsMailReadingQuickQueue : sqsMailReadingQuickQueue
@@ -62,7 +62,7 @@ module.exports = {
   , azure : {
       storageAccount : 'portalvhdsmh1jckv1x925m',
       storageAccessKey : '+83U9Cnm0m/iG4zvcWL53eewbBkETFNVCVhSruu+D21MCXu/pso1hb+QBaaRC0204SfJ78vLw8el+Zi+gqdWcA==',
-      container : environment,
+      container : 'production', //TODO: CAHNGE This bakc?~!!~!!!
       blobFolders: {
           attachment: 'attachment'
         , static: 'images'
