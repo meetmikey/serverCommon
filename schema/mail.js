@@ -42,7 +42,7 @@ var Mail = new Schema({
   , gmMsgId : {type : String}
   , gmLabels : {type : [String]}
   , isDeleted : {type : Boolean}
-  , indexState : {type : String, enum : ['started', 'done', 'error']}
+  , indexable : {type: Boolean} // indication of whether any attachment or link in the mail isPromoted
   , hasAttachment : {type : Boolean}
   , hasMarketingFrom : {type : Boolean}
   , hasMarketingText : {type : Boolean}

@@ -10,7 +10,8 @@ curl -XPUT 'http://localhost:9200/mail_v1/' -d '
         },
         "url" : {
           "type": "pattern",
-          "pattern":"[\\./\\-_?&\\=\\s+]"
+          "pattern":"[\\./\\-_?&\\=\\s+]",
+          "stopwords" : ["com", "org", "www", "http", "https", "http://", "https://"]
         },
         "default_analyzer" : {
           "type" : "snowball", 

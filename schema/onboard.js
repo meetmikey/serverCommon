@@ -3,7 +3,8 @@ var mongoose = require('mongoose'),
 
 var headerBatch = new Schema ({
   minUid : Number,
-  maxUid : Number
+  maxUid : Number,
+  numMails : Number
 });
 
 var UserOnboardingState = new Schema({
@@ -19,6 +20,7 @@ var UserOnboardingState = new Schema({
             'markMarketingTextEmails',
             'retrieveAttachments',
             'retrieveEmailsNoAttachments',
+            'retrieveEmails',
             'markStoppingPoint']},
   headerBatchesComplete : {type : [headerBatch]},
   errorMsg : {type : String},
@@ -39,6 +41,7 @@ var ResumeDownloadState = new Schema({
             'createTempDirectoryForEmails',
             'retrieveAttachments',
             'retrieveEmailsNoAttachments',
+            'retrieveEmails',
             'markStoppingPoint']},
   errorMsg : {type : String},
   hasError : {type : Boolean, default : false},
