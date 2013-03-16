@@ -72,5 +72,6 @@ var MailBox = new Schema ({
 })
 
 mongoose.model ('MailBox', MailBox)
+exports.MailBoxModel = mongoose.model('MailBox');
 mongoose.model('Mail', Mail);
 exports.MailModel = mongoose.model('Mail');
