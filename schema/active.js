@@ -13,3 +13,4 @@ ActiveConnection.index({ lastPoll: 1}, {expireAfterSeconds : constants.ACTIVE_CO
 ActiveConnection.index ({nodeId : 1, _id : 1}) // index on nodeId and _id -> which represents userId
 
 mongoose.model('ActiveConnection', ActiveConnection);
+exports.ActiveConnectionModel = mongoose.model('ActiveConnection');

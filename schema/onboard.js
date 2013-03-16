@@ -30,6 +30,7 @@ var UserOnboardingState = new Schema({
 })
 
 mongoose.model('UserOnboardingState', UserOnboardingState);
+exports.UserOnboardingStateModel = mongoose.model('UserOnboardingState');
 
 var ResumeDownloadState = new Schema({
   userId: {type: Schema.ObjectId, index: true},
@@ -50,4 +51,5 @@ var ResumeDownloadState = new Schema({
   nodeId : {type : String, index : true}  // uniquely identifies which node process is handling the connection
 });
 
-mongoose.model ('ResumeDownloadState', ResumeDownloadState)
+mongoose.model ('ResumeDownloadState', ResumeDownloadState);
+exports.ResumeDownloadStateModel = mongoose.model('ResumeDownloadState');
