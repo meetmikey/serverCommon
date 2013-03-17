@@ -5,9 +5,9 @@
     "properties" : {
       "filename" : { "type" : "string", "analyzer" : "url", "store": "yes"},
       "url" : { "type" : "string", "analyzer" : "url", "store" : "yes"},
-      "authorName" : {"type" : "string", "analyzer" : "simple"},
+      "authorName" : {"type" : "string", "analyzer" : "email"},
       "authorEmail" : {"type" : "string", "analyzer" : "email"},
-      "recipientNames" : {"type" : "string", "index_name" : "recipientName", "analyzer" : "simple"},
+      "recipientNames" : {"type" : "string", "index_name" : "recipientName", "analyzer" : "email"},
       "recipientEmails" : {"type" : "string", "index_name" : "recipientEmail", "analyzer" : "email"},
       "emailBody" : {"type" : "string", "analyzer" : "html_analyzer"},
       "emailSubject" : {"type" : "string", "analyzer" : "default_analyzer"},
