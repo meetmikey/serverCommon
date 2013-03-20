@@ -24,7 +24,7 @@ describe('findDoubleCallback', function() {
       }
     });
 
-    var retry = function (err) {
+    function retry (err) {
       if ( attempts < MAX_RETRIES ) {
         winston.doInfo('retrying...', {attempts: attempts});
         putBuffer( attempts + 1, callback );
