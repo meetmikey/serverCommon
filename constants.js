@@ -13,15 +13,12 @@ define('LOG_BREAK', '\n\n\n\n\n\n\n\n');
 
 define('ACTIVE_CONNECTION_TTL', 60*2)
 
-define ('MAIL_READER_CHECK_INTERVAL', 1000*3);
+//Milliseconds to wait with one miss.  Will do exponential back-off if many misses.
+//A 'miss' is either an error or 'no message'
+define('QUEUE_WAIT_TIME_BASE', 10)
 
-define ('MAIL_READER_QUICK_CHECK_INTERVAL', 1000*3);
-
-define ('MAIL_DOWNLOAD_CHECK_INTERVAL', 1000*5);
-
-define ('MAIL_UPDATE_CHECK_INTERVAL', 1000*5);
-
-define ('ACTIVE_CONNECTIONS_CHECK_INTERVAL', 1000*1); // the interval at which we re-check < threshold if mikeymail mode=listen is saturated
+//Never wait more than 20 seconds
+define('QUEUE_MAX_WAIT_TIME', 20000)
 
 define ('CLOUD_STORAGE_DEFAULT', 'aws');
 
