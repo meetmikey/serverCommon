@@ -6,6 +6,8 @@ function define(name, value) {
   });
 }
 
+define('DEFAULT_QUICK_UNIQUE_ID_LENGTH', 8);
+
 define('DEFAULT_RESPONSE_MESSAGE', 'internal error')
 define('DEFAULT_RESPONSE_CODE', 500)
 
