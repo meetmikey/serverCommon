@@ -20,7 +20,7 @@ var Link = new Schema({
   , resolvedURL: {type: String}
   , comparableURLHash: {type: String, index : true, required: true}
   , isPromoted: {type: Boolean}
-  , nonPromotableReason: {type: String, enum: ['sender', 'text', 'duplicates']}
+  , nonPromotableReason: {type: String, enum: ['sender', 'text', 'duplicates', 'followFail']}
   , image: {type: String}
   , title: {type: String}
   , summary: {type: String}
@@ -33,8 +33,8 @@ var Link = new Schema({
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
   , gmMsgHex : {type : String}
-  , metaIndexState : {type : String, enum : ['done', 'error']}
-  , metaIndexError : {type : String}
+  , indexState : {type : String, enum : ['done', 'error']}
+  , indexError : {type : String}
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean}
   , shardKey: {type : String}

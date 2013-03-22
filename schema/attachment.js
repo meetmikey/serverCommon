@@ -39,10 +39,10 @@ var Attachment = new Schema({
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
   , gmMsgHex : {type : String}
-  , indexState: {type : String, enum : ['done', 'error']} // index state of the attachment resource
+  , indexState : {type : String, enum : ['done', 'softFail', 'hardFail']}
   , indexError : {type : String}
-  , metaIndexState : {type : String, enum : ['done', 'error']}
-  , metaIndexError : {type : String}
+  , fileIndexState: {type : String, enum : ['done', 'softFail', 'hardFail']}
+  , fileIndexError : {type : String}
   , timestamp: {type: Date, default: Date.now}
   , isPromoted: {type : Boolean}
   , isDeleted: {type : Boolean}
