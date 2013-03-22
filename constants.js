@@ -8,19 +8,23 @@ function define(name, value) {
 
 define('DEFAULT_QUICK_UNIQUE_ID_LENGTH', 8);
 
-define('DEFAULT_RESPONSE_MESSAGE', 'internal error')
-define('DEFAULT_RESPONSE_CODE', 500)
+define('DEFAULT_RESPONSE_MESSAGE', 'internal error');
+define('DEFAULT_RESPONSE_CODE', 500);
 
 define('LOG_BREAK', '\n\n\n\n\n\n\n\n');
 
-define('ACTIVE_CONNECTION_TTL', 60*2)
+define('ACTIVE_CONNECTION_TTL', 60*2);
 
 //Milliseconds to wait with one miss.  Will do exponential back-off if many misses.
 //A 'miss' is either an error or 'no message'
-define('QUEUE_WAIT_TIME_BASE', 10)
+define('QUEUE_WAIT_TIME_BASE', 10);
 
 //Never wait more than 20 seconds
-define('QUEUE_MAX_WAIT_TIME', 20000)
+define('QUEUE_MAX_WAIT_TIME', 20*1000);
+
+define('CHECK_WORKERS_INTERVAL', 20*1000);
+
+define('DEFAULT_WORKER_TIMEOUT', 20*60*1000);
 
 define ('CLOUD_STORAGE_DEFAULT', 'aws');
 
