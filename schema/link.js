@@ -33,7 +33,7 @@ var Link = new Schema({
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
   , gmMsgHex : {type : String}
-  , indexState : {type : String, enum : ['done', 'error']}
+  , indexState : {type : String, enum : ['done', 'softFail', 'hardFail']}
   , indexError : {type : String}
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean}
