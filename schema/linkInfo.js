@@ -12,7 +12,7 @@ var LinkInfo = new Schema({
   , lastFollowDate: {type: Date}
   , followType: {type: String, enum: ['fail', 'diffbot', 'pdf', 'googleDoc', 'direct']}
   , timestamp: {type: Date, default: Date.now}
-  , indexState: {type : String, enum : ['done', 'error']}
+  , indexState: {type : String, enum : ['done', 'softFail', 'hardFail']}
   , indexError : {type : String}
 }, {
   shardKey: {
