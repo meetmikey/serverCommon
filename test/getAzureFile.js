@@ -1,7 +1,7 @@
 var azureUtils = require ('../lib/azureUtils')
     , fs = require ('fs');
 
-var file = "rawEmail/513d1d5ec7e0c441280000sdf05/11-body.txt"
+var file = "rawEmail/514266e16a9290970a000008/196099-body.txt"
 
 azureUtils.getFile (file, false, function (err, res) {
   var buffer = '';
@@ -14,11 +14,11 @@ azureUtils.getFile (file, false, function (err, res) {
 
   res.on('data', function (chunk) {
     buffer += chunk.toString ('binary');
+    console.log (buffer.length);
   });
 
   res.on('end', function () {
     console.log (buffer.length);
-    console.log (buffer);
     fs.writeFile ('NEW_METHOD', buffer, 'binary')
   });
 
