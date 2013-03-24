@@ -23,6 +23,7 @@ var UserOnboardingState = new Schema({
             'retrieveEmails',
             'markStoppingPoint']},
   headerBatchesComplete : {type : [headerBatch]},
+  bandwith : {type : Number, default : 0},
   errorMsg : {type : String},
   hasError : {type : Boolean, default : false},
   mikeyMailTS : {type : Date, default : Date.now}, // the last time a mailDownload daemon indicated it's still working on the download
@@ -44,10 +45,8 @@ var ResumeDownloadState = new Schema({
             'retrieveEmailsNoAttachments',
             'retrieveEmails',
             'markStoppingPoint']},
-  errorMsg : {type : String},
-  hasError : {type : Boolean, default : false},
-  claimed : {type : Boolean, default : false}, // TODO: get rid of this
-  mikeyMailTS : {type : Date, default : Date.now}, // the last time a mailDownload daemon indicated it's still working on the download
+  bandwith : {type : Number, default : 0},
+  mikeyMailTS : {type : Date},
   nodeId : {type : String, index : true}  // uniquely identifies which node process is handling the connection
 });
 
