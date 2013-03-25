@@ -15,7 +15,7 @@
       },
       "isLink"  : {"type" : "boolean", "store" : "yes"},
       "size" : {"type" : "long"},
-      "docType" : {"type" : "string", "store" : "yes"}
+      "docType" : {"type" : "string", "store" : "yes", "analyzer" : "simple"}
     }
   }
 }

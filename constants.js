@@ -46,7 +46,7 @@ define ('DOC_TYPE_MAPPING', {
       'gzip',
       'compressed'],
   'spreadsheet' : ['spreadsheet', 'excel'],
-  'document' : ['msword', 'ms-word', 'text/plain', 'text/richtext', 'opendocument.text'],
+  'document' : ['msword', 'wordprocessingml', 'ms-word', 'text/plain', 'text/richtext', 'opendocument.text'],
   'code' : ['html', 
       'python', 
       'java', 
