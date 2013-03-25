@@ -32,6 +32,7 @@ var Mail = new Schema({
   , seqNo : {type : Number}
   , mailboxId : {type : Schema.ObjectId}
   , s3Path : {type : String}
+  , rawEmailInAzure : {type : Boolean}
   , failUpload : {type : Boolean}
   , bodyInS3 : {type : String, enum : ['success', 'fail']}
   , size : {type : Number}
