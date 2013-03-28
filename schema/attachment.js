@@ -47,6 +47,7 @@ var Attachment = new Schema({
   , isPromoted: {type : Boolean}
   , isDeleted: {type : Boolean}
   , shardKey: {type : String}
+  , isStreamed: {type : Boolean}
 }, {
   shardKey: {
     shardKey: 1
