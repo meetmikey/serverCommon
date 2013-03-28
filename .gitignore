@@ -13,3 +13,4 @@ node_modules/bigdecimal
 node_modules/bluesky
 node_modules/bufferedstream
 node_modules/.bin
+secureConf.js
