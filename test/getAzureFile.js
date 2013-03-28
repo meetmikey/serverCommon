@@ -1,7 +1,7 @@
 var azureUtils = require ('../lib/azureUtils')
     , fs = require ('fs');
 
-var file = "rawEmail/514266e16a9290970a000008/196099-body.txt"
+var file = process.argv[2];
 
 azureUtils.getFile (file, false, function (err, res) {
   var buffer = '';
@@ -19,7 +19,7 @@ azureUtils.getFile (file, false, function (err, res) {
 
   res.on('end', function () {
     console.log (buffer.length);
-    fs.writeFile ('NEW_METHOD', buffer, 'binary')
+    fs.writeFile (file, buffer, 'binary')
   });
 
   /*
