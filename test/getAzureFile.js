@@ -19,7 +19,7 @@ azureUtils.getFile (file, false, function (err, res) {
 
   res.on('end', function () {
     console.log (buffer.length);
-    fs.writeFile (file, buffer, 'binary')
+    fs.writeFile ('myfile', buffer, 'binary')
   });
 
   /*
