@@ -12,8 +12,8 @@ var winston = require('./lib/winstonWrapper').winston
 var http = require('http');
 var https = require('https');
 
-http.globalAgent.maxSockets = 10000;
-https.globalAgent.maxSockets = 10000;
+http.globalAgent.maxSockets = 15;
+https.globalAgent.maxSockets = 15;
 
 var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
