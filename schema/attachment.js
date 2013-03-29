@@ -22,6 +22,8 @@ var Attachment = new Schema({
   , recipients: {type: [EmailUserSchema]}
   , image: {type: String}
   , isImage: {type: Boolean}
+  , needsThumb : {type : Boolean}
+  , hasThumb : {type : Boolean}
   , docType : {type : String, enum : ['image', 
                                       'pdf', 
                                       'presentation', 
