@@ -20,10 +20,11 @@ var Attachment = new Schema({
   , sentDate: {type: Date, default: Date.now}
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
-  , image: {type: String}
+  , image: {type: String} // the preview image
+  , imageThumbExists : {type : Boolean}
   , isImage: {type: Boolean}
-  , needsThumb : {type : Boolean}
-  , hasThumb : {type : Boolean}
+  , attachmentThumbExists : {type : Boolean}
+  , attachmentThumbSkip : {type : Boolean} // true if we should skip thumbnailing b/c attachment is already small
   , docType : {type : String, enum : ['image', 
                                       'pdf', 
                                       'presentation', 
