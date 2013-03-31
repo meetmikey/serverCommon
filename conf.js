@@ -40,6 +40,7 @@ var sqsMailDownloadQueue = queuePrefix + 'MailDownload';
 var sqsMailReadingQueue = queuePrefix + 'MailReader';
 var sqsMailReadingQuickQueue = queuePrefix + 'MailReaderQuick';
 var sqsMailActiveConnectionQueue = queuePrefix + 'MailActiveConnection';
+var sqsWorkerQueue = queuePrefix + 'Worker';
 
 module.exports = {
   aws : {
@@ -51,6 +52,7 @@ module.exports = {
     , sqsMailReadingQuickQueue : sqsMailReadingQuickQueue
     , sqsMailDownloadQueue : sqsMailDownloadQueue
     , sqsMailActiveConnectionQueue : sqsMailActiveConnectionQueue
+    , sqsWorkerQueue : sqsWorkerQueue
     , s3Folders: {
         attachment: 'attachment'
       , static: 'images'
