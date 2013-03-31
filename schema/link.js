@@ -22,6 +22,7 @@ var Link = new Schema({
   , isPromoted: {type: Boolean}
   , nonPromotableReason: {type: String, enum: ['sender', 'text', 'duplicates', 'followFail']}
   , image: {type: String}
+  , imageThumbExists : {type : Boolean}
   , title: {type: String}
   , summary: {type: String}
   , sentDate: {type: Date, default: Date.now}

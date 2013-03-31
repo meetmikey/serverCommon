@@ -21,7 +21,7 @@ var Attachment = new Schema({
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
   , image: {type: String} // the preview image
-  , imageThumbExists : {type : Boolean}
+  , imageThumbExists : {type : Boolean} 
   , isImage: {type: Boolean}
   , attachmentThumbExists : {type : Boolean}
   , attachmentThumbSkip : {type : Boolean} // true if we should skip thumbnailing b/c attachment is already small
