@@ -8,6 +8,7 @@ var LinkInfo = new Schema({
   , resolvedURL: {type: String}
   , image: {type: String} // the preview image
   , imageThumbExists : {type : Boolean}
+  , imageThumbErr : {type : Boolean}
   , title: {type: String}
   , summary: {type: String}
   , lastFollowDate: {type: Date}
