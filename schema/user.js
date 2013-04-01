@@ -15,8 +15,6 @@ else {
 
 var User = new Schema({
   googleID: {type: String, index: true},
-//  accessToken: {type: String},
-//  refreshToken: {type: String},
   accessHash : {type : String},
   symHash : {type : String},
   symSalt : {type : String},
@@ -64,7 +62,6 @@ User.virtual('accessToken')
     var cipher = crypto.createCipher(conf.crypto.scheme, cryptoSecret);
     var hashToken = cipher.update (accessToken, 'utf8', 'hex');
     hashToken += cipher.final('hex');
-    console.log (hashToken);
     this.accessHash = hashToken;
   });
 
