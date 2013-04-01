@@ -5,7 +5,8 @@ var imageUtils = require (serverCommon + '/lib/imageUtils')
     , fs = require ('fs');
 
 var imageResizeTest = this;
-var testFiles = ['./test/data/fist.png', './test/data/image.tiff', './test/data/obama_emails.jpg', './test/data/needs_crop.png', './test/data/wide.png', './test/data/wide2.png'];
+//var testFiles = ['./test/data/fist.png', './test/data/image.tiff', './test/data/obama_emails.jpg', './test/data/needs_crop.png', './test/data/wide.png', './test/data/wide2.png'];
+var testFiles = ['./test/data/sisbanner_stream.jpg'];
 
 exports.testBuffer = function (path, name, contentType) {
 
