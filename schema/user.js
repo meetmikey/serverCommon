@@ -1,10 +1,27 @@
 var mongoose = require('mongoose'),
+    crypto   = require ('crypto'),
+    conf     = require ('../conf'),
     Schema   = mongoose.Schema;
+
+var cryptoSecret;
+
+if (process.env.NODE_ENV == 'production') {
+  cryptoSecret = require ('../secureConf').crypto.aesSecret;
+}
+else {
+  cryptoSecret = require ('../conf').crypto.aesSecret;  
+}
+
 
 var User = new Schema({
   googleID: {type: String, index: true},
-  accessToken: {type: String},
-  refreshToken: {type: String},
+//  accessToken: {type: String},
+//  refreshToken: {type: String},
+  accessSym : {type : String},
+  sym : {type : String},
+  symSalt : {type : String},
+//  asym : {type : String},
+//  asymSalt : {type : String},
   expiresAt: {type: Date },
   displayName: {type: String},
   firstName: {type: String},
@@ -19,6 +36,43 @@ var User = new Schema({
 });
 
 
+User.virtual('refreshToken')
+  .get(function () {
+    var decipher = crypto.createDecipher(conf.crypto.scheme, cryptoSecret);
+    var tokenAndSalt = decipher.update(this.sym, 'hex', 'utf8');
+    tokenAndSalt += decipher.final ('utf8');
+    var saltLen = this.symSalt.length;
+    var token = tokenAndSalt.substring (saltLen, tokenAndSalt.length);
+    return token;
+  })
+  .set (function (refreshToken) {
+    var cipher = crypto.createCipher(conf.crypto.scheme, cryptoSecret);
+    this.symSalt = crypto.randomBytes (8).toString ('hex');
+    var symmetricHash = cipher.update (this.symSalt + refreshToken, 'utf8', 'hex');
+    symmetricHash += cipher.final ('hex');
+    this.sym = symmetricHash;
+  });
+
+User.virtual('accessToken')
+  .get (function () {
+    var decipher = crypto.createDecipher(conf.crypto.scheme, cryptoSecret);
+    var token = decipher.update (this.accessSym, 'hex', 'utf8');
+    token += decipher.final ('utf8');
+    return token;
+  })
+  .set (function (accessToken) {
+    var cipher = crypto.createCipher(conf.crypto.scheme, cryptoSecret);
+    var hashToken = cipher.update (accessToken, 'utf8', 'hex');
+    hashToken += cipher.final('hex');
+    console.log (hashToken);
+    this.accessSym = hashToken;
+  });
 
 mongoose.model('User', User);
-exports.UserModel = mongoose.model('User')
+exports.UserModel = mongoose.model('User');
+
+
+this.UserModel.findById ("51592d40997cbf6f45000005", function (err, foundUser) {
+  console.log (foundUser.refreshToken);
+  console.log (foundUser.accessToken);
+});

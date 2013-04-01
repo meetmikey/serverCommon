@@ -19,7 +19,6 @@ var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
 var elasticSearchHost = 'localhost';
 
-
 var queuePrefix = 'local';
 if ( process.env.LOCAL_QUEUE_PREFIX ) {
   queuePrefix = process.env.LOCAL_QUEUE_PREFIX + 'Local';
@@ -116,6 +115,10 @@ module.exports = {
         , pass: ''
         , port: ''
       }
+  }
+  , crypto : {
+    aesSecret : 'M45Iksu09349)(*$(jsdL:KD',
+    scheme : 'aes256'
   }
   , express: {
       secret: 'IITYWYBAD4487'
