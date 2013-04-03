@@ -8,7 +8,6 @@ var initActions = [
 ];
 
 appInitUtils.initApp( 'addUserToDownloadQueue', initActions, null, function() {
-  console.log ('ehllo')
   googleUtils.getAccessToken ("514265596a9290970a000007", function (err, newAccessToken) {
     if (err) {
       winston.handleError (err);
