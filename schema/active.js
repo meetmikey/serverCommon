@@ -5,7 +5,7 @@ var constants = require ('../constants')
 var ActiveConnection = new Schema({
     _id: {type: Schema.ObjectId} // use userId in this field
   , lastPoll: {type: Date, default : Date.now}
-  , lastQueued : {type : Date, default : Date.now} // the last time we queued this object for an update
+  , lastQueued : {type : Date} // the last time we queued this object for an update
   , nodeId : {type : String, index : true}  // uniquely identifies which node process is handling the connection
 });
 
