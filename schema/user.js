@@ -24,7 +24,7 @@ var User = new Schema({
   displayName: {type: String},
   firstName: {type: String},
   lastName: {type: String},
-  email: {type: String, unique: true},
+  email: {type: String, unique: true, lowercase: true},
   gender: {type: String},
   locale: {type: String},
   hostedDomain: {type: String},
