@@ -22,7 +22,7 @@ var Attachment = new Schema({
   , recipients: {type: [EmailUserSchema]}
   , image: {type: String} // the preview image
   , imageThumbExists : {type : Boolean} 
-  , isImage: {type: Boolean}
+  , isImage: {type: Boolean, index : true}
   , attachmentThumbExists : {type : Boolean}
   , attachmentThumbSkip : {type : Boolean} // true if we should skip thumbnailing b/c attachment is already small
   , attachmentThumbErr : {type : Boolean} // true if there was an error trying to process an image attachment
@@ -60,7 +60,8 @@ var Attachment = new Schema({
 
 Attachment.index({ userId: 1, gmThreadId: 1 });
 Attachment.index({ hash: 1, fileSize: 1 });
-Attachment.index({ userId: 1, sentDate: -1 });
+//Attachment.index({ userId: 1, sentDate: -1 });
+Attachment.index({ userId: 1, isImage: 1, sentDate: -1 });
 
 mongoose.model('Attachment', Attachment);
 exports.AttachmentModel = mongoose.model('Attachment')
