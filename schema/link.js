@@ -20,7 +20,7 @@ var Link = new Schema({
   , resolvedURL: {type: String}
   , comparableURLHash: {type: String, index : true, required: true}
   , isPromoted: {type: Boolean}
-  , nonPromotableReason: {type: String, enum: ['sender', 'text', 'duplicates', 'followFail']}
+  , nonPromotableReason: {type: String, enum: ['sender', 'senderRatio', 'text', 'duplicates', 'followFail']}
   , image: {type: String}
   , imageThumbExists : {type : Boolean}
   , title: {type: String}
