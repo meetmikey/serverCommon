@@ -29,7 +29,7 @@ define ('CLOUD_STORAGE_DEFAULT', 'aws');
 
 define ('SHARD_KEY_LENGTH', 5);
 
-define ('S3_RETRIES', 3);
+define ('S3_RETRIES', 4);
 
 define ('ERROR_UPLOADS_DIR', '/tmp/upload_errors/');
 
