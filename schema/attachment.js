@@ -62,6 +62,7 @@ Attachment.index({ userId: 1, gmThreadId: 1 });
 Attachment.index({ hash: 1, fileSize: 1 });
 //Attachment.index({ userId: 1, sentDate: -1 });
 Attachment.index({ userId: 1, isImage: 1, sentDate: -1 });
+Attachment.index ({userId : 1, hash : 1});
 
 mongoose.model('Attachment', Attachment);
 exports.AttachmentModel = mongoose.model('Attachment')
