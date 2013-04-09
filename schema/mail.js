@@ -32,7 +32,7 @@ var Mail = new Schema({
   , seqNo : {type : Number}
   , mailboxId : {type : Schema.ObjectId}
   , s3Path : {type : String}
-  , rawEmailInAzure : {type : Boolean}
+  , mmDone : {type : Boolean}
   , failUpload : {type : Boolean}
   , bodyInS3 : {type : String, enum : ['success', 'fail']}
   , size : {type : Number}
@@ -58,6 +58,7 @@ var Mail = new Schema({
 // for querying for attachments or no attachments + user and sorting by uid descending
 Mail.index({ userId: 1, s3Path : 1, hasAttachment: 1, uid : -1 } );
 Mail.index ({userId: 1, s3Path: 1, hasMarketingText : 1, hasMarketingFrom : 1, uid : -1});
+Mail.index ({mmDone: 1, mailReaderState: 1});
 
 //db.mails.ensureIndex ({userId : 1, s3Path : 1, hasMarketingText : 1, hasMarketingFrom: 1, uid : -1})
 
