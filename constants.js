@@ -37,6 +37,14 @@ define ('DOC_TYPE_MAPPING', {
   'pdf' : ['application/pdf'],
   'presentation' : ['ms-powerpoint', 'presentation', 'keynote'],
   'music' : ['audio/'],
+  'photoshop' : ['image/photoshop', 
+    'image/x-photoshop', 
+    'image/psd', 
+    'image/x-psd', 
+    'application/photoshop', 
+    'application/psd', 
+    'zz-application/zz-winassoc-psd', 
+    'image/vnd.adobe.photoshop'],
   'image' : ['image/'],
   'video' : ['video/'],
   'archive' : ['zip',
@@ -45,7 +53,12 @@ define ('DOC_TYPE_MAPPING', {
       'gzip',
       'compressed'],
   'spreadsheet' : ['spreadsheet', 'excel'],
-  'document' : ['msword', 'wordprocessingml', 'ms-word', 'text/plain', 'text/richtext', 'opendocument.text'],
+  'document' : ['msword', 
+    'wordprocessingml', 
+    'ms-word', 
+    'text/richtext', 
+    'opendocument.text'
+  ],
   'code' : ['html', 
       'python', 
       'java', 
@@ -59,6 +72,30 @@ define ('DOC_TYPE_MAPPING', {
       '/x-src', 
       'x-latex']
 });
+
+define ('EXCLUDE_FROM_IMAGES', [
+  'image/vnd.djvu',
+  'image/x-emf',
+  'image/x-xfig',
+  'image/vnd.dwg',
+  'image/x-macpict',
+  'image/vnd.rn-realpix',
+  'image/vnd.ms-modi',
+  'image/psd',
+  'image/x-icon',
+  'image/ico',
+  'image/vnd.dxf',
+  'image/x-3ds',
+  'image/x-targa',
+  'image/x-dwg',
+  'image/x-photoshop',
+  'image/doc',
+  'image/eps',
+  'image/pdf',
+  'image/x-xcf',
+  'image/unknown',
+  'image/x-pict'
+]);
 
 define ('ACCESS_TOKEN_UPDATE_TIME_BUFFER', 3*1000*60); // 3 mins
 
