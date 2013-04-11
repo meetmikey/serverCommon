@@ -1,5 +1,6 @@
 var mongoose = require ('mongoose')
 var Schema = mongoose.Schema;
+var indexStateSchema = require ('./indexState').indexStateSchema;
 
 var AttachmentInfo = new Schema({
     contentType: {type: String}
@@ -19,8 +20,7 @@ var AttachmentInfo = new Schema({
                                       'archive',
                                       'other']}
   , hash: {type: String, required: true}
-  , indexState : {type : String, enum : ['done', 'softFail', 'hardFail']}
-  , indexError : {type : String}
+  , index : indexStateSchema
   , timestamp: {type: Date, default: Date.now}
 }, {
   shardKey: {
@@ -30,3 +30,7 @@ var AttachmentInfo = new Schema({
 
 mongoose.model('AttachmentInfo', AttachmentInfo);
 exports.AttachmentInfoModel = mongoose.model('AttachmentInfo');
+
+AttachmentInfo.index({ userId: 1, gmThreadId: 1 });
+AttachmentInfo.index({ hash: 1, fileSize: 1 });
+AttachmentInfo.index({ userId: 1, isImage: 1, sentDate: -1 });

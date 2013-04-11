@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var indexStateSchema = require ('./indexState').indexStateSchema;
 
 var EmailUserSchema = new Schema({
     name: {type: String}
@@ -41,13 +42,12 @@ var Attachment = new Schema({
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
   , gmMsgHex : {type : String}
-  , indexState : {type : String, enum : ['done', 'softFail', 'hardFail']}
-  , indexError : {type : String}
-  , timestamp: {type: Date, default: Date.now}
+  , index : indexStateSchema
   , isPromoted: {type : Boolean}
   , isDeleted: {type : Boolean}
   , shardKey: {type : String}
   , image: {type: String} // dummy used by API for signedURL
+  , timestamp: {type: Date, default: Date.now}
 }, {
   shardKey: {
     shardKey: 1
@@ -61,4 +61,4 @@ Attachment.index({ userId: 1, isImage: 1, sentDate: -1 });
 Attachment.index ({userId : 1, hash : 1});
 
 mongoose.model('Attachment', Attachment);
-exports.AttachmentModel = mongoose.model('Attachment')
+exports.AttachmentModel = mongoose.model('Attachment');
