@@ -13,6 +13,8 @@ var LinkInfo = new Schema({
   , summary: {type: String}
   , lastFollowDate: {type: Date}
   , followType: {type: String, enum: ['fail', 'diffbot', 'pdf', 'googleDoc', 'direct']}
+  , imageFollowFailed : {type : Boolean, index : true}
+  , origImageUrl : {type : String}
   , timestamp: {type: Date, default: Date.now}
   , indexState: {type : String, enum : ['done', 'softFail', 'hardFail']}
   , indexError : {type : String}
