@@ -20,8 +20,6 @@ var Attachment = new Schema({
   , sentDate: {type: Date, default: Date.now}
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
-  , image: {type: String} // the preview image
-  , imageThumbExists : {type : Boolean} 
   , isImage: {type: Boolean, index : true}
   , attachmentThumbExists : {type : Boolean}
   , attachmentThumbSkip : {type : Boolean} // true if we should skip thumbnailing b/c attachment is already small
@@ -45,13 +43,11 @@ var Attachment = new Schema({
   , gmMsgHex : {type : String}
   , indexState : {type : String, enum : ['done', 'softFail', 'hardFail']}
   , indexError : {type : String}
-  , fileIndexState: {type : String, enum : ['done', 'softFail', 'hardFail']}
-  , fileIndexError : {type : String}
   , timestamp: {type: Date, default: Date.now}
   , isPromoted: {type : Boolean}
   , isDeleted: {type : Boolean}
   , shardKey: {type : String}
-  , isStreamed: {type : Boolean}
+  , image: {type: String} // dummy used by API for signedURL
 }, {
   shardKey: {
     shardKey: 1
