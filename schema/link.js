@@ -1,6 +1,6 @@
 var mongoose = require ('mongoose');
-
 var Schema = mongoose.Schema;
+var indexStateSchema = require ('./indexState').indexStateSchema;
 
 var EmailUserSchema = new Schema({
     name: {type: String}
@@ -34,8 +34,7 @@ var Link = new Schema({
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
   , gmMsgHex : {type : String}
-  , indexState : {type : String, enum : ['done', 'softFail', 'hardFail']}
-  , indexError : {type : String}
+  , index : indexStateSchema
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean}
   , shardKey: {type : String}
