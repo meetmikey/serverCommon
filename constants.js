@@ -90,6 +90,7 @@ define ('EXCLUDE_FROM_IMAGES', [
   'image/x-dwg',
   'image/x-photoshop',
   'image/doc',
+  'image/pict',
   'image/eps',
   'image/pdf',
   'image/x-xcf',
