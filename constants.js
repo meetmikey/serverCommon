@@ -27,6 +27,8 @@ define('DEFAULT_WORKER_TIMEOUT', 20*60*1000);
 
 define ('CLOUD_STORAGE_DEFAULT', 'aws');
 
+define('DEFAULT_NUM_REDIRECTS_TO_FOLLOW', 4);
+
 define ('SHARD_KEY_LENGTH', 5);
 
 define ('S3_RETRIES', 3);
