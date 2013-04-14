@@ -31,7 +31,7 @@ define('DEFAULT_NUM_REDIRECTS_TO_FOLLOW', 4);
 
 define ('SHARD_KEY_LENGTH', 5);
 
-define ('S3_RETRIES', 3);
+define ('S3_RETRIES', 4);
 
 define ('ERROR_UPLOADS_DIR', '/tmp/upload_errors/');
 
@@ -92,6 +92,7 @@ define ('EXCLUDE_FROM_IMAGES', [
   'image/x-dwg',
   'image/x-photoshop',
   'image/doc',
+  'image/pict',
   'image/eps',
   'image/pdf',
   'image/x-xcf',
