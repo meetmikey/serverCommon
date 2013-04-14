@@ -1,5 +1,6 @@
 var mongoose = require ('mongoose')
 var Schema = mongoose.Schema;
+var indexStateSchema = require ('./indexState').indexStateSchema;
 
 var LinkInfo = new Schema({
     comparableURLHash: {type: String, required: true, unique: true}
@@ -16,8 +17,7 @@ var LinkInfo = new Schema({
   , imageFollowFailed : {type : Boolean, index : true}
   , origImageUrl : {type : String}
   , timestamp: {type: Date, default: Date.now}
-  , indexState: {type : String, enum : ['done', 'softFail', 'hardFail']}
-  , indexError : {type : String}
+  , index : indexStateSchema
 }, {
   shardKey: {
     comparableURLHash: 1
