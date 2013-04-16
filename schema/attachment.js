@@ -27,7 +27,8 @@ var Attachment = new Schema({
   , attachmentThumbSkip : {type : Boolean} // true if we should skip thumbnailing b/c attachment is already small
   , attachmentThumbErr : {type : Boolean} // true if there was an error trying to process an image attachment
   , docType : {type : String, enum : ['image', 
-                                      'pdf', 
+                                      'pdf',
+                                      'photoshop',
                                       'presentation', 
                                       'spreadsheet', 
                                       'document', 
