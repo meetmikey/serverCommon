@@ -33,7 +33,7 @@ define ('SHARD_KEY_LENGTH', 5);
 
 define ('S3_RETRIES', 4);
 
-define ('INDEXING_TRIES', 4);
+define ('MAX_INDEXING_ATTEMPTS', 3);
 
 define ('ERROR_UPLOADS_DIR', '/tmp/upload_errors/');
 
