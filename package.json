@@ -14,7 +14,7 @@
     , "bigdecimal" : ">=0.6.1"
     , "azure" : "https://github.com/svmehta/azure-sdk-for-node/archive/master.tar.gz"
     , "bluesky" : ">=0.6.6"
-    , "gm" : ">=1.8.2"
+    , "gm" : "https://github.com/meetmikey/gm/archive/master.tar.gz"
     , "oauth" : "~0.9.8"
     , "rollbar" : ">=0.2.2"
   },
