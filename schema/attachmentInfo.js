@@ -10,7 +10,8 @@ var AttachmentInfo = new Schema({
   , attachmentThumbSkip : {type : Boolean} // true if we should skip thumbnailing b/c attachment is already small
   , attachmentThumbErr : {type : Boolean} // true if there was an error trying to process an image attachment
   , docType : {type : String, enum : ['image', 
-                                      'pdf', 
+                                      'pdf',
+                                      'photoshop', 
                                       'presentation', 
                                       'spreadsheet', 
                                       'document', 
@@ -28,9 +29,11 @@ var AttachmentInfo = new Schema({
   }
 });
 
-mongoose.model('AttachmentInfo', AttachmentInfo);
-exports.AttachmentInfoModel = mongoose.model('AttachmentInfo');
 
 AttachmentInfo.index({ userId: 1, gmThreadId: 1 });
-AttachmentInfo.index({ hash: 1, fileSize: 1 });
+AttachmentInfo.index({ hash: 1, fileSize: 1 }, {unique : true});
 AttachmentInfo.index({ userId: 1, isImage: 1, sentDate: -1 });
+
+
+mongoose.model('AttachmentInfo', AttachmentInfo);
+exports.AttachmentInfoModel = mongoose.model('AttachmentInfo');
