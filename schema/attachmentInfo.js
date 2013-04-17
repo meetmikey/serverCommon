@@ -23,10 +23,6 @@ var AttachmentInfo = new Schema({
   , hash: {type: String, required: true}
   , index : indexStateSchema
   , timestamp: {type: Date, default: Date.now}
-}, {
-  shardKey: {
-    comparableURLHash: 1
-  }
 });
 
 
