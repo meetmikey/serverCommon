@@ -17,7 +17,6 @@
     , "gm" : "https://github.com/meetmikey/gm/archive/master.tar.gz"
     , "oauth" : "~0.9.8"
     , "rollbar" : ">=0.2.2"
-    , "diffbot": "0.1.0"
   },
   "engines": {
     "node": "0.8.x"
