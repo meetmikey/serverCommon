@@ -26,7 +26,7 @@ var Mail = new Schema({
   , bodyText: {type: String}
   , bodyHTML: {type: String}
   , numAttachments: {type: Number}
-  , sentDate: {type: Date}
+  , sentDate: {type: Date, required : true}
   , timestamp: {type: Date, default: Date.now}
   , uid : {type : Number, required : true}
   , seqNo : {type : Number}
@@ -39,11 +39,10 @@ var Mail = new Schema({
   , mailReaderState: {type: String, enum: ['started', 'softFail', 'hardFail', 'done']}
   , linkExtractorState: {type: String, enum: ['ignored', 'noLinks', 'started', 'done']}
   , gmDate : {type: Date}
-  , gmThreadId : {type : String}
+  , gmThreadId : {type : String, required : true}
   , gmMsgId : {type : String}
   , gmLabels : {type : [String]}
   , isDeleted : {type : Boolean}
-  , indexable : {type: Boolean} // indication of whether any attachment or link in the mail isPromoted
   , hasAttachment : {type : Boolean}
   , hasMarketingFrom : {type : Boolean}
   , hasMarketingText : {type : Boolean}
