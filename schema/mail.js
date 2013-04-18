@@ -48,6 +48,7 @@ var Mail = new Schema({
   , hasMarketingFrom : {type : Boolean}
   , hasMarketingText : {type : Boolean}
   , senderContactData: ContactData //dummy val
+  , isSentByUser: {type : Boolean} //dummy val
   , shardKey: {type : String}
 }, {
   shardKey: {
