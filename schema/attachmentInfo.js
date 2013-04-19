@@ -25,11 +25,7 @@ var AttachmentInfo = new Schema({
   , timestamp: {type: Date, default: Date.now}
 });
 
-
-AttachmentInfo.index({ userId: 1, gmThreadId: 1 });
 AttachmentInfo.index({ hash: 1, fileSize: 1 }, {unique : true});
-AttachmentInfo.index({ userId: 1, isImage: 1, sentDate: -1 });
-
 
 mongoose.model('AttachmentInfo', AttachmentInfo);
 exports.AttachmentInfoModel = mongoose.model('AttachmentInfo');

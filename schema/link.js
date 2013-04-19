@@ -19,8 +19,8 @@ var Link = new Schema({
   , url: {type: String, required: true}
   , resolvedURL: {type: String}
   , comparableURLHash: {type: String, index : true, required: true}
-  , isPromoted: {type: Boolean, index :true}
-  , isFollowed: {type: Boolean, index :true}
+  , isPromoted: {type: Boolean, index: true}
+  , isFollowed: {type: Boolean}
   , nonPromotableReason: {type: String, enum: ['sender', 'text', 'duplicates', 'followFail']}
   , image: {type: String}
   , imageThumbExists : {type : Boolean}
@@ -46,8 +46,9 @@ var Link = new Schema({
 });
 
 Link.index({ userId: 1, gmThreadId: 1, comparableURLHash : 1 }, {unique : true});
-Link.index({ userId: 1, isPromoted: 1,  comparableURLHash : 1});
-Link.index({ userId: 1, sentDate: -1 });
+Link.index({ userId: 1, comparableURLHash : 1});
+Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, sentDate : -1});
+Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, comparableURLHash : 1});
 
 mongoose.model('Link', Link);
 exports.LinkModel = mongoose.model('Link');
