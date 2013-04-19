@@ -3,7 +3,7 @@ var indexStateSchema = {
   , indexError : {type : String}
   , tries : {type : Number, default : 0}
   , version : {type : String}
-  , asStub : {type : Boolean} // after a number of failed indexing attempts we may keep a stub resource in the index with whatever info we could extract
+  , asStub : {type : Boolean} // after a number of failed indexing attempts we may keep a stub resource...
 };
 
 
