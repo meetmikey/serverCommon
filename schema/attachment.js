@@ -46,13 +46,8 @@ var Attachment = new Schema({
   , index : indexStateSchema
   , isPromoted: {type : Boolean}
   , isDeleted: {type : Boolean}
-  , shardKey: {type : String}
   , image: {type: String} // dummy used by API for signedURL
   , timestamp: {type: Date, default: Date.now}
-}, {
-  shardKey: {
-    shardKey: 1
-  }
 });
 
 Attachment.index({ userId: 1, gmThreadId: 1, hash : 1, fileSize : 1 }, {unique : true});

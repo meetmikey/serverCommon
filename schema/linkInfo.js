@@ -18,10 +18,6 @@ var LinkInfo = new Schema({
   , origImageUrl : {type : String}
   , timestamp: {type: Date, default: Date.now}
   , index : indexStateSchema
-}, {
-  shardKey: {
-    comparableURLHash: 1
-  }
 });
 
 LinkInfo.index({ image: 1, imageThumbExists: 1, imageThumbErr: 1 });
