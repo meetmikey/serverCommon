@@ -38,11 +38,6 @@ var Link = new Schema({
   , index : indexStateSchema
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean}
-  , shardKey: {type : String}
-}, {
-  shardKey: {
-    shardKey: 1
-  }
 });
 
 Link.index({ userId: 1, gmThreadId: 1, comparableURLHash : 1 }, {unique : true});

@@ -48,11 +48,6 @@ var Mail = new Schema({
   , hasMarketingText : {type : Boolean}
   , senderContactData: ContactData //dummy val
   , isSentByUser: {type : Boolean} //dummy val
-  , shardKey: {type : String}
-}, {
-  shardKey: {
-    shardKey: 1
-  }
 });
 
 // for querying for attachments or no attachments + user and sorting by uid descending
@@ -65,8 +60,7 @@ Mail.index ({mmDone: 1, mailReaderState: 1});
 // need an index on... userId, s3Path, hasAttachment, hasMarketingFrom, hasMarketingText, sort uid -1
 
 // For ensuring we don't duplicate in failure state.
-// Needs to include shardKey so mongo knows it can enforce uniqueness in each shard.
-Mail.index( { "shardKey": 1, "userId": 1, "uid": 1 }, {unique : true} )
+Mail.index( {"userId": 1, "uid": 1}, {unique : true} );
 
 
 var MailBox = new Schema ({
