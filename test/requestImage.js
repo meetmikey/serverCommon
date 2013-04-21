@@ -10,16 +10,19 @@ var request = require('request')
 //var url = 'https://smartguysbuildingcoolstuff.com';
 //var url = 'http://online.citibank.com/GFC/branding/img/citilogo_branding_60x35.png';
 var url = 'http://bit.ly/VoKjP8';
+var url = 'http://www.wired.com/images_blogs/rawfile/2013/04/manofwar400x200.jpg';
 
-var COUNT = 100;
+var COUNT = 1;
 for ( var i=0; i<COUNT; i++ ) {
 
-  webUtils.webGet( url, function(err, response) {
+  webUtils.webGet( url, true, function(err, responseBuffer, url, headers) {
     if ( err ) {
       winston.handleError(err);
 
     } else {
-      winston.doInfo('success!');
+      var s = responseBuffer.toString();
+      //console.log()
+      winston.doInfo('success!', {url: url, headers: headers});
     }
   });
 }
