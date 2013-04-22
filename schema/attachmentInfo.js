@@ -21,7 +21,7 @@ var AttachmentInfo = new Schema({
                                       'archive',
                                       'other']}
   , hash: {type: String, required: true}
-  , index : indexStateSchema
+  , index : {type : [indexStateSchema], default :[]}
   , timestamp: {type: Date, default: Date.now}
 });
 
