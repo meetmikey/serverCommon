@@ -35,7 +35,7 @@ var Link = new Schema({
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
   , gmMsgHex : {type : String}
-  , index : indexStateSchema
+  , index : {type : [indexStateSchema], default :[]}
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean}
 });

@@ -41,7 +41,7 @@ var Attachment = new Schema({
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
   , gmMsgHex : {type : String}
-  , index : indexStateSchema
+  , index : {type : [indexStateSchema], default :[]}
   , isPromoted: {type : Boolean}
   , isDeleted: {type : Boolean}
   , image: {type: String} // dummy used by API for signedURL
