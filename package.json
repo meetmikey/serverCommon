@@ -13,6 +13,7 @@
     , "async": "=0.2.7"
     , "bigdecimal" : "=0.6.1"
     , "azure" : "https://github.com/svmehta/azure-sdk-for-node/archive/master.tar.gz"
+    , "diffbot" : "https://github.com/meetmikey/node-diffbot/archive/master.tar.gz"
     , "bluesky" : "=0.6.7"
     , "gm" : "https://github.com/meetmikey/gm/archive/master.tar.gz"
     , "oauth" : "=0.9.10"
