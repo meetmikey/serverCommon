@@ -16,4 +16,5 @@ node_modules/gm
 node_modules/knox
 node_modules/oauth
 node_modules/rollbar
+node_modules/memwatch
 secureConf.js
