@@ -17,7 +17,7 @@ var LinkInfo = new Schema({
   , imageFollowFailed : {type : Boolean}
   , origImageUrl : {type : String}
   , timestamp: {type: Date, default: Date.now}
-  , index : indexStateSchema
+  , index : {type : [indexStateSchema], default :[]}
 });
 
 LinkInfo.index({ image: 1, imageThumbExists: 1, imageThumbErr: 1 });
