@@ -34,7 +34,7 @@ var Mail = new Schema({
   , s3Path : {type : String}
   , mmDone : {type : Boolean}
   , failUpload : {type : Boolean}
-  , bodyInS3 : {type : String, enum : ['success', 'fail']}
+  , bodyInS3 : {type : Boolean}
   , size : {type : Number}
   , mailReaderState: {type: String, enum: ['started', 'softFail', 'hardFail', 'done']}
   , linkExtractorState: {type: String, enum: ['ignored', 'noLinks', 'started', 'done']}
