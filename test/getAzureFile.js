@@ -8,16 +8,12 @@ azureUtils.getFile (file, false, function (err, res) {
 
   console.log ('getfile register event listeners');
 
-  if (!res.properties.blobType) {
-    azureUtils.printAzureResponse (res);
-  }
-
   res.on('data', function (chunk) {
     buffer += chunk.toString ('binary');
     console.log (buffer.length);
   });
 
-  res.on('end', function () {
+  res.on('finished', function () {
     console.log (buffer.length);
     fs.writeFile ('myfile', buffer, 'binary')
   });
