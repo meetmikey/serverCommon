@@ -23,6 +23,8 @@ var Attachment = new Schema({
   , recipients: {type: [EmailUserSchema]}
   , isImage: {type: Boolean, index : true}
   , attachmentThumbExists : {type : Boolean}
+  , attachmentThumbSkip : {type : Boolean} // true if we should skip thumbnailing b/c attachment is already small
+  , attachmentThumbErr : {type : Boolean} // true if there was an error trying to process an image attachment
   , docType : {type : String, enum : ['image', 
                                       'pdf',
                                       'photoshop',
