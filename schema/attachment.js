@@ -55,3 +55,15 @@ Attachment.index({ hash: 1, fileSize: 1 });
 
 mongoose.model('Attachment', Attachment);
 exports.AttachmentModel = mongoose.model('Attachment');
+
+
+var AttachmentMR = new Schema ({
+  _id : {
+    userId:  {type: Schema.ObjectId},
+    gmThreadId : {type: String},
+    hash : {type : String}
+  },
+  value : {type: Number}
+});
+
+mongoose.model('AttachmentMR', AttachmentMR);
