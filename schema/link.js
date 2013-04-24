@@ -40,8 +40,9 @@ var Link = new Schema({
   , isDeleted : {type : Boolean}
 });
 
-Link.index({ userId: 1, gmThreadId: 1, comparableURLHash : 1 }, {unique : true});
-Link.index({ comparableURLHash : 1, userId: 1 });
+Link.index({ comparableURLHash : 1, userId: 1, gmThreadId: 1 }, {unique : true});
+
+// API server
 Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, sentDate : -1});
 Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, comparableURLHash : 1});
 
