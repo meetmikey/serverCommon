@@ -48,8 +48,7 @@ var Attachment = new Schema({
   , timestamp: {type: Date, default: Date.now}
 });
 
-Attachment.index({ userId: 1, gmThreadId: 1, hash : 1, fileSize : 1 }, {unique : true});
-Attachment.index ({userId : 1, hash : 1});
+Attachment.index({ userId: 1, hash : 1, fileSize : 1, gmThreadId: 1 }, {unique : true});
 Attachment.index({ userId: 1, isPromoted: 1, isImage: 1, sentDate: -1 });
 Attachment.index({ hash: 1, fileSize: 1 });
 
