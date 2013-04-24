@@ -60,7 +60,7 @@ exports.AttachmentModel = mongoose.model('Attachment');
 var AttachmentMR = new Schema ({
   _id : {
     userId:  {type: Schema.ObjectId},
-    threadId : {type: String},
+    gmThreadId : {type: String},
     hash : {type : String}
   },
   value : {type: Number}

@@ -52,7 +52,7 @@ exports.LinkModel = mongoose.model('Link');
 var LinkMr = new Schema ({
   _id : {
     userId:  {type: Schema.ObjectId},
-    threadId : {type: String},
+    gmThreadId : {type: String},
     comparableURLHash : {type : String}
   },
   value : {type: Number}
