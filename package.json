@@ -22,7 +22,7 @@
     , "memwatch": "=0.2.2"
   },
   "engines": {
-    "node": "0.10.4"
+    "node": "0.10.5"
   },
   "env": {
     "PYTHON": "/opt/local/bin/python2.7"
