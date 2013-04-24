@@ -47,3 +47,15 @@ Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, comparableURLHash : 1});
 
 mongoose.model('Link', Link);
 exports.LinkModel = mongoose.model('Link');
+
+
+var LinkMr = new Schema ({
+  _id : {
+    userId:  {type: Schema.ObjectId},
+    threadId : {type: String},
+    comparableURLHash : {type : String}
+  },
+  value : {type: Number}
+});
+
+mongoose.model('LinkMr', LinkMr);
