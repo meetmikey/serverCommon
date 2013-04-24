@@ -18,7 +18,7 @@ var Link = new Schema({
   , linkInfoId: {type: Schema.ObjectId}
   , url: {type: String, required: true}
   , resolvedURL: {type: String}
-  , comparableURLHash: {type: String, index : true, required: true}
+  , comparableURLHash: {type: String, required: true}
   , isPromoted: {type: Boolean, index: true}
   , isFollowed: {type: Boolean}
   , nonPromotableReason: {type: String, enum: ['invalid', 'sender', 'text', 'duplicates', 'followFail']}
@@ -41,7 +41,7 @@ var Link = new Schema({
 });
 
 Link.index({ userId: 1, gmThreadId: 1, comparableURLHash : 1 }, {unique : true});
-Link.index({ userId: 1, comparableURLHash : 1});
+Link.index({ comparableURLHash : 1, userId: 1 });
 Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, sentDate : -1});
 Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, comparableURLHash : 1});
 
