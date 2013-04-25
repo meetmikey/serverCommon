@@ -131,7 +131,7 @@ module.exports = {
   , elasticSearch: {
       host: elasticSearchHost
     , port: 9200
-    , indexName: 'mail_v1' // TODO: switch to mail_v1
+    , indexName: 'mail_v1'
     , indexAlias : 'mail'
     , mappingConfigs: [
       {
@@ -145,4 +145,9 @@ module.exports = {
     ]
   }
   , logDir: '/var/log/mikey'
+  , diffbot : {
+      token : 'b45dc70b4a560b2b106a136212486c0e'
+  }
+  , googleDriveAPIFileGetPrefix: 'https://www.googleapis.com/drive/v2/files/'
+  , validTopLevelDomainsFile: serverCommon + '/data/validTopLevelDomains.txt'
 }

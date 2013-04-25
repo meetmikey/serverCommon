@@ -26,7 +26,7 @@ var Mail = new Schema({
   , bodyText: {type: String}
   , bodyHTML: {type: String}
   , numAttachments: {type: Number}
-  , sentDate: {type: Date}
+  , sentDate: {type: Date, required : true}
   , timestamp: {type: Date, default: Date.now}
   , uid : {type : Number, required : true}
   , seqNo : {type : Number}
@@ -39,20 +39,15 @@ var Mail = new Schema({
   , mailReaderState: {type: String, enum: ['started', 'softFail', 'hardFail', 'done']}
   , linkExtractorState: {type: String, enum: ['ignored', 'noLinks', 'started', 'done']}
   , gmDate : {type: Date}
-  , gmThreadId : {type : String}
+  , gmThreadId : {type : String, required : true}
   , gmMsgId : {type : String}
   , gmLabels : {type : [String]}
   , isDeleted : {type : Boolean}
-  , indexable : {type: Boolean} // indication of whether any attachment or link in the mail isPromoted
   , hasAttachment : {type : Boolean}
   , hasMarketingFrom : {type : Boolean}
   , hasMarketingText : {type : Boolean}
   , senderContactData: ContactData //dummy val
-  , shardKey: {type : String}
-}, {
-  shardKey: {
-    shardKey: 1
-  }
+  , isSentByUser: {type : Boolean} //dummy val
 });
 
 // for querying for attachments or no attachments + user and sorting by uid descending
@@ -65,8 +60,7 @@ Mail.index ({mmDone: 1, mailReaderState: 1});
 // need an index on... userId, s3Path, hasAttachment, hasMarketingFrom, hasMarketingText, sort uid -1
 
 // For ensuring we don't duplicate in failure state.
-// Needs to include shardKey so mongo knows it can enforce uniqueness in each shard.
-Mail.index( { "shardKey": 1, "userId": 1, "uid": 1 }, {unique : true} )
+Mail.index( {"userId": 1, "uid": 1}, {unique : true} );
 
 
 var MailBox = new Schema ({

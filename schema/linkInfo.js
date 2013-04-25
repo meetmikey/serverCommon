@@ -1,5 +1,6 @@
 var mongoose = require ('mongoose')
 var Schema = mongoose.Schema;
+var indexStateSchema = require ('./indexState').indexStateSchema;
 
 var LinkInfo = new Schema({
     comparableURLHash: {type: String, required: true, unique: true}
@@ -13,16 +14,13 @@ var LinkInfo = new Schema({
   , summary: {type: String}
   , lastFollowDate: {type: Date}
   , followType: {type: String, enum: ['fail', 'diffbot', 'pdf', 'googleDoc', 'direct']}
-  , imageFollowFailed : {type : Boolean, index : true}
+  , imageFollowFailed : {type : Boolean}
   , origImageUrl : {type : String}
   , timestamp: {type: Date, default: Date.now}
-  , indexState: {type : String, enum : ['done', 'softFail', 'hardFail']}
-  , indexError : {type : String}
-}, {
-  shardKey: {
-    comparableURLHash: 1
-  }
+  , index : {type : [indexStateSchema], default :[]}
 });
+
+LinkInfo.index({ image: 1, imageThumbExists: 1, imageThumbErr: 1 });
 
 mongoose.model('LinkInfo', LinkInfo);
 exports.LinkInfoModel = mongoose.model('LinkInfo');

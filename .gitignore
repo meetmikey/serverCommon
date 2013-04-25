@@ -1,4 +1,3 @@
-node_modules/
 node_modules/aws-lib
 node_modules/winston
 node_modules/mongoose
@@ -13,4 +12,9 @@ node_modules/bigdecimal
 node_modules/bluesky
 node_modules/bufferedstream
 node_modules/.bin
+node_modules/gm
+node_modules/knox
+node_modules/oauth
+node_modules/rollbar
+node_modules/memwatch
 secureConf.js
