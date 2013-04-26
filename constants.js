@@ -215,6 +215,7 @@ var urlFilterText = [
   , 'links.mkt2713.com'
   , 'herokuapp.com'
   , 'supershuttle.com'
+  , 'mailgun.org'
   , '.jpg'
   , '.gif'
   , '.png'
