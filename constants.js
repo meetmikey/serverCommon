@@ -29,6 +29,8 @@ define ('CLOUD_STORAGE_DEFAULT', 'aws');
 
 define('DEFAULT_NUM_REDIRECTS_TO_FOLLOW', 4);
 
+define ('QUEUE_MAX_MESSAGE_RECEIVE_COUNT', 25);
+
 define ('SHARD_KEY_LENGTH', 5);
 
 define ('S3_RETRIES', 4);
