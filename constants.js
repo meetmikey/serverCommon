@@ -134,10 +134,12 @@ var urlFilterText = [
   , 'google.com/calendar/'
   , 'schemas.microsoft.com'
   , 'schema.org'
+  , 'schemas.microsoft.com'
   , 'magicnotebook.com'
   , 'meetmikey.com'
   , 'email.launchrock.com'
   , 'trypico.com'
+  , 'emailmarketing'
   , 'app.yesware.com' // tracking
   , 'paypal.com'
   , 'dmanalytics' // tracking
