@@ -37,7 +37,7 @@ var Mail = new Schema({
   , bodyInS3 : {type : Boolean}
   , size : {type : Number}
   , mailReaderState: {type: String, enum: ['started', 'softFail', 'hardFail', 'done']}
-  , linkExtractorState: {type: String, enum: ['ignored', 'noLinks', 'started', 'done']}
+  , linkExtractorState: {type: String, enum: ['tooManyLinks', 'tooMuchHTML', 'ignored', 'noLinks', 'started', 'done']}
   , gmDate : {type: Date}
   , gmThreadId : {type : String, required : true}
   , gmMsgId : {type : String}
