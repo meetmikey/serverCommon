@@ -29,6 +29,8 @@ define ('CLOUD_STORAGE_DEFAULT', 'aws');
 
 define('DEFAULT_NUM_REDIRECTS_TO_FOLLOW', 4);
 
+define ('QUEUE_MAX_MESSAGE_RECEIVE_COUNT', 25);
+
 define ('SHARD_KEY_LENGTH', 5);
 
 define ('S3_RETRIES', 4);
@@ -134,10 +136,12 @@ var urlFilterText = [
   , 'google.com/calendar/'
   , 'schemas.microsoft.com'
   , 'schema.org'
+  , 'schemas.microsoft.com'
   , 'magicnotebook.com'
   , 'meetmikey.com'
   , 'email.launchrock.com'
   , 'trypico.com'
+  , 'emailmarketing'
   , 'app.yesware.com' // tracking
   , 'paypal.com'
   , 'dmanalytics' // tracking
@@ -215,6 +219,7 @@ var urlFilterText = [
   , 'links.mkt2713.com'
   , 'herokuapp.com'
   , 'supershuttle.com'
+  , 'mailgun.org'
   , '.jpg'
   , '.gif'
   , '.png'
