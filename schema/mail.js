@@ -37,7 +37,7 @@ var Mail = new Schema({
   , bodyInS3 : {type : Boolean}
   , size : {type : Number}
   , mailReaderState: {type: String, enum: ['started', 'softFail', 'hardFail', 'done']}
-  , linkExtractorState: {type: String, enum: ['ignored', 'noLinks', 'started', 'done']}
+  , linkExtractorState: {type: String, enum: ['tooManyLinks', 'tooMuchHTML', 'ignored', 'noLinks', 'started', 'done']}
   , gmDate : {type: Date}
   , gmThreadId : {type : String, required : true}
   , gmMsgId : {type : String}
@@ -53,7 +53,7 @@ var Mail = new Schema({
 // for querying for attachments or no attachments + user and sorting by uid descending
 Mail.index({ userId: 1, s3Path : 1, hasAttachment: 1, uid : -1 } );
 Mail.index ({userId: 1, s3Path: 1, hasMarketingText : 1, hasMarketingFrom : 1, uid : -1});
-Mail.index ({mmDone: 1, mailReaderState: 1});
+Mail.index ({mmDone: 1, userId: 1, mailReaderState: 1});
 
 //db.mails.ensureIndex ({userId : 1, s3Path : 1, hasMarketingText : 1, hasMarketingFrom: 1, uid : -1})
 
