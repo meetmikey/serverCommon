@@ -136,6 +136,7 @@ var urlFilterText = [
   , 'google.com/calendar/'
   , 'schemas.microsoft.com'
   , 'schema.org'
+  , 'passport.com'
   , 'schemas.microsoft.com'
   , 'magicnotebook.com'
   , 'meetmikey.com'
