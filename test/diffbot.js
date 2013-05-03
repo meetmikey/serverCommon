@@ -1,6 +1,6 @@
 var diffbot = require('../lib/diffbotWrapper').diffbot;
 
-var url = "http://www.elasticsearch.org/videos/2012/06/05/big-data-search-and-analytics.html";
+var url = "https://github.com/JomuMist/VacationRentals/commit/a5d0a77db82c5e5e3b9d3e94f7ebf3de95331af4";
 
 var diffbotData = {
   uri: url
@@ -18,6 +18,9 @@ if ( err || ( ! response ) || ( response.errorCode ) ) {
   }
   console.log ('linkHandler: followDiffbotLink: diffbot failed', warnData);
   console.log (response)
+
+  console.log ('404', response && response.errorCode == 404 || response.errorCode == "404");
+
 
     // TODO: check why there was a failure before following directly
   }
