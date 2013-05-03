@@ -29,6 +29,8 @@ define ('CLOUD_STORAGE_DEFAULT', 'aws');
 
 define('DEFAULT_NUM_REDIRECTS_TO_FOLLOW', 4);
 
+define('DEFAULT_WEB_GET_TIMEOUT', 30000);
+
 define ('QUEUE_MAX_MESSAGE_RECEIVE_COUNT', 25);
 
 define ('SHARD_KEY_LENGTH', 5);
@@ -113,7 +115,6 @@ define ('ROLLOVER_THUMBNAIL_SIZE', 152);
 define ('IMAGE_TAB_FIXED_WIDTH', 250);
 define ('IMAGE_TAB_MAX_HEIGHT', 750);
 define ('IMAGE_TAB_MIN_HEIGHT', 100);
-
 
 var urlFilterText = [
     'track'
