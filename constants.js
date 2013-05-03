@@ -125,6 +125,7 @@ var urlFilterText = [
   , 'evite.com'
   , 'jobvite.com'
   , 'w3.org'
+  , 'lieferheld.de'
   , 'doubleclick.net'
   , 'itunes.apple.com'
   , 'api_key='
