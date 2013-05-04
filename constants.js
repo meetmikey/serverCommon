@@ -29,6 +29,10 @@ define ('CLOUD_STORAGE_DEFAULT', 'aws');
 
 define('DEFAULT_NUM_REDIRECTS_TO_FOLLOW', 4);
 
+define('DEFAULT_WEB_GET_TIMEOUT', 30000);
+
+define ('QUEUE_MAX_MESSAGE_RECEIVE_COUNT', 25);
+
 define ('SHARD_KEY_LENGTH', 5);
 
 define ('S3_RETRIES', 4);
@@ -112,7 +116,6 @@ define ('IMAGE_TAB_FIXED_WIDTH', 250);
 define ('IMAGE_TAB_MAX_HEIGHT', 750);
 define ('IMAGE_TAB_MIN_HEIGHT', 100);
 
-
 var urlFilterText = [
     'track'
   , 'unsub'
@@ -122,7 +125,8 @@ var urlFilterText = [
   , 'eventbrite.com'
   , 'evite.com'
   , 'jobvite.com'
-  , 'www.w3.org'
+  , 'w3.org'
+  , 'lieferheld.de'
   , 'doubleclick.net'
   , 'itunes.apple.com'
   , 'api_key='
@@ -132,12 +136,16 @@ var urlFilterText = [
   , 'mailchimp.com'
   , 'marketing.typesafe.com'
   , 'google.com/calendar/'
-  , 'schemas.microsoft.com'
   , 'schema.org'
+  , 'passport.com'
+  , 'schemas.microsoft.com'
+  , 'microsoft.com/sharepoint'
+  , 'microsoft.com/officenet'
   , 'magicnotebook.com'
   , 'meetmikey.com'
   , 'email.launchrock.com'
   , 'trypico.com'
+  , 'emailmarketing'
   , 'app.yesware.com' // tracking
   , 'paypal.com'
   , 'dmanalytics' // tracking
@@ -181,6 +189,8 @@ var urlFilterText = [
   , 'southwest.com'
   , 'virgin.com'
   , 'schemas.openxmlformats.org'
+  , 'schemas.xmlsoap.org'
+  , 'myspace.com'
   , 'yousend.it'
   , 'fbstatic'
   , 'cgi-bin'
