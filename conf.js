@@ -131,8 +131,8 @@ module.exports = {
   , elasticSearch: {
       host: elasticSearchHost
     , port: 9200
-    , indexName: 'mail_v1'
-    , indexAlias : 'mail'
+    , indexName: 'mail_v2'
+    , indexAlias : 'mail_v2'
     , mappingConfigs: [
       {
           mappingName: 'resource'
