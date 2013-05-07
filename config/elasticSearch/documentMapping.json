@@ -15,7 +15,7 @@
       },
       "isLink"  : {"type" : "boolean", "store" : "yes"},
       "size" : {"type" : "long", "store" : "yes"},
-      "docType" : {"type" : "string", "store" : "yes", "analyzer" : "simple"},
+      "docType" : {"type" : "string", "store" : "yes", "analyzer" : "snowball"},
       "filename" : { "type" : "string", "analyzer" : "url", "store" : "yes"},
       "url" : { "type" : "string", "analyzer" : "url", "store" : "yes"},
       "authorName" : {"type" : "string", "analyzer" : "email", "store" : "yes"},

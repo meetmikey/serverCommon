@@ -133,16 +133,12 @@ module.exports = {
   , elasticSearch: {
       host: elasticSearchHost
     , port: 9200
-    , indexName: 'mail_v3'
-    , indexAlias : 'mail_v3'
+    , indexName: 'mail_v4'
+    , indexAlias : 'mail_v4'
     , mappingConfigs: [
       {
-          mappingName: 'resource'
-        , configFile: serverCommon + '/config/elasticSearch/resourceMapping.json'
-      },
-      {
-          mappingName: 'resourceMeta'
-        , configFile: serverCommon + '/config/elasticSearch/resourceMetaMapping.json'
+          mappingName: 'document'
+        , configFile: serverCommon + '/config/elasticSearch/document.json'
       }
     ]
   }
