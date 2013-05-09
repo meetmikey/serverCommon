@@ -31,7 +31,7 @@ if ( process.env.LOCAL_QUEUE_PREFIX ) {
 
 if (environment == 'production') {
   domain = 'api.meetmikey.com';
-  elasticSearchHost = 'es.meetmikey.com'
+  elasticSearchHost = 'esr.meetmikey.com'
   awsBucket = 'mikeymail';
   queuePrefix = 'prod';
   var secureConf = require('./secureConf');
@@ -56,6 +56,7 @@ var sqsMailReadingQueue = queuePrefix + 'MailReader';
 var sqsMailReadingQuickQueue = queuePrefix + 'MailReaderQuick';
 var sqsMailActiveConnectionQueue = queuePrefix + 'MailActiveConnection';
 var sqsWorkerQueue = queuePrefix + 'Worker';
+var sqsWorkerReindexQueue = queuePrefix + 'WorkerReindex';
 
 module.exports = {
   aws : {
@@ -68,6 +69,7 @@ module.exports = {
     , sqsMailDownloadQueue : sqsMailDownloadQueue
     , sqsMailActiveConnectionQueue : sqsMailActiveConnectionQueue
     , sqsWorkerQueue : sqsWorkerQueue
+    , sqsWorkerReindexQueue : sqsWorkerReindexQueue
     , s3Folders: {
         attachment: 'attachment'
       , static: 'images'
@@ -135,16 +137,12 @@ module.exports = {
   , elasticSearch: {
       host: elasticSearchHost
     , port: 9200
-    , indexName: 'mail_v1'
-    , indexAlias : 'mail'
+    , indexName: 'v3'
+    , indexAlias : 'v3'
     , mappingConfigs: [
       {
-          mappingName: 'resource'
-        , configFile: serverCommon + '/config/elasticSearch/resourceMapping.json'
-      },
-      {
-          mappingName: 'resourceMeta'
-        , configFile: serverCommon + '/config/elasticSearch/resourceMetaMapping.json'
+          mappingName: 'document'
+        , configFile: serverCommon + '/config/elasticSearch/document.json'
       }
     ]
   }
