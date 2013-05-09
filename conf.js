@@ -17,8 +17,8 @@ https.globalAgent.maxSockets = 15;
 
 var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
-var awsKey = 'AKIAJUQI454R3UQ747DA'; //IAM: nonProd
-var awsSecret = '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'; //IAM: nonProd
+var awsKey = 'AKIAJENDDHKD34F4QMSA'; //IAM: nonProd
+var awsSecret = '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'; //IAM: nonProd
 var elasticSearchHost = 'localhost';
 var cryptoAESSecret = 'M45Iksu09349)(*$(jsdL:KD';
 var mongoHQProd = {};
@@ -59,8 +59,8 @@ var sqsWorkerQueue = queuePrefix + 'Worker';
 
 module.exports = {
   aws : {
-      key: awsKey;
-    , secret: awsSecret;
+      key: awsKey
+    , secret: awsSecret
     , bucket: awsBucket
     , accountID: '315865265008'
     , sqsMailReadingQueue: sqsMailReadingQueue
@@ -121,8 +121,8 @@ module.exports = {
     , mongoHQProd : mongoHQProd
   }
   , crypto : {
-    aesSecret : cryptoAESSecret,
-    scheme : 'aes256'
+      aesSecret : cryptoAESSecret
+    , scheme : 'aes256'
   }
   , express: {
       secret: 'IITYWYBAD4487'
