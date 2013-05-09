@@ -26,7 +26,7 @@ if ( process.env.LOCAL_QUEUE_PREFIX ) {
 
 if (environment == 'production') {
   domain = 'api.meetmikey.com';
-  elasticSearchHost = 'es.meetmikey.com'
+  elasticSearchHost = 'esr.meetmikey.com'
   awsBucket = 'mikeymail';
   queuePrefix = 'prod';
 } else if (environment == 'development') {
