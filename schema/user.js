@@ -3,15 +3,7 @@ var mongoose = require('mongoose'),
     conf     = require ('../conf'),
     Schema   = mongoose.Schema;
 
-var cryptoSecret;
-
-if (process.env.NODE_ENV == 'production') {
-  cryptoSecret = require ('../secureConf').crypto.aesSecret;
-}
-else {
-  cryptoSecret = require ('../conf').crypto.aesSecret;  
-}
-
+var cryptoSecret = conf.crypto.aesSecret;
 
 var User = new Schema({
   googleID: {type: String, index: true},

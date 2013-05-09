@@ -17,7 +17,12 @@ https.globalAgent.maxSockets = 15;
 
 var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
+var awsKey = 'AKIAJUQI454R3UQ747DA'; //IAM: nonProd
+var awsSecret = '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'; //IAM: nonProd
 var elasticSearchHost = 'localhost';
+var cryptoAESSecret = 'M45Iksu09349)(*$(jsdL:KD';
+var mongoHQProd = {};
+var objectRocketProd = {};
 
 var queuePrefix = 'local';
 if ( process.env.LOCAL_QUEUE_PREFIX ) {
@@ -29,6 +34,17 @@ if (environment == 'production') {
   elasticSearchHost = 'es.meetmikey.com'
   awsBucket = 'mikeymail';
   queuePrefix = 'prod';
+  var secureConf = require('./secureConf');
+  //AppInitUtils does this same check, but let's just be sure.
+  if ( ( ! secureConf ) || (typeof secureConf === 'undefined') ) {
+    winston.doError('no secureConf file... exiting now');
+    process.exit(1);
+  }
+  awsKey = secureConf.aws.key;
+  awsSecret = secureConf.aws.secret;
+  cryptoAESSecret = secureConf.crypto.aesSecret;
+  mongoHQProd = secureConf.mongo.mongoHQProd;
+
 } else if (environment == 'development') {
   domain = 'dev.meetmikey.com';
   awsBucket = 'mikeymaildev';
@@ -43,8 +59,8 @@ var sqsWorkerQueue = queuePrefix + 'Worker';
 
 module.exports = {
   aws : {
-      key: 'AKIAJL2PLJ3JSVHBZD5Q'
-    , secret: '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'
+      key: awsKey;
+    , secret: awsSecret;
     , bucket: awsBucket
     , accountID: '315865265008'
     , sqsMailReadingQueue: sqsMailReadingQueue
@@ -101,23 +117,11 @@ module.exports = {
         , pass: 'delospass'
         , port: 10065
       }
-    , objectRocketProd : { //This data left blank here and populated in production.
-          host : ''
-        , db: ''
-        , user: ''
-        , pass: ''
-        , port: ''
-      }
-    , mongoHQProd : { //This data left blank here and populated in production.
-          host : ''
-        , db: ''
-        , user: ''
-        , pass: ''
-        , port: ''
-      }
+    , objectRocketProd : objectRocketProd
+    , mongoHQProd : mongoHQProd
   }
   , crypto : {
-    aesSecret : 'M45Iksu09349)(*$(jsdL:KD',
+    aesSecret : cryptoAESSecret,
     scheme : 'aes256'
   }
   , express: {
