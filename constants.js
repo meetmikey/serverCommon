@@ -243,3 +243,11 @@ define('URL_FILTER_TEXT', urlFilterText);
 define('MIN_SENT_AND_CORECEIVE', 2);
 
 define('MAX_DUPLICATE_LINKS_FOR_USER', 4);
+
+
+define ('ES_HARD_FAILS', [
+  'image/gif parse error',
+  'ZipException',
+  'CryptographyException',
+  'TikaException'
+]);
