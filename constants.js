@@ -35,9 +35,9 @@ define ('QUEUE_MAX_MESSAGE_RECEIVE_COUNT', 25);
 
 define ('SHARD_KEY_LENGTH', 5);
 
-define ('S3_RETRIES', 4);
+define ('S3_RETRIES', 3);
 
-define ('MAX_INDEXING_ATTEMPTS', 3);
+define ('MAX_INDEXING_ATTEMPTS', 4);
 
 define ('ERROR_UPLOADS_DIR', '/tmp/upload_errors/');
 
@@ -249,5 +249,6 @@ define ('ES_HARD_FAILS', [
   'image/gif parse error',
   'ZipException',
   'CryptographyException',
-  'TikaException'
+  'TikaException',
+  'EncryptedDocumentException'
 ]);
