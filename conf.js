@@ -31,7 +31,7 @@ if ( process.env.LOCAL_QUEUE_PREFIX ) {
 
 if (environment == 'production') {
   domain = 'api.meetmikey.com';
-  elasticSearchHost = 'esr.meetmikey.com'
+  elasticSearchHost = 'esa.meetmikey.com'
   awsBucket = 'mikeymail';
   queuePrefix = 'prod';
   var secureConf = require('./secureConf');
