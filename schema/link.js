@@ -42,12 +42,8 @@ var Link = new Schema({
 
 Link.index({ comparableURLHash : 1, userId: 1, gmThreadId: 1 }, {unique : true});
 
-// keep track of for onboarding
-Link.index ({'index.version' : 1});
-
 // API server
 Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, sentDate : -1});
-Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, comparableURLHash : 1});
 
 mongoose.model('Link', Link);
 exports.LinkModel = mongoose.model('Link');
