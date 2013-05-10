@@ -17,7 +17,12 @@ https.globalAgent.maxSockets = 15;
 
 var domain = 'local.meetmikey.com';
 var awsBucket = 'mikeymaillocal';
+var awsKey = 'AKIAJENDDHKD34F4QMSA'; //IAM: nonProd
+var awsSecret = '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'; //IAM: nonProd
 var elasticSearchHost = 'localhost';
+var cryptoAESSecret = 'M45Iksu09349)(*$(jsdL:KD';
+var mongoHQProd = {};
+var objectRocketProd = {};
 
 var queuePrefix = 'local';
 if ( process.env.LOCAL_QUEUE_PREFIX ) {
@@ -26,9 +31,20 @@ if ( process.env.LOCAL_QUEUE_PREFIX ) {
 
 if (environment == 'production') {
   domain = 'api.meetmikey.com';
-  elasticSearchHost = 'es.meetmikey.com'
+  elasticSearchHost = 'esa.meetmikey.com'
   awsBucket = 'mikeymail';
   queuePrefix = 'prod';
+  var secureConf = require('./secureConf');
+  //AppInitUtils does this same check, but let's just be sure.
+  if ( ( ! secureConf ) || (typeof secureConf === 'undefined') ) {
+    winston.doError('no secureConf file... exiting now');
+    process.exit(1);
+  }
+  awsKey = secureConf.aws.key;
+  awsSecret = secureConf.aws.secret;
+  cryptoAESSecret = secureConf.crypto.aesSecret;
+  mongoHQProd = secureConf.mongo.mongoHQProd;
+
 } else if (environment == 'development') {
   domain = 'dev.meetmikey.com';
   awsBucket = 'mikeymaildev';
@@ -40,11 +56,12 @@ var sqsMailReadingQueue = queuePrefix + 'MailReader';
 var sqsMailReadingQuickQueue = queuePrefix + 'MailReaderQuick';
 var sqsMailActiveConnectionQueue = queuePrefix + 'MailActiveConnection';
 var sqsWorkerQueue = queuePrefix + 'Worker';
+var sqsWorkerReindexQueue = queuePrefix + 'WorkerReindex';
 
 module.exports = {
   aws : {
-      key: 'AKIAJL2PLJ3JSVHBZD5Q'
-    , secret: '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'
+      key: awsKey
+    , secret: awsSecret
     , bucket: awsBucket
     , accountID: '315865265008'
     , sqsMailReadingQueue: sqsMailReadingQueue
@@ -52,6 +69,7 @@ module.exports = {
     , sqsMailDownloadQueue : sqsMailDownloadQueue
     , sqsMailActiveConnectionQueue : sqsMailActiveConnectionQueue
     , sqsWorkerQueue : sqsWorkerQueue
+    , sqsWorkerReindexQueue : sqsWorkerReindexQueue
     , s3Folders: {
         attachment: 'attachment'
       , static: 'images'
@@ -101,24 +119,12 @@ module.exports = {
         , pass: 'delospass'
         , port: 10065
       }
-    , objectRocketProd : { //This data left blank here and populated in production.
-          host : ''
-        , db: ''
-        , user: ''
-        , pass: ''
-        , port: ''
-      }
-    , mongoHQProd : { //This data left blank here and populated in production.
-          host : ''
-        , db: ''
-        , user: ''
-        , pass: ''
-        , port: ''
-      }
+    , objectRocketProd : objectRocketProd
+    , mongoHQProd : mongoHQProd
   }
   , crypto : {
-    aesSecret : 'M45Iksu09349)(*$(jsdL:KD',
-    scheme : 'aes256'
+      aesSecret : cryptoAESSecret
+    , scheme : 'aes256'
   }
   , express: {
       secret: 'IITYWYBAD4487'
@@ -131,18 +137,19 @@ module.exports = {
   , elasticSearch: {
       host: elasticSearchHost
     , port: 9200
-    , indexName: 'mail_v1' // TODO: switch to mail_v1
-    , indexAlias : 'mail'
+    , indexName: 'v3'
+    , indexAlias : 'v3'
     , mappingConfigs: [
       {
-          mappingName: 'resource'
-        , configFile: serverCommon + '/config/elasticSearch/resourceMapping.json'
-      },
-      {
-          mappingName: 'resourceMeta'
-        , configFile: serverCommon + '/config/elasticSearch/resourceMetaMapping.json'
+          mappingName: 'document'
+        , configFile: serverCommon + '/config/elasticSearch/document.json'
       }
     ]
   }
   , logDir: '/var/log/mikey'
+  , diffbot : {
+      token : 'b45dc70b4a560b2b106a136212486c0e'
+  }
+  , googleDriveAPIFileGetPrefix: 'https://www.googleapis.com/drive/v2/files/'
+  , validTopLevelDomainsFile: serverCommon + '/data/validTopLevelDomains.txt'
 }
