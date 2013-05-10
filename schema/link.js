@@ -1,6 +1,6 @@
 var mongoose = require ('mongoose');
-
 var Schema = mongoose.Schema;
+var indexStateSchema = require ('./indexState').indexStateSchema;
 
 var EmailUserSchema = new Schema({
     name: {type: String}
@@ -18,9 +18,10 @@ var Link = new Schema({
   , linkInfoId: {type: Schema.ObjectId}
   , url: {type: String, required: true}
   , resolvedURL: {type: String}
-  , comparableURLHash: {type: String, index : true, required: true}
-  , isPromoted: {type: Boolean}
-  , nonPromotableReason: {type: String, enum: ['sender', 'senderRatio', 'text', 'duplicates', 'followFail']}
+  , comparableURLHash: {type: String, required: true}
+  , isPromoted: {type: Boolean, index: true}
+  , isFollowed: {type: Boolean}
+  , nonPromotableReason: {type: String, enum: ['invalid', 'sender', 'senderRatio', 'text', 'duplicates', 'followFail']}
   , image: {type: String}
   , imageThumbExists : {type : Boolean}
   , title: {type: String}
@@ -34,20 +35,27 @@ var Link = new Schema({
   , gmThreadId: {type: String}
   , gmMsgId : {type : String}
   , gmMsgHex : {type : String}
-  , indexState : {type : String, enum : ['done', 'softFail', 'hardFail']}
-  , indexError : {type : String}
+  , index : {type : [indexStateSchema], default :[]}
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean}
-  , shardKey: {type : String}
-}, {
-  shardKey: {
-    shardKey: 1
-  }
 });
 
-Link.index({ userId: 1, gmThreadId: 1 });
-Link.index({ userId: 1, isPromoted: 1 });
-Link.index({ userId: 1, sentDate: -1 });
+Link.index({ comparableURLHash : 1, userId: 1, gmThreadId: 1 }, {unique : true});
+
+// API server
+Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, sentDate : -1});
 
 mongoose.model('Link', Link);
 exports.LinkModel = mongoose.model('Link');
+
+
+var LinkMr = new Schema ({
+  _id : {
+    userId:  {type: Schema.ObjectId},
+    gmThreadId : {type: String},
+    comparableURLHash : {type : String}
+  },
+  value : {type: Number}
+});
+
+mongoose.model('LinkMr', LinkMr);
