@@ -244,7 +244,6 @@ define('MIN_SENT_AND_CORECEIVE', 2);
 
 define('MAX_DUPLICATE_LINKS_FOR_USER', 4);
 
-
 define ('ES_HARD_FAILS', [
   'image/gif parse error',
   'ZipException',
@@ -252,3 +251,7 @@ define ('ES_HARD_FAILS', [
   'TikaException',
   'EncryptedDocumentException'
 ]);
+
+define('MIN_DOMAIN_FAILS', 500);
+
+define('MIN_DOMAIN_SUCCESS_RATIO', 1/20);
