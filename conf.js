@@ -62,7 +62,7 @@ var sqsMailReadingQuickQueue = queuePrefix + 'MailReaderQuick';
 var sqsMailActiveConnectionQueue = queuePrefix + 'MailActiveConnection';
 var sqsWorkerQueue = queuePrefix + 'Worker';
 var sqsWorkerReindexQueue = queuePrefix + 'WorkerReindex';
-var sqsCacheInvalidationQueue = queuePrefix + 'CacheInvalidate';
+var sqsCacheInvalidationQueue = queuePrefix + 'CacheInvalidation';
 
 module.exports = {
   aws : {
@@ -76,6 +76,7 @@ module.exports = {
     , sqsMailActiveConnectionQueue : sqsMailActiveConnectionQueue
     , sqsWorkerQueue : sqsWorkerQueue
     , sqsWorkerReindexQueue : sqsWorkerReindexQueue
+    , sqsCacheInvalidationQueue : sqsCacheInvalidationQueue
     , s3Folders: {
         attachment: 'attachment'
       , static: 'images'
