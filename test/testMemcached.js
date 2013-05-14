@@ -11,6 +11,7 @@ appInitUtils.initApp( 'memcache connect', initActions, conf, function() {
 
   console.log ("memcache connection success")
 
+
   var links = [{
     "__v" : 0,
     "_id" : "5146c0dd37fc1b62060000f3",
@@ -198,7 +199,7 @@ appInitUtils.initApp( 'memcache connect', initActions, conf, function() {
   }];
 
 
-
+  
   memcached.setBatch (links, 
     function (err, result) {
       memcached.get ('517d85517b5633b3a8000ed6', function (err, result) {
@@ -219,5 +220,6 @@ appInitUtils.initApp( 'memcache connect', initActions, conf, function() {
 
 
     });
+
 
 });
