@@ -62,6 +62,7 @@ var sqsMailReadingQuickQueue = queuePrefix + 'MailReaderQuick';
 var sqsMailActiveConnectionQueue = queuePrefix + 'MailActiveConnection';
 var sqsWorkerQueue = queuePrefix + 'Worker';
 var sqsWorkerReindexQueue = queuePrefix + 'WorkerReindex';
+var sqsCacheInvalidationQueue = queuePrefix + 'CacheInvalidate';
 
 module.exports = {
   aws : {
