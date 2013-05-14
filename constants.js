@@ -238,12 +238,6 @@ var urlFilterText = [
   , 'craigslist.org/mf'
 ];
 
-define('URL_FILTER_TEXT', urlFilterText);
-
-define('MIN_SENT_AND_CORECEIVE', 2);
-
-define('MAX_DUPLICATE_LINKS_FOR_USER', 4);
-
 define ('ES_HARD_FAILS', [
   'image/gif parse error',
   'ZipException',
@@ -251,6 +245,16 @@ define ('ES_HARD_FAILS', [
   'TikaException',
   'EncryptedDocumentException'
 ]);
+
+define('URL_FILTER_TEXT', urlFilterText);
+
+define('MIN_SENT_AND_CORECEIVE', 2);
+
+define('MAX_DUPLICATE_LINKS_FOR_USER', 4);
+
+define('BAD_SENDER_MINIMUM_RECEIEVED', 200);
+
+define('CONTACT_RATIO_LINK_PROMOTION_THRESHOLD', 1/100);
 
 define('MIN_DOMAIN_FAILS', 500);
 

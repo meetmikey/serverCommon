@@ -1,40 +1,40 @@
 
 var mongoose = require('../lib/mongooseConnect').mongoose
+  , appInitUtils = require('../lib/appInitUtils')
   , conf = require('../conf')
   , winston = require('../lib/winstonWrapper').winston
-  , SentAndCoReceiveMRModel = require('../schema/contact').SentAndCoReceiveMRModel
-  , ObjectId = require('mongoose').Types.ObjectId
+  , contactUtils = require('../lib/contactUtils')
 
-var email = 'anands@sse.stanford.edu';
-var userId = '5119c7b60746d47552000005';
+var email = 'justin@mikeyteam.com';
+var userId = '5153c61713934f3811000005';
 
-var run = function() {
+var initActions = [
+  appInitUtils.CONNECT_MONGO
+];
 
-  winston.doInfo('running');
+appInitUtils.initApp( 'getContactData', initActions, conf, function() {
 
-  var userIdObjectId = new ObjectId( userId.toString() );
+  var run = function() {
 
-  var searchCriteria = {
-    _id: {
-        email: email
-      , userId: userIdObjectId
-    }
-  };
+    winston.doInfo('running');
 
-  SentAndCoReceiveMRModel.collection.findOne( searchCriteria, function(err, foundContactData) {
-    if ( err ) {
-      winston.doMongoError( err );
-    } else {
+    contactUtils.getContactData( userId, email, function(err, contactData) {
 
-      console.log('CONSOLE LOG FOUND CONTACT DATA', foundContactData);
-      winston.doInfo('FOUND CONTACT DATA', {foundContactData: foundContactData});
-    }
-    cleanup();
-  });
-}
+      winston.doInfo('called back!');
 
-var cleanup = function() {
-  mongoose.disconnect();
-}
+      if ( err ) {
+        winston.handleError(err);
 
-run();
+      } else {
+        winston.doInfo('contactData', {contactData: contactData});
+      }
+      cleanup();
+    });
+  }
+
+  var cleanup = function() {
+    mongoose.disconnect();
+  }
+
+  run();
+});
