@@ -23,6 +23,10 @@ var elasticSearchHost = 'localhost';
 var cryptoAESSecret = 'M45Iksu09349)(*$(jsdL:KD';
 var mongoHQProd = {};
 var objectRocketProd = {};
+var memcached = {
+  host : 'localhost',
+  port : 11211
+};
 
 var queuePrefix = 'local';
 if ( process.env.LOCAL_QUEUE_PREFIX ) {
@@ -44,6 +48,7 @@ if (environment == 'production') {
   awsSecret = secureConf.aws.secret;
   cryptoAESSecret = secureConf.crypto.aesSecret;
   mongoHQProd = secureConf.mongo.mongoHQProd;
+  memcached.host = 'mikeycache.5rt4mb.0001.use1.cache.amazonaws.com';
 
 } else if (environment == 'development') {
   domain = 'dev.meetmikey.com';
@@ -152,4 +157,5 @@ module.exports = {
   }
   , googleDriveAPIFileGetPrefix: 'https://www.googleapis.com/drive/v2/files/'
   , validTopLevelDomainsFile: serverCommon + '/data/validTopLevelDomains.txt'
+  , memcached : memcached
 }

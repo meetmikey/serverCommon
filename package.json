@@ -20,6 +20,7 @@
     , "oauth" : "=0.9.10"
     , "rollbar" : "=0.2.2"
     , "memwatch": "=0.2.2"
+    , "memcache" : "https://github.com/meetmikey/node-memcache/archive/master.tar.gz"
   },
   "engines": {
     "node": "0.10.5"
