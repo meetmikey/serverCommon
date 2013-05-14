@@ -265,7 +265,8 @@ define('MIN_DOMAIN_FAILS', 500);
 define('MIN_DOMAIN_SUCCESS_RATIO', 1/20);
 
 var linkDomainWhitelist = [
-  'docs.google.com'
+  'docs.google.com',
+  'youtube.com'
 ];
 
 define('LINK_DOMAIN_WHITELIST', linkDomainWhitelist);
