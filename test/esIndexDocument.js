@@ -14,7 +14,7 @@ var initActions = [
   , appInitUtils.CONNECT_MONGO
 ];
 
-var modelId = '519311355f5ef8c2430000c3';
+var modelId = '51940d25256f364b2a000057';
 var isLink = true;
 
 appInitUtils.initApp('esIndexDocument', initActions, conf, function() {
@@ -51,6 +51,7 @@ appInitUtils.initApp('esIndexDocument', initActions, conf, function() {
 
               } else {
                 var job = indexingHandler.getIndexingJobForDocument( foundModel, isLink );
+                var job = JSON.parse (JSON.stringify (job));
                 if ( ! job ) {
                   callback( winston.makeError('no job') );
 
