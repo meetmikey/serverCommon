@@ -21,6 +21,7 @@ var AttachmentInfo = new Schema({
                                       'archive',
                                       'other']}
   , hash: {type: String, required: true}
+  , isUploaded: {type: Boolean}
   , index : {type : [indexStateSchema], default :[]}
   , timestamp: {type: Date, default: Date.now}
 });

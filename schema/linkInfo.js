@@ -16,6 +16,7 @@ var LinkInfo = new Schema({
   , followType: {type: String, enum: ['fail', 'diffbot', 'pdf', 'googleDoc', 'direct', 'ignore']}
   , imageFollowFailed : {type : Boolean}
   , isBadDomain: {type : Boolean}
+  , followJobCreated: {type: Boolean}
   , origImageUrl : {type : String}
   , timestamp: {type: Date, default: Date.now}
   , index : {type : [indexStateSchema], default :[]}
