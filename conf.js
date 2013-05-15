@@ -20,6 +20,8 @@ var awsBucket = 'mikeymaillocal';
 var awsKey = 'AKIAJENDDHKD34F4QMSA'; //IAM: nonProd
 var awsSecret = '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'; //IAM: nonProd
 var elasticSearchHost = 'localhost';
+var elasticSearchIsSecure = false;
+var elasticSearchPort = 9200;
 var cryptoAESSecret = 'M45Iksu09349)(*$(jsdL:KD';
 var mongoHQProd = {};
 var objectRocketProd = {};
@@ -36,6 +38,8 @@ if ( process.env.LOCAL_QUEUE_PREFIX ) {
 if (environment == 'production') {
   domain = 'api.meetmikey.com';
   elasticSearchHost = 'es.meetmikey.com'
+  elasticSearchIsSecure = true;
+  elasticSearchPort = 9201;
   awsBucket = 'mikeymail';
   queuePrefix = 'prod';
   var secureConf = require('./secureConf');
@@ -143,8 +147,8 @@ module.exports = {
   , domain: domain
   , elasticSearch: {
       host: elasticSearchHost
-    , port: 9201
-    , useSSL: true
+    , port: elasticSearchPort
+    , useSSL: elasticSearchIsSecure
     , indexName: 'v3'
     , indexAlias : 'v3'
     , mappingConfigs: [
