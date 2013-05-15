@@ -51,7 +51,8 @@ appInitUtils.initApp('esIndexDocument', initActions, conf, function() {
 
               } else {
                 var job = indexingHandler.getIndexingJobForDocument( foundModel, isLink );
-                var job = JSON.parse (JSON.stringify (job));
+                job = JSON.parse(JSON.stringify(job));
+
                 if ( ! job ) {
                   callback( winston.makeError('no job') );
 
