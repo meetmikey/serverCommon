@@ -35,7 +35,7 @@ if ( process.env.LOCAL_QUEUE_PREFIX ) {
 
 if (environment == 'production') {
   domain = 'api.meetmikey.com';
-  elasticSearchHost = 'esa.meetmikey.com'
+  elasticSearchHost = 'es.meetmikey.com'
   awsBucket = 'mikeymail';
   queuePrefix = 'prod';
   var secureConf = require('./secureConf');
@@ -143,7 +143,8 @@ module.exports = {
   , domain: domain
   , elasticSearch: {
       host: elasticSearchHost
-    , port: 9200
+    , port: 9201
+    , useSSL: true
     , indexName: 'v3'
     , indexAlias : 'v3'
     , mappingConfigs: [
