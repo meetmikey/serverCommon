@@ -16,15 +16,23 @@ http.globalAgent.maxSockets = 15;
 https.globalAgent.maxSockets = 15;
 
 var domain = 'local.meetmikey.com';
+
 var awsBucket = 'mikeymaillocal';
 var awsKey = 'AKIAJENDDHKD34F4QMSA'; //IAM: nonProd
 var awsSecret = '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'; //IAM: nonProd
+
+var azureStorageAccount = 'mikeymaillocal';
+var azureStorageAccessKey = 'aQHFv+BS2/K920hRjtjrfWggqD1/liGGiKiNWdqfyuN18De7P106Vq/g8KKuz07QNczM+YmRzwVDUshpjcxVaA==';
+
 var elasticSearchHost = 'localhost';
 var elasticSearchIsSecure = false;
 var elasticSearchPort = 9200;
+
 var cryptoAESSecret = 'M45Iksu09349)(*$(jsdL:KD';
+
 var mongoHQProd = {};
 var objectRocketProd = {};
+
 var memcached = {
   host : 'localhost',
   port : 11211
@@ -50,6 +58,8 @@ if (environment == 'production') {
   }
   awsKey = secureConf.aws.key;
   awsSecret = secureConf.aws.secret;
+  azureStorageAccount = secureConf.azure.storageAccount
+  azureStorageAccessKey = secureConf.azure.storageAccessKey
   cryptoAESSecret = secureConf.crypto.aesSecret;
   mongoHQProd = secureConf.mongo.mongoHQProd;
   memcached.host = 'mikeycache.5rt4mb.0001.use1.cache.amazonaws.com';
@@ -90,8 +100,8 @@ module.exports = {
     }
   }
   , azure : {
-      storageAccount : 'portalvhdsmh1jckv1x925m',
-      storageAccessKey : '+83U9Cnm0m/iG4zvcWL53eewbBkETFNVCVhSruu+D21MCXu/pso1hb+QBaaRC0204SfJ78vLw8el+Zi+gqdWcA==',
+      storageAccount : azureStorageAccount,
+      storageAccessKey : azureStorageAccessKey,
       container : environment,
       blobFolders: {
           attachment: 'attachment'
