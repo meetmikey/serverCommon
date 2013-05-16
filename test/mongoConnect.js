@@ -1,34 +1,24 @@
 var serverCommon = process.env.SERVER_COMMON;
 
-var mongoose = require('mongoose')
+var mongoose = require('../lib/mongooseConnect').mongoose
   , winston = require('../lib/winstonWrapper').winston
   , conf = require('../conf')
+  , appInitUtils = require('../lib/appInitUtils')
+  , UserModel = require('../schema/user').UserModel
   
-var mongoConf = conf.mongo.objectRocketDev;
+initActions = [
+  appInitUtils.CONNECT_MONGO
+];
 
-var port = mongoConf.port;
-port = 20065;
+appInitUtils.initApp('mongoConnect', initActions, conf, function() {
 
-mongoPath = 'mongodb://' + mongoConf.user + ':' + mongoConf.pass;
-mongoPath += '@' + mongoConf.host + ':' + port + '/' + mongoConf.db;
+  UserModel.count( function(err, userCount) {
+    if ( err ) {
+      winston.handleMongoErr(err);
+    } else {
+      winston.doInfo('success', {userCount: userCount});
+    }
+    mongoose.disconnect();
+  });
 
-winston.info('mongooseConnect: mongoPath: ' + mongoPath)
-
-var con = mongoose.createConnection(mongoPath, {server: {ssl:true}});
-console.log('con: ', con)
-
-/*
-mongoose.connect(mongoPath, {server: {ssl:true}}, function (err) {
-  if (err) {
-    winston.doMongoError(err);
-    process.exit(1);
-  } else {
-    winston.doInfo('connected!');
-  }
 });
-
-setTimeout( function() {
-  mongoose.disconnect();
-}, 3000);
-
-*/
