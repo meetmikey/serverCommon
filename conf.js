@@ -33,6 +33,9 @@ var cryptoAESSecret = 'M45Iksu09349)(*$(jsdL:KD';
 var mongoHQProd = {};
 var objectRocketProd = {};
 
+var googleAppId = '1020629660865-gvsssgbplrea00m3nddmu7h9b939k5cj.apps.googleusercontent.com';
+var googleAppSecret = 'gzRl0SRo58sMiE39yyKiAQ9g';
+
 var memcached = {
   host : 'localhost',
   port : 11211
@@ -62,6 +65,8 @@ if (environment == 'production') {
   azureStorageAccessKey = secureConf.azure.storageAccessKey
   cryptoAESSecret = secureConf.crypto.aesSecret;
   mongoHQProd = secureConf.mongo.mongoHQProd;
+  googleAppId = secureConf.google.appId;
+  googleAppSecret = secureConf.google.appSecret;
   memcached.host = 'mikeycache.5rt4mb.0001.use1.cache.amazonaws.com';
 
 } else if (environment == 'development') {
@@ -150,8 +155,8 @@ module.exports = {
       secret: 'IITYWYBAD4487'
   }
   , google : {
-    appId : '1020629660865.apps.googleusercontent.com',
-    appSecret : 'pFvM2J42oBnUFD9sI1ZwITFE'
+      appId: googleAppId
+    , appSecret : googleAppSecret
   }
   , domain: domain
   , elasticSearch: {
