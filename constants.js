@@ -236,7 +236,6 @@ var urlFilterText = [
   , '.jpeg'
   , '.wmv'
   , 'indinero.com'
-  , 'ideo.com'
   , 'opentable.com'
   , 'local.vipecloud.com'
   , 'craigslist.org/mf'
