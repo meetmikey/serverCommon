@@ -22,6 +22,7 @@ var User = new Schema({
   hostedDomain: {type: String},
   picture: {type: String},
   gmailScrapeRequested : {type : Boolean, default: false},
+  invalidToken : {type : Boolean, default : false},
   timestamp: {type: Date, 'default': Date.now}
 });
 
