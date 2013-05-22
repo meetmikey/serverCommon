@@ -23,7 +23,11 @@ var User = new Schema({
   picture: {type: String},
   gmailScrapeRequested : {type : Boolean, default: false},
   invalidToken : {type : Boolean, default : false},
-  timestamp: {type: Date, 'default': Date.now}
+  deleteRequest : {type : Boolean},
+  timestamp: {type: Date, 'default': Date.now},
+  daysProcessed : {type : Number},
+  daysTotal : {type : Number},
+  daysAccountLimit : {type : Number}
 });
 
 
