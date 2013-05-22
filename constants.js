@@ -239,6 +239,8 @@ var urlFilterText = [
   , 'opentable.com'
   , 'local.vipecloud.com'
   , 'craigslist.org/mf'
+  , 'google.com/google-d-s/terms'
+  , 'google.com/intl/en/policies/terms'
 ];
 
 define ('ES_HARD_FAILS', [
