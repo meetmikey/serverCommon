@@ -35,7 +35,7 @@ define ('QUEUE_MAX_MESSAGE_RECEIVE_COUNT', 25);
 
 define ('SHARD_KEY_LENGTH', 5);
 
-define ('S3_RETRIES', 3);
+define ('CLOUD_STORAGE_RETRIES', 3);
 
 define ('MAX_INDEXING_ATTEMPTS', 4);
 
