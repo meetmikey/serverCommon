@@ -1,9 +1,21 @@
 var mongoose = require('mongoose'),
     crypto   = require ('crypto'),
     conf     = require ('../conf'),
+    constants = require ('../constants'),
     Schema   = mongoose.Schema;
 
 var cryptoSecret = conf.crypto.aesSecret;
+
+
+var userShare = {
+  twitShare : {type : Boolean},
+  twitCount : {type : Number, default : 0},
+  fbShare : {type : Boolean},
+  fbCount : {type : Number, default : 0},
+  emShare : {type : Boolean},
+  emCount : {type : Number, default : 0},
+  baseDays : {type : Number, default : constants.BASE_DAYS_LIMIT}
+};
 
 var User = new Schema({
   googleID: {type: String, index: true},
@@ -27,9 +39,10 @@ var User = new Schema({
   timestamp: {type: Date, 'default': Date.now},
   daysProcessed : {type : Number},
   daysTotal : {type : Number},
-  daysAccountLimit : {type : Number}
+  daysAccLimit : {type : Number},
+  isPremium : {type : Boolean}, // flag to "ignore" the account limit
+  shares : userShare
 });
-
 
 User.virtual('refreshToken')
   .get(function () {
@@ -61,6 +74,23 @@ User.virtual('accessToken')
     hashToken += cipher.final('hex');
     this.accessHash = hashToken;
   });
+
+
+User.virtual ('twitRefLink')
+  .get (function () {
+    return 'https://api.meetmikey.com/refer?token=' + this._id + '&source=twit';
+  });
+
+User.virtual ('fbRefLink')
+  .get (function () {
+    return 'https://api.meetmikey.com/refer?token=' + this._id + '&source=fb';
+  });
+
+User.virtual ('emRefLink')
+  .get (function () {
+    return 'https://api.meetmikey.com/refer?token=' + this._id + '&source=em';
+  });
+
 
 mongoose.model('User', User);
 exports.UserModel = mongoose.model('User');

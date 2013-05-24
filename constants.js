@@ -44,6 +44,7 @@ define ('ERROR_UPLOADS_DIR', '/tmp/upload_errors/');
 define('DEFAULT_FIELDS_ATTACHMENT', 'userId filename contentType sentDate sender recipients image isImage hash fileSize isDeleted gmMsgId gmMsgHex docType attachmentThumbExists isPromoted');
 define('DEFAULT_FIELDS_LINK', 'userId url resolvedURL sentDate sender recipients image title summary comparableURLHash isDeleted gmMsgId gmMsgHex imageThumbExists isPromoted isFollowed');
 
+define('BASE_DAYS_LIMIT', 30);
 
 define ('DOC_TYPE_MAPPING', {
   'pdf' : ['application/pdf'],
