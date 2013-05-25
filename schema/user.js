@@ -6,13 +6,10 @@ var mongoose = require('mongoose'),
 
 var cryptoSecret = conf.crypto.aesSecret;
 
-
+// aggregate counts of user sharing can be kept here
 var userShare = {
-  twitShare : {type : Boolean},
   twitCount : {type : Number, default : 0},
-  fbShare : {type : Boolean},
   fbCount : {type : Number, default : 0},
-  emShare : {type : Boolean},
   emCount : {type : Number, default : 0},
   baseDays : {type : Number, default : constants.BASE_DAYS_LIMIT}
 };
@@ -35,14 +32,32 @@ var User = new Schema({
   picture: {type: String},
   gmailScrapeRequested : {type : Boolean, default: false},
   invalidToken : {type : Boolean, default : false},
-  deleteRequest : {type : Boolean},
-  timestamp: {type: Date, 'default': Date.now},
-  daysProcessed : {type : Number},
-  daysTotal : {type : Number},
-  daysAccLimit : {type : Number},
-  isPremium : {type : Boolean}, // flag to "ignore" the account limit
-  shares : userShare
+  deleteRequest : {type : Boolean}, // the user has requested we delete their account
+  timestamp: {type: Date, default: Date.now},
+  minProcessedDate : {type : Date, default : Date.now}, // the date of the earliest mail we've processed (according to mikeymail)
+  minMailDate : {type : Date}, // the date of the earliest mail in the gmail account
+  daysLimit : {type : Number, default : constants.BASE_DAYS_LIMIT}, // how many days the user is entitled to
+  isPremium : {type : Boolean, default : false}, // flag to "ignore" the daysLimit in the account entirely
+  shares : userShare // aggregated share data
 });
+
+
+// virtual fields for specialized links
+User.virtual ('twitRefLink')
+  .get (function () {
+    return 'https://api.meetmikey.com/refer?token=' + this._id + '&source=twit';
+  });
+
+User.virtual ('fbRefLink')
+  .get (function () {
+    return 'https://api.meetmikey.com/refer?token=' + this._id + '&source=fb';
+  });
+
+User.virtual ('emRefLink')
+  .get (function () {
+    return 'https://api.meetmikey.com/refer?token=' + this._id + '&source=em';
+  });
+
 
 User.virtual('refreshToken')
   .get(function () {
@@ -73,22 +88,6 @@ User.virtual('accessToken')
     var hashToken = cipher.update (accessToken, 'utf8', 'hex');
     hashToken += cipher.final('hex');
     this.accessHash = hashToken;
-  });
-
-
-User.virtual ('twitRefLink')
-  .get (function () {
-    return 'https://api.meetmikey.com/refer?token=' + this._id + '&source=twit';
-  });
-
-User.virtual ('fbRefLink')
-  .get (function () {
-    return 'https://api.meetmikey.com/refer?token=' + this._id + '&source=fb';
-  });
-
-User.virtual ('emRefLink')
-  .get (function () {
-    return 'https://api.meetmikey.com/refer?token=' + this._id + '&source=em';
   });
 
 
