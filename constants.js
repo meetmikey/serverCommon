@@ -132,7 +132,6 @@ var urlFilterText = [
   , 'w3.org'
   , 'lieferheld.de'
   , 'doubleclick.net'
-  , 'itunes.apple.com'
   , 'api_key='
   , 'plus.google.com'
   , 'tickets.'
