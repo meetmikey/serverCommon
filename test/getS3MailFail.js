@@ -13,9 +13,6 @@ var msg = {'s3Path' : 'rawEmail/513cd9b6d0f26c9d41000005/305859-body.txt'}
     } else if ( ! res) {
       winston.makeMissingParamError('res');
 
-    } else if (res && res.statusCode != 200) {
-      winston.makeError ('Non-200 status code for download and run mail parser'), {statusCode : res.statusCode};
-      cloudStorageUtils.printResponse (res, false);
     } else {
       res.on('data', function(data) {
         // data - but data could be something like...
