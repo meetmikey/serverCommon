@@ -37,6 +37,8 @@ define ('SHARD_KEY_LENGTH', 5);
 
 define ('CLOUD_STORAGE_RETRIES', 3);
 
+define('RESPONSE_MAX_WAIT_MS', 5000);
+
 define ('MAX_INDEXING_ATTEMPTS', 4);
 
 define ('ERROR_UPLOADS_DIR', '/tmp/upload_errors/');
