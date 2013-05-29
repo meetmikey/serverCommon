@@ -16,7 +16,7 @@ http.globalAgent.maxSockets = 15;
 https.globalAgent.maxSockets = 15;
 
 var domain = 'local.meetmikey.com';
-var debugMode = false;
+var debugMode = true;
 
 var awsBucket = 'mikeymaillocal';
 var awsKey = 'AKIAJENDDHKD34F4QMSA'; //IAM: nonProd
