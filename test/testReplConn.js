@@ -8,7 +8,5 @@ var initActions = [
 ];
 
 appInitUtils.initApp( 'testReplConn', initActions, conf, function() {
-
-  console.log ("repl connection success")
-
+  winston.doInfo('repl connection success');
 });

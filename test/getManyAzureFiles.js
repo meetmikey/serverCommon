@@ -21,20 +21,19 @@ files.forEach (function (file) {
       return;
     }
 
-    console.log ('getfile register event listeners', res);
+    winston.doInfo('getfile register event listeners', {res: res});
 
 //    if (!res.properties.blobType) {
 //      azureUtils.printAzureResponse (res);
 //    }
 
     res.on('data', function (chunk) {
-      console.log ('data event');
+      winston.doInfo('data event', {bufferLength: buffer.length});
       buffer += chunk.toString ('binary');
-      console.log (buffer.length);
     });
 
     res.on('end', function () {
-      console.log (buffer.length);
+      winston.doInfo('bufferLength', {bufferLength: buffer.length});
     });
 
   });
