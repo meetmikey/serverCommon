@@ -6,8 +6,8 @@ var followLinkUtils = require('../lib/followLinkUtils')
   , mongoose = require('../lib/mongooseConnect').mongoose
 
 
-var linkInfoId = "5171cdef5c3291961ce7d706";
-var userId = '5171c34cc610151f79000005';
+var linkInfoId = '51a64e7d686838d7a2513bc7';
+var userId = '51a64e26a0a454fb11000009';
 
 //https://docs.google.com/a/sse.stanford.edu/spreadsheet/ccc?key=0AioMgL26ri9TdGJ1QU5FZlJYLUxuQzBCSllUbmFRbUE#gid=0
 

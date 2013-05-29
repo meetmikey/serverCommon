@@ -1,20 +1,21 @@
 var azureUtils = require ('../lib/azureUtils')
-    , fs = require ('fs');
+  , fs = require ('fs')
+  , winston = require('../lib/winstonWrapper').winston
 
 var file = process.argv[2];
 
 azureUtils.getFile (file, false, function (err, res) {
   var buffer = '';
 
-  console.log ('getfile register event listeners');
+  winston.doInfo('getfile register event listeners');
 
   res.on('data', function (chunk) {
     buffer += chunk.toString ('binary');
-    console.log (buffer.length);
+    winston.doInfo('bufferLength', {bufferLength: bufferLength});
   });
 
   res.on('finished', function () {
-    console.log (buffer.length);
+    winston.doInfo('bufferLength', {bufferLength: bufferLength});
     fs.writeFile ('myfile', buffer, 'binary')
   });
 

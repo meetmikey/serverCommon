@@ -16,6 +16,7 @@ http.globalAgent.maxSockets = 15;
 https.globalAgent.maxSockets = 15;
 
 var domain = 'local.meetmikey.com';
+var debugMode = false;
 
 var awsBucket = 'mikeymaillocal';
 var awsKey = 'AKIAJENDDHKD34F4QMSA'; //IAM: nonProd
@@ -68,7 +69,7 @@ if (environment == 'production') {
   googleAppId = secureConf.google.appId;
   googleAppSecret = secureConf.google.appSecret;
   memcached.host = 'mikeycache.5rt4mb.0001.use1.cache.amazonaws.com';
-
+  debugMode = false;
 } else if (environment == 'development') {
   domain = 'dev.meetmikey.com';
   awsBucket = 'mikeymaildev';
@@ -98,7 +99,7 @@ module.exports = {
     , sqsCacheInvalidationQueue : sqsCacheInvalidationQueue
     , s3Folders: {
         attachment: 'attachment'
-      , static: 'images'
+      , images: 'images'
       , linkInfo: 'linkInfo'
       , mailBody : 'mailBody'
       , rawEmail : 'rawEmail'
@@ -110,7 +111,7 @@ module.exports = {
       container : environment,
       blobFolders: {
           attachment: 'attachment'
-        , static: 'images'
+        , images: 'images'
         , linkInfo: 'linkInfo'
         , mailBody : 'mailBody'
         , rawEmail : 'rawEmail'
@@ -179,4 +180,5 @@ module.exports = {
   , googleDriveAPIFileGetPrefix: 'https://www.googleapis.com/drive/v2/files/'
   , validTopLevelDomainsFile: serverCommon + '/data/validTopLevelDomains.txt'
   , memcached : memcached
+  , debugMode: debugMode
 }

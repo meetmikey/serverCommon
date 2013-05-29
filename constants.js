@@ -35,7 +35,13 @@ define ('QUEUE_MAX_MESSAGE_RECEIVE_COUNT', 25);
 
 define ('SHARD_KEY_LENGTH', 5);
 
-define ('CLOUD_STORAGE_RETRIES', 3);
+define( 'MIN_RETRY_WAIT_TIME_MS', 200);
+
+define( 'MAX_RETRY_WAIT_TIME_MS', 20000);
+
+define ('SQS_RETRIES', 5);
+
+define ('CLOUD_STORAGE_RETRIES', 5);
 
 define('RESPONSE_MAX_WAIT_MS', 5000);
 

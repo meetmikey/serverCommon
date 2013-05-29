@@ -9,8 +9,7 @@ var initActions = [
 
 appInitUtils.initApp( 'memcache connect', initActions, conf, function() {
 
-  console.log ("memcache connection success")
-
+  winston.doInfo('memcache connection success');
 
   var links = [{
     "__v" : 0,
@@ -199,27 +198,18 @@ appInitUtils.initApp( 'memcache connect', initActions, conf, function() {
   }];
 
 
-  
   memcached.setBatch (links, 
     function (err, result) {
       memcached.get ('517d85517b5633b3a8000ed6', function (err, result) {
-        console.log ('GET ONE');
-        console.log ('result', result)
-      })
+        winston.doInfo('GET ONE', {result: result});
+      });
 
       memcached.get (['517d85517b5633b3a8000ed6','517d85517b5633b3a8000ee0'], function (err, result) {
-        console.log ('GET BOTH');
-        console.log ('result', result)
-      })
-
+        winston.doInfo('GET BOTH', {result: result});
+      });
 
       memcached.get (['517d85517b5633b3a8000ed6','517d85517b5633b3a8d00ee0'], function (err, result) {
-        console.log ('GET 1 correct');
-        console.log ('result', result)
-      })
-
-
+        winston.doInfo('GET 1 correct', {result: result});
+      });
     });
-
-
 });

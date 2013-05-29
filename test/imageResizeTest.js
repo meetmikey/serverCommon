@@ -15,25 +15,25 @@ exports.testBuffer = function (path, name, contentType) {
 
     imageUtils.generateThumbnailForImagesTab ("test/buffer_" + name, data, true, contentType, function (err, needsThumb) {
       if (err) {
-        console.log (err);
+        winston.doInfo('error', {err: err});
       }
       else if (!needsThumb) {
-        winston.info ('rollover thumbnail not generated because image is already small');
+        winston.doInfo('rollover thumbnail not generated because image is already small');
       }
       else {
-        winston.info ('done resizing image');
+        winston.doInfo('done resizing image');
       }
     });
 
     imageUtils.generateThumbnailForRollover ("test/buffer_rollover_" + name, data, true, contentType, function (err, needsThumb) {
       if (err) {
-        console.log (err);
+        winston.doInfo('error', {err: err});
       }
       else if (!needsThumb) {
-        winston.info ('thumbnail not generated because image is already small');
+        winston.doInfo('thumbnail not generated because image is already small');
       }
       else {
-        winston.info ('done resizing image');
+        winston.doInfo('done resizing image');
       }
     });
 
@@ -47,13 +47,13 @@ exports.testStreaming = function (path, name, contentType) {
 
   imageUtils.generateThumbnailForImagesTab ("stream_" + name, rs, false, contentType, function (err, needsThumb) {
     if (err) {
-      console.log (err);
+      winston.doInfo('error', {err: err});
     }
     else if (!needsThumb) {
-      winston.info ('thumbnail not generated because image is already small');
+      winston.doInfo ('thumbnail not generated because image is already small');
     }
     else {
-      winston.info ('done resizing image');
+      winston.doInfo('done resizing image');
     }
   });
 
@@ -61,13 +61,13 @@ exports.testStreaming = function (path, name, contentType) {
 
   imageUtils.generateThumbnailForRollover ("stream_rollover_" + name, rs2, false, contentType, function (err, needsThumb) {
     if (err) {
-      console.log (err)
+      winston.doInfo('error', {err: err});
     }
     else if (!needsThumb) {
-      winston.info ('thumbnail not generated because image is already small');
+      winston.doInfo('thumbnail not generated because image is already small');
     }
     else {
-      winston.info ('done resizing image');
+      winston.doInfo('done resizing image');
     }
   });
 
