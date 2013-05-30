@@ -11,7 +11,6 @@ var initActions = [
 ];
 
 describe ('createAlias', function () {
-  //console.log ('hello')
 
   it ('alias', function () {
 

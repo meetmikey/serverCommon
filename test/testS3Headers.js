@@ -1,5 +1,6 @@
 var cloudStorageUtils = require('../lib/cloudStorageUtils');
-var mongoose = require ('../lib/mongooseConnect').mongoose
+  , mongoose = require ('../lib/mongooseConnect').mongoose
+  , winston = require('../lib/winstonWrapper').winston
 
 var newFileName = 'yoyo';
 
@@ -43,5 +44,4 @@ var attachment = new AttachmentModel({
 //  'response-content-disposition' : 'inline;' + newFileName
 
 var url = cloudStorageUtils.signedURL (cloudStorageUtils.getAttachmentPath (attachment), 30, attachment);
-
-console.log (url);
+winston.doInfo('url', {url: url});

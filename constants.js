@@ -35,11 +35,19 @@ define ('QUEUE_MAX_MESSAGE_RECEIVE_COUNT', 25);
 
 define ('SHARD_KEY_LENGTH', 5);
 
-define ('S3_RETRIES', 3);
+define( 'MIN_RETRY_WAIT_TIME_MS', 200);
+
+define( 'MAX_RETRY_WAIT_TIME_MS', 20000);
+
+define ('SQS_RETRIES', 5);
+
+define ('CLOUD_STORAGE_RETRIES', 5);
+
+define('RESPONSE_MAX_WAIT_MS', 5000);
 
 define ('MAX_INDEXING_ATTEMPTS', 4);
 
-define ('ERROR_UPLOADS_DIR', '/tmp/upload_errors/');
+define('ERROR_TYPE_404', '404');
 
 define('DEFAULT_FIELDS_ATTACHMENT', 'userId filename contentType sentDate sender recipients image isImage hash fileSize isDeleted gmMsgId gmMsgHex docType attachmentThumbExists isPromoted');
 define('DEFAULT_FIELDS_LINK', 'userId url resolvedURL sentDate sender recipients image title summary comparableURLHash isDeleted gmMsgId gmMsgHex imageThumbExists isPromoted isFollowed');
@@ -133,7 +141,6 @@ var urlFilterText = [
   , 'w3.org'
   , 'lieferheld.de'
   , 'doubleclick.net'
-  , 'itunes.apple.com'
   , 'api_key='
   , 'plus.google.com'
   , 'tickets.'
@@ -240,6 +247,8 @@ var urlFilterText = [
   , 'opentable.com'
   , 'local.vipecloud.com'
   , 'craigslist.org/mf'
+  , 'google.com/google-d-s/terms'
+  , 'google.com/intl/en/policies/terms'
 ];
 
 define ('ES_HARD_FAILS', [

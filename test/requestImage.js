@@ -21,7 +21,6 @@ for ( var i=0; i<COUNT; i++ ) {
 
     } else {
       var s = responseBuffer.toString();
-      //console.log()
       winston.doInfo('success!', {url: url, headers: headers});
     }
   });
