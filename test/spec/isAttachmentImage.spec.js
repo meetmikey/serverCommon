@@ -9,7 +9,6 @@ describe ('isAttachmentImage', function () {
       {contentType : 'image/vnd.djvu'}, 
       {contentType: 'application/pdf'}];
     inputs.forEach (function (input) {
-      console.log (input);
       expect (attachmentUtils.isAttachmentImage (input)).toBe (false);
     });
   });
@@ -17,7 +16,6 @@ describe ('isAttachmentImage', function () {
   it ('image', function () {
     var inputs = [{contentType : 'image/png'}, {contentType : 'image/gif'}, {contentType : 'image/xgif'}];
     inputs.forEach (function (input) {
-      console.log (input);
       expect (attachmentUtils.isAttachmentImage (input)).toBe (true);
     });
   });

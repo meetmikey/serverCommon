@@ -1,6 +1,7 @@
 var serverCommon = process.env.SERVER_COMMON;
 var googleUtils = require ('../lib/googleUtils')
-  , appInitUtils = require(serverCommon + '/lib/appInitUtils');
+  , appInitUtils = require(serverCommon + '/lib/appInitUtils')
+  , winston = require(serverCommon + '/lib/winstonWrapper').winston
 
 
 var initActions = [
@@ -12,6 +13,6 @@ appInitUtils.initApp( 'addUserToDownloadQueue', initActions, null, function() {
     if (err) {
       winston.handleError (err);
     }
-    console.log (newAccessToken);
+    winston.doInfo('newAccessToken', {newAccessToken: newAccessToken});
   });
 })

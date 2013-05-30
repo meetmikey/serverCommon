@@ -1,4 +1,5 @@
-var diffbot = require('../lib/diffbotWrapper').diffbot;
+var diffbot = require('../lib/diffbotWrapper').diffbot
+  , winston = require('../lib/winstonWrapper').winston
 
 var url = "https://github.com/JomuMist/VacationRentals/commit/a5d0a77db82c5e5e3b9d3e94f7ebf3de95331af4";
 
@@ -16,16 +17,14 @@ if ( err || ( ! response ) || ( response.errorCode ) ) {
   if ( response ) {
     warnData['responseErrorCode'] = response.errorCode;
   }
-  console.log ('linkHandler: followDiffbotLink: diffbot failed', warnData);
-  console.log (response)
-
-  console.log ('404', response && response.errorCode == 404 || response.errorCode == "404");
+  winston.doInfo('linkHandler: followDiffbotLink: diffbot failed', warnData)
+  var is404 = response && response.errorCode == 404 || response.errorCode == "404";
+  winston.doInfo('404', {is404: is404});
 
 
     // TODO: check why there was a failure before following directly
   }
   else {
-    console.log (response)
-
+    winston.doInfo('response', {response: response});
   }
 });
