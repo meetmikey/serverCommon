@@ -6,8 +6,6 @@
 var environment = process.env.NODE_ENV;
 var serverCommon = process.env.SERVER_COMMON;
 
-var winston = require('./lib/winstonWrapper').winston
-
 // set maxsockets
 var http = require('http');
 var https = require('https');
@@ -57,7 +55,7 @@ if (environment == 'production') {
   var secureConf = require('./secureConf');
   //AppInitUtils does this same check, but let's just be sure.
   if ( ( ! secureConf ) || (typeof secureConf === 'undefined') ) {
-    winston.doError('no secureConf file... exiting now');
+    console.error('no secureConf file... exiting now');
     process.exit(1);
   }
   awsKey = secureConf.aws.key;
@@ -181,4 +179,8 @@ module.exports = {
   , validTopLevelDomainsFile: serverCommon + '/data/validTopLevelDomains.txt'
   , memcached : memcached
   , debugMode: debugMode
+  , rollbar: {
+      token: '53df19b3bc7244dcbe8bde98d62ccebd'
+    , turnedOn: false
+  }
 }
