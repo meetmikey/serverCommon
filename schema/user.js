@@ -6,6 +6,12 @@ var mongoose = require('mongoose'),
 
 var cryptoSecret = conf.crypto.aesSecret;
 
+var schemaOptions = {
+  toJSON: {
+    virtuals: true
+  }
+};
+
 var User = new Schema({
   googleID: {type: String, index: true},
   accessHash : {type : String},
@@ -31,32 +37,33 @@ var User = new Schema({
   minMailDate : {type : Date}, // the date of the earliest mail in the gmail account
   daysLimit : {type : Number, default : constants.BASE_DAYS_LIMIT}, // how many days the user is entitled to
   isPremium : {type : Boolean, default : false} // flag to "ignore" the daysLimit in the account entirely
-});
+}, schemaOptions );
 
 
 // virtual fields for specialized links
-
-
-var baseReferralLink = 'https://api.meetmikey.com/install';
+var baseReferralURL = constants.BASE_REFERRAL_URL;
 
 User.virtual ('twitterReferralLink')
   .get (function () {
-    return baseReferralLink + '?rId=' + this._id + '&s=' + constants.REFERRAL_SOURCE_TWITTER;
+    return baseReferralURL + '?rId=' + this._id + '&s=' + constants.REFERRAL_SOURCE_TWITTER;
   });
 
 User.virtual ('facebookReferralLink')
   .get (function () {
-    return baseReferralLink + '?rId=' + this._id + '&s=' + constants.REFERRAL_SOURCE_FACEBOOK;
+    return baseReferralURL + '?rId=' + this._id + '&s=' + constants.REFERRAL_SOURCE_FACEBOOK;
   });
 
 User.virtual ('directReferralLink')
   .get (function () {
-    return baseReferralLink + '?rId=' + this._id + '&s=' + constants.REFERRAL_SOURCE_DIRECT;
+    return baseReferralURL + '?rId=' + this._id + '&s=' + constants.REFERRAL_SOURCE_DIRECT;
   });
 
 
 User.virtual('refreshToken')
   .get(function () {
+    if ( ! this.symHash ) {
+      return null;
+    }
     var decipher = crypto.createDecipher(conf.crypto.scheme, cryptoSecret);
     var tokenAndSalt = decipher.update(this.symHash, 'hex', 'utf8');
     tokenAndSalt += decipher.final ('utf8');
@@ -65,21 +72,29 @@ User.virtual('refreshToken')
     return token;
   })
   .set (function (refreshToken) {
-    var cipher = crypto.createCipher(conf.crypto.scheme, cryptoSecret);
-    this.symSalt = crypto.randomBytes (8).toString ('hex');
-    var symmetricHash = cipher.update (this.symSalt + refreshToken, 'utf8', 'hex');
-    symmetricHash += cipher.final ('hex');
-    this.symHash = symmetricHash;
+    if ( refreshToken ) {
+      var cipher = crypto.createCipher(conf.crypto.scheme, cryptoSecret);
+      this.symSalt = crypto.randomBytes (8).toString ('hex');
+      var symmetricHash = cipher.update (this.symSalt + refreshToken, 'utf8', 'hex');
+      symmetricHash += cipher.final ('hex');
+      this.symHash = symmetricHash;
+    }
   });
 
 User.virtual('accessToken')
   .get (function () {
+    if ( ! this.accessHash ) {
+      return null;
+    }
     var decipher = crypto.createDecipher(conf.crypto.scheme, cryptoSecret);
     var token = decipher.update (this.accessHash, 'hex', 'utf8');
     token += decipher.final ('utf8');
     return token;
   })
   .set (function (accessToken) {
+    if ( ! accessToken ) {
+      return;
+    }
     var cipher = crypto.createCipher(conf.crypto.scheme, cryptoSecret);
     var hashToken = cipher.update (accessToken, 'utf8', 'hex');
     hashToken += cipher.final('hex');

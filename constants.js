@@ -287,3 +287,5 @@ define('REFERRAL_SOURCE_DIRECT', 'd');
 define('BASE_DAYS_LIMIT', 30);
 
 define('REFERRAL_EXTRA_DAYS', 10);
+
+define('BASE_REFERRAL_URL', 'https://api.meetmikey.com/install');
