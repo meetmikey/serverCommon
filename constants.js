@@ -52,8 +52,6 @@ define('ERROR_TYPE_404', '404');
 define('DEFAULT_FIELDS_ATTACHMENT', 'userId filename contentType sentDate sender recipients image isImage hash fileSize isDeleted gmMsgId gmMsgHex docType attachmentThumbExists isPromoted');
 define('DEFAULT_FIELDS_LINK', 'userId url resolvedURL sentDate sender recipients image title summary comparableURLHash isDeleted gmMsgId gmMsgHex imageThumbExists isPromoted isFollowed');
 
-define('BASE_DAYS_LIMIT', 60);
-
 define ('DOC_TYPE_MAPPING', {
   'pdf' : ['application/pdf'],
   'presentation' : ['ms-powerpoint', 'presentation', 'keynote'],
@@ -279,3 +277,13 @@ var linkDomainWhitelist = [
 ];
 
 define('LINK_DOMAIN_WHITELIST', linkDomainWhitelist);
+
+define('REFERRAL_SOURCE_TWITTER', 't');
+
+define('REFERRAL_SOURCE_FACEBOOK', 'f');
+
+define('REFERRAL_SOURCE_DIRECT', 'd');
+
+define('BASE_DAYS_LIMIT', 30);
+
+define('REFERRAL_EXTRA_DAYS', 10);
