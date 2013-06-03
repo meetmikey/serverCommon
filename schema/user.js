@@ -35,6 +35,7 @@ var User = new Schema({
   deleteRequest : {type : Boolean}, // the user has requested we delete their account
   timestamp: {type: Date, default: Date.now},
   minProcessedDate : {type : Date, default : Date.now}, // the date of the earliest mail we've processed (according to mikeymail)
+  minMRProcessedDate : {type : Date}, // the date of the earliest mail that has been processed (according to mailreader)
   minMailDate : {type : Date}, // the date of the earliest mail in the gmail account
   daysLimit : {type : Number, default : constants.BASE_DAYS_LIMIT}, // how many days the user is entitled to
   isPremium : {type : Boolean, default : false}, // flag to "ignore" the daysLimit in the account entirely
