@@ -6,14 +6,6 @@ var mongoose = require('mongoose'),
 
 var cryptoSecret = conf.crypto.aesSecret;
 
-// aggregate counts of user sharing can be kept here
-var userShare = {
-  twitCount : {type : Number, default : 0},
-  fbCount : {type : Number, default : 0},
-  emCount : {type : Number, default : 0},
-  baseDays : {type : Number, default : constants.BASE_DAYS_LIMIT}
-};
-
 var User = new Schema({
   googleID: {type: String, index: true},
   accessHash : {type : String},
@@ -38,25 +30,28 @@ var User = new Schema({
   minMRProcessedDate : {type : Date}, // the date of the earliest mail that has been processed (according to mailreader)
   minMailDate : {type : Date}, // the date of the earliest mail in the gmail account
   daysLimit : {type : Number, default : constants.BASE_DAYS_LIMIT}, // how many days the user is entitled to
-  isPremium : {type : Boolean, default : false}, // flag to "ignore" the daysLimit in the account entirely
-  shares : userShare // aggregated share data
+  isPremium : {type : Boolean, default : false} // flag to "ignore" the daysLimit in the account entirely
 });
 
 
 // virtual fields for specialized links
-User.virtual ('twitRefLink')
+
+
+var baseReferralLink = 'https://api.meetmikey.com/install';
+
+User.virtual ('twitterReferralLink')
   .get (function () {
-    return 'https://api.meetmikey.com/refer?token=' + this._id + '&source=twit';
+    return baseReferralLink + '?rId=' + this._id + '&s=' + constants.REFERRAL_SOURCE_TWITTER;
   });
 
-User.virtual ('fbRefLink')
+User.virtual ('facebookReferralLink')
   .get (function () {
-    return 'https://api.meetmikey.com/refer?token=' + this._id + '&source=fb';
+    return baseReferralLink + '?rId=' + this._id + '&s=' + constants.REFERRAL_SOURCE_FACEBOOK;
   });
 
-User.virtual ('emRefLink')
+User.virtual ('directReferralLink')
   .get (function () {
-    return 'https://api.meetmikey.com/refer?token=' + this._id + '&source=em';
+    return baseReferralLink + '?rId=' + this._id + '&s=' + constants.REFERRAL_SOURCE_DIRECT;
   });
 
 
