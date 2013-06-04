@@ -133,6 +133,7 @@ var urlFilterText = [
     'track'
   , 'unsub'
   , 'activate'
+  , 'confirm'
   , 'sendgrid.me'
   , 'api.mixpanel.com'
   , 'eventbrite.com'
