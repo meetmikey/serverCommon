@@ -228,7 +228,6 @@ var urlFilterText = [
   , 'mailjet.com'
   , 'www.continental.com'
   , 'zerply.com'
-  , 'mail.'
   , 'contactually.com'
   , 'app.asana.com'
   , 'sendgrid'
