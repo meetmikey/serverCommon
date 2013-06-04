@@ -5,6 +5,8 @@ function define(name, value) {
   });
 }
 
+define ('ONE_DAY_IN_MS', 24*60*60*1000);
+
 define('DEFAULT_QUICK_UNIQUE_ID_LENGTH', 8);
 
 define('DEFAULT_RESPONSE_MESSAGE', 'internal error');
