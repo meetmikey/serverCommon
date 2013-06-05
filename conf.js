@@ -181,6 +181,6 @@ module.exports = {
   , debugMode: debugMode
   , rollbar: {
       token: '53df19b3bc7244dcbe8bde98d62ccebd'
-    , turnedOn: true
+    , turnedOn: false
   }
 }
