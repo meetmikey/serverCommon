@@ -36,7 +36,7 @@ exports.UserOnboardingStateModel = mongoose.model('UserOnboardingState');
 var ResumeDownloadState = new Schema({
   userId: {type: Schema.ObjectId, index: true},
   mailBoxId: {type: Schema.ObjectId},
-  resumeAt : {type : Date, index : true},
+  resumeAt : {type : Date},
   maxUid : {type: Number}, // uid of the most recent mail object when initial onboarding commenced
   lastCompleted : {type : String,
     enum : ['lookupMailbox',
@@ -47,8 +47,11 @@ var ResumeDownloadState = new Schema({
             'markStoppingPoint']},
   bandwith : {type : Number, default : 0},
   mikeyMailTS : {type : Date},
-  nodeId : {type : String, index : true}  // uniquely identifies which node process is handling the connection
+  disabled : {type : Boolean, default : false}, // don't try this again
+  nodeId : {type : String} 
 });
+
+ResumeDownloadState.index ({mikeyMailTS : 1, resumeAt : 1, lastCompleted : 1, disable : 1});
 
 mongoose.model ('ResumeDownloadState', ResumeDownloadState);
 exports.ResumeDownloadStateModel = mongoose.model('ResumeDownloadState');
