@@ -22,7 +22,5 @@ var LinkInfo = new Schema({
   , index : {type : [indexStateSchema], default :[]}
 });
 
-LinkInfo.index({ image: 1, imageThumbExists: 1, imageThumbErr: 1 });
-
 mongoose.model('LinkInfo', LinkInfo);
 exports.LinkInfoModel = mongoose.model('LinkInfo');

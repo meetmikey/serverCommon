@@ -5,7 +5,7 @@ var indexStateSchema = require ('./indexState').indexStateSchema;
 var AttachmentInfo = new Schema({
     contentType: {type: String}
   , fileSize: {type: Number}
-  , isImage: {type: Boolean, index : true}
+  , isImage: {type: Boolean}
   , attachmentThumbExists : {type : Boolean}
   , attachmentThumbSkip : {type : Boolean} // true if we should skip thumbnailing b/c attachment is already small
   , attachmentThumbErr : {type : Boolean} // true if there was an error trying to process an image attachment

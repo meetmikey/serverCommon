@@ -51,7 +51,7 @@ var ResumeDownloadState = new Schema({
   nodeId : {type : String} 
 });
 
-ResumeDownloadState.index ({mikeyMailTS : 1, resumeAt : 1, lastCompleted : 1, disable : 1});
+ResumeDownloadState.index ({mikeyMailTS : 1, resumeAt : 1, lastCompleted : 1, disabled : 1});
 
 mongoose.model ('ResumeDownloadState', ResumeDownloadState);
 exports.ResumeDownloadStateModel = mongoose.model('ResumeDownloadState');

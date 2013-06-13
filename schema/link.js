@@ -19,7 +19,7 @@ var Link = new Schema({
   , url: {type: String, required: true}
   , resolvedURL: {type: String}
   , comparableURLHash: {type: String, required: true}
-  , isPromoted: {type: Boolean, index: true}
+  , isPromoted: {type: Boolean}
   , isFollowed: {type: Boolean}
   , nonPromotableReason: {type: String, enum: ['invalid', 'sender', 'senderRatio', 'text', 'duplicates', 'followFail']}
   , image: {type: String}
@@ -41,8 +41,6 @@ var Link = new Schema({
 });
 
 Link.index({ comparableURLHash : 1, userId: 1, gmThreadId: 1 }, {unique : true});
-
-// API server
 Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, isDeleted : 1, sentDate : -1});
 
 mongoose.model('Link', Link);
