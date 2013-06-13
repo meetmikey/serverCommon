@@ -54,11 +54,6 @@ var Mail = new Schema({
 // for querying for attachments or no attachments + user and sorting by uid descending
 Mail.index({userId: 1, mmDone : 1, hasAttachment: 1, uid : -1 } );
 Mail.index ({userId: 1, mmDone: 1, hasMarketingText : 1, hasMarketingFrom : 1, uid : -1});
-Mail.index ({mmDone: 1, userId: 1, mailReaderState: 1});
-
-//db.mails.ensureIndex ({userId : 1, s3Path : 1, hasMarketingText : 1, hasMarketingFrom: 1, uid : -1})
-
-// need an index on... userId, s3Path, hasAttachment, hasMarketingFrom, hasMarketingText, sort uid -1
 
 // For ensuring we don't duplicate in failure state.
 Mail.index( {"userId": 1, "uid": 1}, {unique : true} );
@@ -70,7 +65,7 @@ var MailBox = new Schema ({
   , name : {type : String, required : true}
   , uidNext : {type : Number, required : true}
   , totalMessages : {type : Number, required: true}
-  , lastUpdate : {type : Date, default : Date.now, index: true}
+  , lastUpdate : {type : Date, default : Date.now}
 })
 
 mongoose.model ('MailBox', MailBox)

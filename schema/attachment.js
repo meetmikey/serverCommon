@@ -21,7 +21,7 @@ var Attachment = new Schema({
   , sentDate: {type: Date, default: Date.now}
   , sender: EmailUser
   , recipients: {type: [EmailUserSchema]}
-  , isImage: {type: Boolean, index : true}
+  , isImage: {type: Boolean}
   , attachmentThumbExists : {type : Boolean}
   , attachmentThumbSkip : {type : Boolean} // true if we should skip thumbnailing b/c attachment is already small
   , attachmentThumbErr : {type : Boolean} // true if there was an error trying to process an image attachment
