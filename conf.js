@@ -183,4 +183,10 @@ module.exports = {
       token: '53df19b3bc7244dcbe8bde98d62ccebd'
     , turnedOn: false
   }
+  , turnDebugModeOff : function () {
+    module.exports.debugMode = false;
+  }
+  , turnDebugModeOn : function () {
+    module.exports.debugMode = true;
+  }
 }
