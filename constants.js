@@ -286,11 +286,11 @@ define('REFERRAL_SOURCE_FACEBOOK', 'f');
 
 define('REFERRAL_SOURCE_DIRECT', 'd');
 
-define('BASE_DAYS_LIMIT', 90);
+define('BASE_DAYS_LIMIT', 30);
 
 define('REFERRAL_EXTRA_DAYS', 30);
 
-define('BASE_REFERRAL_URL', 'https://api.meetmikey.com/install');
+define('BASE_REFERRAL_URL', 'https://api.meetmikey.com/i');
 
 define('ONE_DAY_IN_MS', 60*60*24*1000);
 
