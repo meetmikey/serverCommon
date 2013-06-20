@@ -48,17 +48,17 @@ var baseReferralURL = constants.BASE_REFERRAL_URL;
 
 User.virtual ('twitterReferralLink')
   .get (function () {
-    return baseReferralURL + '/' + this.shortId + '?s=' + constants.REFERRAL_SOURCE_TWITTER;
+    return baseReferralURL + '/' + this.shortId + '/' + constants.REFERRAL_SOURCE_TWITTER;
   });
 
 User.virtual ('facebookReferralLink')
   .get (function () {
-    return baseReferralURL + '/' + this.shortId + '?s=' + constants.REFERRAL_SOURCE_FACEBOOK;
+    return baseReferralURL + '/' + this.shortId + '/' + constants.REFERRAL_SOURCE_FACEBOOK;
   });
 
 User.virtual ('directReferralLink')
   .get (function () {
-    return baseReferralURL + '/' + this.shortId + '?s=' + constants.REFERRAL_SOURCE_DIRECT;
+    return baseReferralURL + '/' + this.shortId + '/' + constants.REFERRAL_SOURCE_DIRECT;
   });
 
 // create a shortId
