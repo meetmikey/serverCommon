@@ -11,11 +11,10 @@ azureUtils.getFile (file, false, function (err, res) {
 
   res.on('data', function (chunk) {
     buffer += chunk.toString ('binary');
-    winston.doInfo('bufferLength', {bufferLength: bufferLength});
   });
 
   res.on('finished', function () {
-    winston.doInfo('bufferLength', {bufferLength: bufferLength});
+    winston.doInfo('finished', {bufferLength: buffer.length});
     fs.writeFile ('myfile', buffer, 'binary')
   });
 
