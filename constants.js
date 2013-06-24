@@ -290,6 +290,13 @@ define('BASE_DAYS_LIMIT', 90);
 
 define('REFERRAL_EXTRA_DAYS', 30);
 
-define('BASE_REFERRAL_URL', 'https://api.meetmikey.com/install');
+var baseRefURL = 'http://gmailw.in';
+if (process.env.NODE_ENV === 'local') {
+  baseRefURL = 'https://local.meetmikey.com'
+}
+
+define('BASE_REFERRAL_URL', baseRefURL);
 
 define('ONE_DAY_IN_MS', 60*60*24*1000);
+
+define('ES_RETRIES', 3);

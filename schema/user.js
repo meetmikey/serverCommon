@@ -1,7 +1,9 @@
 var mongoose = require('mongoose'),
     crypto   = require ('crypto'),
     conf     = require ('../conf'),
+    bases     = require ('bases'),
     constants = require ('../constants'),
+    CounterModel = require ('./counter').CounterModel,
     Schema   = mongoose.Schema;
 
 var cryptoSecret = conf.crypto.aesSecret;
@@ -13,6 +15,7 @@ var schemaOptions = {
 };
 
 var User = new Schema({
+  shortId : {type : String, index : true},
   googleID: {type: String, index: true},
   accessHash : {type : String},
   symHash : {type : String},
@@ -40,24 +43,41 @@ var User = new Schema({
   allMailError : {type : Boolean}
 }, schemaOptions );
 
-
 // virtual fields for specialized links
 var baseReferralURL = constants.BASE_REFERRAL_URL;
 
 User.virtual ('twitterReferralLink')
   .get (function () {
-    return baseReferralURL + '?rId=' + this._id + '&s=' + constants.REFERRAL_SOURCE_TWITTER;
+    return baseReferralURL + '/' + this.shortId + '/' + constants.REFERRAL_SOURCE_TWITTER;
   });
 
 User.virtual ('facebookReferralLink')
   .get (function () {
-    return baseReferralURL + '?rId=' + this._id + '&s=' + constants.REFERRAL_SOURCE_FACEBOOK;
+    return baseReferralURL + '/' + this.shortId + '/' + constants.REFERRAL_SOURCE_FACEBOOK;
   });
 
 User.virtual ('directReferralLink')
   .get (function () {
-    return baseReferralURL + '?rId=' + this._id + '&s=' + constants.REFERRAL_SOURCE_DIRECT;
+    return baseReferralURL + '/' + this.shortId + '/' + constants.REFERRAL_SOURCE_DIRECT;
   });
+
+// create a shortId
+User.pre ('save', function (next) {
+  var self = this;
+  if (!this.shortId) {
+    CounterModel.findOneAndUpdate ({model : 'user'}, 
+      {$inc : {count : 1}}, 
+      {new : true, upsert : true}, 
+      function (err, doc) {
+        if (err) {return next (err); }
+        self.shortId = String(bases.toBase36(doc.count));
+        next ();
+      });
+  } 
+  else {
+    next();
+  }
+});
 
 
 User.virtual('refreshToken')
