@@ -300,3 +300,7 @@ define('BASE_REFERRAL_URL', baseRefURL);
 define('ONE_DAY_IN_MS', 60*60*24*1000);
 
 define('ES_RETRIES', 3);
+
+define('INDEX_HANDLER_LOCK_CHECK_TIMEOUT', 1000*30); // 30 seconds
+
+define('INDEX_LOCK_TIMEOUT', 1000*60*4);

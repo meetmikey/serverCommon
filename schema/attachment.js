@@ -48,6 +48,7 @@ var Attachment = new Schema({
   , isDeleted: {type : Boolean, default : false}
   , image: {type: String} // dummy used by API for signedURL
   , timestamp: {type: Date, default: Date.now}
+  , indexLockTS : {type : Date}
 });
 
 Attachment.index({ userId: 1, hash : 1, fileSize : 1, gmThreadId: 1 }, {unique : true});

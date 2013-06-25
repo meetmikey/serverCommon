@@ -38,6 +38,7 @@ var Link = new Schema({
   , index : {type : [indexStateSchema], default :[]}
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean, default : false}
+  , indexLockTS : {type : Date}
 });
 
 Link.index({ comparableURLHash : 1, userId: 1, gmThreadId: 1 }, {unique : true});
