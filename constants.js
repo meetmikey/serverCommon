@@ -155,7 +155,7 @@ var urlFilterText = [
   , 'microsoft.com/sharepoint'
   , 'microsoft.com/officenet'
   , 'magicnotebook.com'
-  , 'simoncast/prodpad/commit'
+  , 'simoncast/prodpad'
   , 'meetmikey.com'
   , 'email.launchrock.com'
   , 'trypico.com'
