@@ -51,9 +51,7 @@ var Mail = new Schema({
   , isSentByUser: {type : Boolean} //dummy val
 });
 
-// for querying for attachments or no attachments + user and sorting by uid descending
-Mail.index({userId: 1, mmDone : 1, hasAttachment: 1, uid : -1 } );
-Mail.index ({userId: 1, mmDone: 1, hasMarketingText : 1, hasMarketingFrom : 1, uid : -1});
+Mail.index ({userId : 1, mmDone: 1, gmDate : -1});
 
 // For ensuring we don't duplicate in failure state.
 Mail.index( {"userId": 1, "uid": 1}, {unique : true} );
