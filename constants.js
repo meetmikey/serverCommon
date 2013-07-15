@@ -129,6 +129,12 @@ define ('IMAGE_TAB_FIXED_WIDTH', 250);
 define ('IMAGE_TAB_MAX_HEIGHT', 750);
 define ('IMAGE_TAB_MIN_HEIGHT', 100);
 
+var urlFilterRegex = [
+  'github.com/.*/.*/commit'
+]
+
+define('URL_FILTER_REGEX', urlFilterRegex);
+
 var urlFilterText = [
     'track'
   , 'unsub'
@@ -276,7 +282,8 @@ define('MIN_DOMAIN_SUCCESS_RATIO', 1/20);
 
 var linkDomainWhitelist = [
   'docs.google.com',
-  'youtube.com'
+  'youtube.com',
+  'github.com'
 ];
 
 define('LINK_DOMAIN_WHITELIST', linkDomainWhitelist);
