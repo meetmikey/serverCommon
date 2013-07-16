@@ -130,7 +130,9 @@ define ('IMAGE_TAB_MAX_HEIGHT', 750);
 define ('IMAGE_TAB_MIN_HEIGHT', 100);
 
 var urlFilterRegex = [
-  'github.com/.*/.*/commit'
+  'github.com/.*/.*/commit',
+  'github.com/.*/.*/tree',
+  'github.com/.*/.*/blob'
 ]
 
 define('URL_FILTER_REGEX', urlFilterRegex);
