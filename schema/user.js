@@ -40,7 +40,9 @@ var User = new Schema({
   minMailDate : {type : Date}, // the date of the earliest mail in the gmail account
   daysLimit : {type : Number, default : constants.BASE_DAYS_LIMIT}, // how many days the user is entitled to
   isPremium : {type : Boolean, default : false}, // flag to "ignore" the daysLimit in the account entirely
-  allMailError : {type : Boolean}
+  allMailError : {type : Boolean},
+  stripeCustomerId: {type: String},
+  billingPlan: {type: String, enum: ['free', 'basic', 'pro'], default: 'free'}
 }, schemaOptions );
 
 // virtual fields for specialized links
