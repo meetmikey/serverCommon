@@ -6,7 +6,7 @@
       "aws-lib" : "=0.2.1"
     , "bases" : "=0.1.1"
     , "winston" : "=0.6.2"
-    , "knox": "=0.7.0"
+    , "knox": "=0.8.4"
     , "bufferedstream" : "=1.6.0"
     , "mongoose": "=3.6.12"
     , "crypto": "=0.0.3"
