@@ -42,7 +42,8 @@ var User = new Schema({
   isPremium : {type : Boolean, default : false}, // flag to "ignore" the daysLimit in the account entirely
   allMailError : {type : Boolean},
   stripeCustomerId: {type: String},
-  billingPlan: {type: String, enum: ['free', 'basic', 'pro'], default: 'free'}
+  billingPlan: {type: String, enum: ['free', 'basic', 'pro']},
+  billingPlanStartDate: {type: Date}
 }, schemaOptions );
 
 // virtual fields for specialized links
