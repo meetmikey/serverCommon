@@ -43,6 +43,7 @@ var User = new Schema({
   isGrantedPremium : {type : Boolean}, // flag to indicate that we manually granted this user a 'premium' account
   allMailError : {type : Boolean},
   stripeCustomerId: {type: String},
+  stripeCardToken: {type: String},
   billingPlan: {type: String, enum: ['free', 'basic', 'pro']},
   billingPlanStartDate: {type: Date}
 }, schemaOptions );

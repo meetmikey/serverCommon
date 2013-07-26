@@ -6,8 +6,10 @@ var UserUpgrade = new Schema({
     userId: {type: Schema.ObjectId, index: true}
   , billingPlan: {type: String, enum: ['free', 'basic', 'pro'], required: true}
   , stripeCustomerId: {type: String}
+  , stripeCardToken: {type: String}
   , timestamp: {type: Date, default: Date.now}
   , status: {type: String, enum: ['success', 'fail']}
+  , failReason: {type: String}
 });
 
 mongoose.model('UserUpgrade', UserUpgrade);
