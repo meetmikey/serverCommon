@@ -300,6 +300,10 @@ define('BASE_DAYS_LIMIT', 90);
 
 define('REFERRAL_EXTRA_DAYS', 30);
 
+define('PLAN_BASIC', 'basic');
+define('PLAN_PRO', 'pro');
+define('PLAN_TEAM', 'team');
+
 var baseRefURL = 'http://gmailw.in';
 if (process.env.NODE_ENV === 'local') {
   baseRefURL = 'https://local.meetmikey.com'
