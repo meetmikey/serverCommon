@@ -4,7 +4,7 @@ var mongoose = require ('mongoose')
 
 var UserUpgrade = new Schema({
     userId: {type: Schema.ObjectId, index: true}
-  , billingPlan: {type: String, enum: ['free', 'basic', 'pro'], required: true}
+  , billingPlan: {type: String, enum: ['free', 'basic', 'pro', 'team'], required: true}
   , stripeCustomerId: {type: String}
   , stripeCardToken: {type: String}
   , timestamp: {type: Date, default: Date.now}

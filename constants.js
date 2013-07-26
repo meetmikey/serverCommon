@@ -298,6 +298,8 @@ define('REFERRAL_SOURCE_DIRECT', 'd');
 
 define('BASE_DAYS_LIMIT', 90);
 
+define('BASE_DAYS_LIMIT_BASIC_PLAN', 365);
+
 define('REFERRAL_EXTRA_DAYS', 30);
 
 define('PLAN_BASIC', 'basic');
