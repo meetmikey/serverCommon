@@ -44,7 +44,7 @@ var User = new Schema({
   allMailError : {type : Boolean},
   stripeCustomerId: {type: String},
   stripeCardToken: {type: String},
-  billingPlan: {type: String, enum: ['free', 'basic', 'pro']},
+  billingPlan: {type: String, enum: ['basic', 'pro', 'team']},
   billingPlanStartDate: {type: Date}
 }, schemaOptions );
 
