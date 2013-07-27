@@ -35,6 +35,8 @@ var objectRocketProd = {};
 var googleAppId = '1020629660865-gvsssgbplrea00m3nddmu7h9b939k5cj.apps.googleusercontent.com';
 var googleAppSecret = 'gzRl0SRo58sMiE39yyKiAQ9g';
 
+var stripeSecretKey = 'sk_test_LLJioxChxEoV1M1SULpLneS3';
+
 var memcached = {
   host : 'localhost',
   port : 11211
@@ -66,6 +68,7 @@ if (environment == 'production') {
   mongoHQProd = secureConf.mongo.mongoHQProd;
   googleAppId = secureConf.google.appId;
   googleAppSecret = secureConf.google.appSecret;
+  stripeSecretKey = secureConf.stripe.secretKey;
   memcached.host = 'mikeycache.5rt4mb.0001.use1.cache.amazonaws.com';
   debugMode = false;
 } else if (environment == 'development') {
@@ -188,5 +191,8 @@ module.exports = {
   }
   , turnDebugModeOn : function () {
     module.exports.debugMode = true;
+  }
+  , stripe: {
+    secretKey: stripeSecretKey
   }
 }
