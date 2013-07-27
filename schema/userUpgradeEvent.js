@@ -2,7 +2,7 @@ var mongoose = require ('mongoose')
   , Schema = mongoose.Schema
   , constants = require('../constants')
 
-var UserUpgrade = new Schema({
+var UserUpgradeEvent = new Schema({
     userId: {type: Schema.ObjectId, index: true}
   , billingPlan: {type: String, enum: ['free', 'basic', 'pro', 'team'], required: true}
   , stripeCustomerId: {type: String}
@@ -12,5 +12,5 @@ var UserUpgrade = new Schema({
   , failReason: {type: String}
 });
 
-mongoose.model('UserUpgrade', UserUpgrade);
-exports.UserUpgradeModel = mongoose.model('UserUpgrade');
+mongoose.model('UserUpgradeEvent', UserUpgradeEvent);
+exports.UserUpgradeEventModel = mongoose.model('UserUpgradeEvent');
