@@ -38,7 +38,10 @@ var ResumeDownloadState = new Schema({
   mailBoxId: {type: Schema.ObjectId},
   resumeAt : {type : Date},
   maxUid : {type: Number}, // uid of the most recent mail object when initial onboarding commenced
-  maxDate : {type : Date, default : Date.now()}, // optionally restrict dates so we dont get duplicated things from db
+  headerBatchesComplete : {type : [headerBatch]},
+  maxDate : {type : Date, default : Date.now()}, // the date to start at
+  minDate : {type : Date}, // the date to end at
+  isPremium : {type : Boolean},
   lastCompleted : {type : String,
     enum : ['lookupMailbox',
             'createTempDirectoryForEmails',

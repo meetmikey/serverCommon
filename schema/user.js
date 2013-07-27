@@ -40,8 +40,14 @@ var User = new Schema({
   minMailDate : {type : Date, default : Date.now}, // the date of the earliest mail in the gmail account
   daysLimit : {type : Number, default : constants.BASE_DAYS_LIMIT}, // how many days the user is entitled to
   isPremium : {type : Boolean, default : false}, // flag to "ignore" the daysLimit in the account entirely
+  allMailOnboardAttempts : {type : Number, default : 0},
+  isGrantedPremium : {type : Boolean}, // flag to indicate that we manually granted this user a 'premium' account
   allMailError : {type : Boolean},
-  allMailOnboardAttempts : {type : Number, default : 0}
+  stripeCustomerId: {type: String},
+  stripeCardToken: {type: String},
+  billingPlan: {type: String, enum: ['basic', 'pro', 'team']},
+  billingPlanStartDate: {type: Date},
+  lastResumeJobEndDate : {type : Date}
 }, schemaOptions );
 
 // virtual fields for specialized links
