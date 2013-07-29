@@ -41,6 +41,7 @@ var User = new Schema({
   daysLimit : {type : Number, default : constants.BASE_DAYS_LIMIT}, // how many days the user is entitled to
   isPremium : {type : Boolean, default : false}, // flag to "ignore" the daysLimit in the account entirely
   isGrantedPremium : {type : Boolean}, // flag to indicate that we manually granted this user a 'premium' account
+  clickedChromeStoreReview : {type : Boolean}, // flag to indicate that this user clicked on the 'rate mikey' button and should get more days
   allMailError : {type : Boolean},
   stripeCustomerId: {type: String},
   stripeCardToken: {type: String},
