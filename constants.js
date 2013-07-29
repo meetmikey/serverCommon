@@ -302,6 +302,8 @@ define('BASE_DAYS_LIMIT_BASIC_PLAN', 365);
 
 define('REFERRAL_EXTRA_DAYS', 30);
 
+define('CHROMESTORE_REVIEW_EXTRA_DAYS', 15);
+
 define('PLAN_BASIC', 'basic');
 define('PLAN_PRO', 'pro');
 define('PLAN_TEAM', 'team');
