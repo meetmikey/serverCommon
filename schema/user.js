@@ -47,7 +47,7 @@ var User = new Schema({
   stripeCardToken: {type: String},
   billingPlan: {type: String, enum: ['basic', 'pro', 'team']},
   billingPlanStartDate: {type: Date},
-  lastResumeJobEndDate : {type : Date}
+  lastResumeJobEndDate : {type : Date, default : Date.now()}
 }, schemaOptions );
 
 // virtual fields for specialized links

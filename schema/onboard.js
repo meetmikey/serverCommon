@@ -9,19 +9,7 @@ var headerBatch = new Schema ({
 
 var UserOnboardingState = new Schema({
   userId : {type : Schema.ObjectId, index : true},
-  lastCompleted : {type : String,
-    enum : ['gmailScrapeDequeued',
-            'createOrLookupMailbox',
-            'retrieveHeadersInBatch',
-            'mapReduceContacts',
-            'mapReduceReceiveCounts',
-            'createTempDirectoryForEmails',
-            'markMarketingFromEmails',
-            'markMarketingTextEmails',
-            'retrieveAttachments',
-            'retrieveEmailsNoAttachments',
-            'retrieveEmails',
-            'markStoppingPoint']},
+  lastCompleted : {type : String},
   headerBatchesComplete : {type : [headerBatch]},
   bandwith : {type : Number, default : 0},
   errorMsg : {type : String},
@@ -42,13 +30,7 @@ var ResumeDownloadState = new Schema({
   maxDate : {type : Date, default : Date.now()}, // the date to start at
   minDate : {type : Date}, // the date to end at
   isPremium : {type : Boolean},
-  lastCompleted : {type : String,
-    enum : ['lookupMailbox',
-            'createTempDirectoryForEmails',
-            'retrieveAttachments',
-            'retrieveEmailsNoAttachments',
-            'retrieveEmails',
-            'markStoppingPoint']},
+  lastCompleted : {type : String},
   bandwith : {type : Number, default : 0},
   mikeyMailTS : {type : Date},
   disabled : {type : Boolean, default : false}, // don't try this again
