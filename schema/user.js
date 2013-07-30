@@ -37,19 +37,19 @@ var User = new Schema({
   timestamp: {type: Date, default: Date.now},
   minProcessedDate : {type : Date, default : Date.now}, // the date of the earliest mail we've processed (according to mikeymail)
   minMRProcessedDate : {type : Date, default : Date.now}, // the date of the earliest mail that has been processed (according to mailreader)
-  minMailDate : {type : Date}, // the date of the earliest mail in the gmail account
+  minMailDate : {type : Date, default : Date.now}, // the date of the earliest mail in the gmail account
+  allMailError : {type : Boolean},
+  allMailOnboardAttempts : {type : Number, default : 0},
   daysLimit : {type : Number, default : constants.BASE_DAYS_LIMIT}, // how many days the user is entitled to
   isPremium : {type : Boolean, default : false}, // flag to "ignore" the daysLimit in the account entirely
   isGrantedPremium : {type : Boolean}, // flag to indicate that we manually granted this user a 'premium' account
   clickedChromeStoreReview : {type : Boolean}, // flag to indicate that this user clicked on the 'rate mikey' button and should get more days
-  allMailError : {type : Boolean},
   stripeCustomerId: {type: String},
   stripeCardToken: {type: String},
   billingPlan: {type: String, enum: ['free', 'basic', 'pro', 'team'], default: 'free'},
   billingPlanStartDate: {type: Date},
   billingPlanEndDate: {type: Date},
-  allMailError : {type : Boolean},
-  allMailOnboardAttempts : {type : Number, default : 0}
+  lastResumeJobEndDate : {type : Date, default : Date.now()}
 }, schemaOptions );
 
 // virtual fields for specialized links
