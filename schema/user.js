@@ -47,7 +47,9 @@ var User = new Schema({
   stripeCardToken: {type: String},
   billingPlan: {type: String, enum: ['free', 'basic', 'pro', 'team'], default: 'free'},
   billingPlanStartDate: {type: Date},
-  billingPlanEndDate: {type: Date}
+  billingPlanEndDate: {type: Date},
+  allMailError : {type : Boolean},
+  allMailOnboardAttempts : {type : Number, default : 0}
 }, schemaOptions );
 
 // virtual fields for specialized links
