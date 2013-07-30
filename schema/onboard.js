@@ -11,7 +11,6 @@ var UserOnboardingState = new Schema({
   userId : {type : Schema.ObjectId, index : true},
   lastCompleted : {type : String},
   headerBatchesComplete : {type : [headerBatch]},
-  bandwith : {type : Number, default : 0},
   errorMsg : {type : String},
   hasError : {type : Boolean, default : false},
   mikeyMailTS : {type : Date, default : Date.now}, // the last time a mailDownload daemon indicated it's still working on the download
@@ -31,7 +30,6 @@ var ResumeDownloadState = new Schema({
   minDate : {type : Date}, // the date to end at
   isPremium : {type : Boolean},
   lastCompleted : {type : String},
-  bandwith : {type : Number, default : 0},
   mikeyMailTS : {type : Date},
   disabled : {type : Boolean, default : false}, // don't try this again
   nodeId : {type : String} 
@@ -41,3 +39,15 @@ ResumeDownloadState.index ({mikeyMailTS : 1, resumeAt : 1, lastCompleted : 1, di
 
 mongoose.model ('ResumeDownloadState', ResumeDownloadState);
 exports.ResumeDownloadStateModel = mongoose.model('ResumeDownloadState');
+
+
+var Bandwith = new Schema({
+  userId: {type: Schema.ObjectId},
+  bandwith : {type : Number, default : 0},
+  dateString : {type : String}
+});
+
+Bandwith.index ({userId : 1, dateString : 1});
+
+mongoose.model ('Bandwith', Bandwith);
+exports.BandwithModel = mongoose.model('Bandwith');
