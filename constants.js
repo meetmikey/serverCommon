@@ -231,7 +231,6 @@ var urlFilterText = [
   , 'sites.google.com'
   , 'hotmail.com'
   , 'dealersocket.com'
-  , 'airbnb.com'
   , 'united.com'
   , 'mailman.'
   , 'invite'
