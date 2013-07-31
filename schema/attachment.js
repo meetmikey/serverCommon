@@ -48,11 +48,12 @@ var Attachment = new Schema({
   , isDeleted: {type : Boolean, default : false}
   , image: {type: String} // dummy used by API for signedURL
   , timestamp: {type: Date, default: Date.now}
+  , isFaved: {type : Boolean, default : false}
   , indexLockTS : {type : Date}
 });
 
 Attachment.index({ userId: 1, hash : 1, fileSize : 1, gmThreadId: 1 }, {unique : true});
-Attachment.index({ userId: 1, isPromoted: 1, isImage: 1, isDeleted : 1, sentDate: -1 });
+Attachment.index({ userId: 1, isPromoted: 1, isImage: 1, isDeleted : 1, isFaved :1, sentDate: -1 });
 Attachment.index({ hash: 1, fileSize: 1 });
 
 mongoose.model('Attachment', Attachment);
