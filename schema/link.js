@@ -38,11 +38,12 @@ var Link = new Schema({
   , index : {type : [indexStateSchema], default :[]}
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean, default : false}
+  , isFaved: {type : Boolean, default : false}
   , indexLockTS : {type : Date}
 });
 
 Link.index({ comparableURLHash : 1, userId: 1, gmThreadId: 1 }, {unique : true});
-Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, isDeleted : 1, sentDate : -1});
+Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, isDeleted : 1, isFaved : 1, sentDate : -1});
 
 mongoose.model('Link', Link);
 exports.LinkModel = mongoose.model('Link');
