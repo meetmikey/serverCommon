@@ -39,6 +39,7 @@ var Link = new Schema({
   , timestamp: {type: Date, default: Date.now}
   , isDeleted : {type : Boolean, default : false}
   , isFavorite: {type : Boolean, default : false}
+  , isLiked: {type : Boolean, default : false}
   , indexLockTS : {type : Date}
 });
 

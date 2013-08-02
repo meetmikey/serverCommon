@@ -49,6 +49,7 @@ var Attachment = new Schema({
   , image: {type: String} // dummy used by API for signedURL
   , timestamp: {type: Date, default: Date.now}
   , isFavorite: {type : Boolean, default : false}
+  , isLiked: {type : Boolean, default : false}
   , indexLockTS : {type : Date}
 });
 
