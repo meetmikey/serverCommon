@@ -53,8 +53,8 @@ define ('MAX_NGINX_TIMEOUTS', 3);
 
 define('ERROR_TYPE_404', '404');
 
-define('DEFAULT_FIELDS_ATTACHMENT', 'userId filename contentType sentDate sender recipients image isImage hash fileSize isDeleted gmMsgId gmMsgHex docType attachmentThumbExists isPromoted mailCleanSubject isFavorite');
-define('DEFAULT_FIELDS_LINK', 'userId url resolvedURL sentDate sender recipients image title summary comparableURLHash isDeleted gmMsgId gmMsgHex imageThumbExists isPromoted isFollowed isFavorite');
+define('DEFAULT_FIELDS_ATTACHMENT', 'userId filename contentType sentDate sender recipients image isImage hash fileSize isDeleted gmMsgId gmMsgHex docType attachmentThumbExists isPromoted mailCleanSubject isFavorite isLiked');
+define('DEFAULT_FIELDS_LINK', 'userId url resolvedURL sentDate sender recipients image title summary comparableURLHash isDeleted gmMsgId gmMsgHex imageThumbExists isPromoted isFollowed isFavorite isLiked');
 
 define ('DOC_TYPE_MAPPING', {
   'pdf' : ['application/pdf'],
