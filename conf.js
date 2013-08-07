@@ -73,7 +73,7 @@ if (environment == 'production') {
   stripeSecretKey = secureConf.stripe.secretKey;
   memcached.host = 'mikeycache.5rt4mb.0001.use1.cache.amazonaws.com';
   debugMode = false;
-  useNodetime = true;
+  useNodetime = false;
 } else if (environment == 'development') {
   domain = 'dev.meetmikey.com';
   awsBucket = 'mikeymaildev';
