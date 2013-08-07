@@ -15,6 +15,8 @@ https.globalAgent.maxSockets = 15;
 
 var domain = 'local.meetmikey.com';
 var debugMode = true;
+var useNodetime = false;
+var nodetimeAccountKey = '8fd76d39c7e8ec11dfb88b3c8d2bba6acc3fa538';
 
 var awsBucket = 'mikeymaillocal';
 var awsKey = 'AKIAJENDDHKD34F4QMSA'; //IAM: nonProd
@@ -71,6 +73,7 @@ if (environment == 'production') {
   stripeSecretKey = secureConf.stripe.secretKey;
   memcached.host = 'mikeycache.5rt4mb.0001.use1.cache.amazonaws.com';
   debugMode = false;
+  useNodetime = true;
 } else if (environment == 'development') {
   domain = 'dev.meetmikey.com';
   awsBucket = 'mikeymaildev';
@@ -194,5 +197,9 @@ module.exports = {
   }
   , stripe: {
     secretKey: stripeSecretKey
+  }
+  , nodetime: {
+      useNodetime: useNodetime
+    , accountKey: nodetimeAccountKey
   }
 }
