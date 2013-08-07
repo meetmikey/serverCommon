@@ -158,6 +158,7 @@ var urlFilterText = [
   , 'ticketmaster'
   , 'mailchimp.com'
   , 'marketing.typesafe.com'
+  , 'libertyresourcedirectory.com'
   , 'google.com/calendar/'
   , 'schema.org'
   , 'passport.com'
