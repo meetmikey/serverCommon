@@ -85,6 +85,7 @@ var sqsMailReadingQueue = queuePrefix + 'MailReader';
 var sqsMailReadingQuickQueue = queuePrefix + 'MailReaderQuick';
 var sqsMailActiveConnectionQueue = queuePrefix + 'MailActiveConnection';
 var sqsWorkerQueue = queuePrefix + 'Worker';
+var sqsWorkerQuickQueue = queuePrefix + 'WorkerQuick';
 var sqsWorkerReindexQueue = queuePrefix + 'WorkerReindex';
 var sqsCacheInvalidationQueue = queuePrefix + 'CacheInvalidation';
 
@@ -99,6 +100,7 @@ module.exports = {
     , sqsMailDownloadQueue : sqsMailDownloadQueue
     , sqsMailActiveConnectionQueue : sqsMailActiveConnectionQueue
     , sqsWorkerQueue : sqsWorkerQueue
+    , sqsWorkerQuickQueue : sqsWorkerQuickQueue
     , sqsWorkerReindexQueue : sqsWorkerReindexQueue
     , sqsCacheInvalidationQueue : sqsCacheInvalidationQueue
     , s3Folders: {
