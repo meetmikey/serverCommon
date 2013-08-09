@@ -324,3 +324,5 @@ define('ES_RETRIES', 3);
 define('INDEX_HANDLER_LOCK_CHECK_TIMEOUT', 1000*30); // 30 seconds
 
 define('INDEX_LOCK_TIMEOUT', 1000*60*4);
+
+define ('MAX_EXCEL_INDEX_SIZE', 4194304); // 4 megabytes

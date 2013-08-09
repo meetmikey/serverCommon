@@ -88,6 +88,8 @@ var sqsWorkerQueue = queuePrefix + 'Worker';
 var sqsWorkerQuickQueue = queuePrefix + 'WorkerQuick';
 var sqsWorkerReindexQueue = queuePrefix + 'WorkerReindex';
 var sqsCacheInvalidationQueue = queuePrefix + 'CacheInvalidation';
+var sqsThumbnailQueue = queuePrefix + 'Thumbnail';
+var sqsThumbnailQuickQueue = queuePrefix + 'ThumbnailQuick';
 
 module.exports = {
   aws : {
@@ -102,6 +104,8 @@ module.exports = {
     , sqsWorkerQueue : sqsWorkerQueue
     , sqsWorkerQuickQueue : sqsWorkerQuickQueue
     , sqsWorkerReindexQueue : sqsWorkerReindexQueue
+    , sqsThumbnailQueue : sqsThumbnailQueue
+    , sqsThumbnailQuickQueue : sqsThumbnailQuickQueue
     , sqsCacheInvalidationQueue : sqsCacheInvalidationQueue
     , s3Folders: {
         attachment: 'attachment'
