@@ -15,6 +15,8 @@ https.globalAgent.maxSockets = 15;
 
 var domain = 'local.meetmikey.com';
 var debugMode = true;
+var useNodetime = false;
+var nodetimeAccountKey = '8fd76d39c7e8ec11dfb88b3c8d2bba6acc3fa538';
 
 var awsBucket = 'mikeymaillocal';
 var awsKey = 'AKIAJENDDHKD34F4QMSA'; //IAM: nonProd
@@ -71,6 +73,7 @@ if (environment == 'production') {
   stripeSecretKey = secureConf.stripe.secretKey;
   memcached.host = 'mikeycache.5rt4mb.0001.use1.cache.amazonaws.com';
   debugMode = false;
+  useNodetime = false;
 } else if (environment == 'development') {
   domain = 'dev.meetmikey.com';
   awsBucket = 'mikeymaildev';
@@ -82,8 +85,11 @@ var sqsMailReadingQueue = queuePrefix + 'MailReader';
 var sqsMailReadingQuickQueue = queuePrefix + 'MailReaderQuick';
 var sqsMailActiveConnectionQueue = queuePrefix + 'MailActiveConnection';
 var sqsWorkerQueue = queuePrefix + 'Worker';
+var sqsWorkerQuickQueue = queuePrefix + 'WorkerQuick';
 var sqsWorkerReindexQueue = queuePrefix + 'WorkerReindex';
 var sqsCacheInvalidationQueue = queuePrefix + 'CacheInvalidation';
+var sqsThumbnailQueue = queuePrefix + 'Thumbnail';
+var sqsThumbnailQuickQueue = queuePrefix + 'ThumbnailQuick';
 
 module.exports = {
   aws : {
@@ -96,7 +102,10 @@ module.exports = {
     , sqsMailDownloadQueue : sqsMailDownloadQueue
     , sqsMailActiveConnectionQueue : sqsMailActiveConnectionQueue
     , sqsWorkerQueue : sqsWorkerQueue
+    , sqsWorkerQuickQueue : sqsWorkerQuickQueue
     , sqsWorkerReindexQueue : sqsWorkerReindexQueue
+    , sqsThumbnailQueue : sqsThumbnailQueue
+    , sqsThumbnailQuickQueue : sqsThumbnailQuickQueue
     , sqsCacheInvalidationQueue : sqsCacheInvalidationQueue
     , s3Folders: {
         attachment: 'attachment'
@@ -185,7 +194,7 @@ module.exports = {
   , debugMode: debugMode
   , rollbar: {
       token: '53df19b3bc7244dcbe8bde98d62ccebd'
-    , turnedOn: true
+    , turnedOn: false
   }
   , turnDebugModeOff : function () {
     module.exports.debugMode = false;
@@ -195,5 +204,9 @@ module.exports = {
   }
   , stripe: {
     secretKey: stripeSecretKey
+  }
+  , nodetime: {
+      useNodetime: useNodetime
+    , accountKey: nodetimeAccountKey
   }
 }
