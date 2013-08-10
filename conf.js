@@ -13,6 +13,8 @@ var https = require('https');
 http.globalAgent.maxSockets = 15;
 https.globalAgent.maxSockets = 15;
 
+var useNgrok = true;
+
 var domain = 'local.meetmikey.com';
 var debugMode = true;
 var useNodetime = false;
@@ -209,4 +211,6 @@ module.exports = {
       useNodetime: useNodetime
     , accountKey: nodetimeAccountKey
   }
+  , useNgrok : useNgrok
+  , ngrokURL : 'https://mikey.ngrok.com'
 }
