@@ -14,6 +14,7 @@ var LinkInfo = new Schema({
   , summary: {type: String}
   , lastFollowDate: {type: Date}
   , followType: {type: String, enum: ['fail', 'diffbot', 'pdf', 'googleDoc', 'direct', 'ignore']}
+  , failReason : {type : String}
   , imageFollowFailed : {type : Boolean}
   , isBadDomain: {type : Boolean}
   , followJobCreated: {type: Boolean}
