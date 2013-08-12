@@ -165,7 +165,6 @@ var urlFilterText = [
   , 'schemas.microsoft.com'
   , 'microsoft.com/sharepoint'
   , 'microsoft.com/officenet'
-  , 'magicnotebook.com'
   , 'simoncast/prodpad'
   , 'meetmikey.com'
   , 'email.launchrock.com'
