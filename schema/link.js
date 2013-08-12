@@ -46,6 +46,7 @@ var Link = new Schema({
 Link.index({ comparableURLHash : 1, userId: 1, gmThreadId: 1 }, {unique : true});
 Link.index({ userId: 1, isPromoted: 1, isFollowed: 1, isDeleted : 1, isFavorite : 1, sentDate : -1});
 Link.index({ userId : 1, isPromoted: 1, isFollowed: 1, gmThreadId : 1});
+Link.index({ userId: 1, gmThreadId: 1 });
 
 mongoose.model('Link', Link);
 exports.LinkModel = mongoose.model('Link');
