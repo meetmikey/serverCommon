@@ -280,9 +280,9 @@ define('BAD_SENDER_MINIMUM_RECEIEVED', 200);
 
 define('CONTACT_RATIO_LINK_PROMOTION_THRESHOLD', 1/100);
 
-define('MIN_DOMAIN_FAILS', 500);
+define('MIN_DOMAIN_FAILS', 50);
 
-define('MIN_DOMAIN_SUCCESS_RATIO', 1/20);
+define('MIN_DOMAIN_SUCCESS_RATIO', 1/10);
 
 var linkDomainWhitelist = [
   'docs.google.com',
