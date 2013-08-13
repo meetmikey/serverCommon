@@ -21,7 +21,7 @@ s3Utils.getFile (file, false, function (err, res) {
     winston.doError('no response!');
 
   } else {
-    utils.streamToBuffer( res, function(err, buffer) {
+    utils.streamToBuffer( res, false, function(err, buffer) {
       if ( err ) {
         winston.handleError(err);
 
