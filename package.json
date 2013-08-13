@@ -15,7 +15,6 @@
     , "request": "=2.16.6"
     , "elasticsearchclient": "=0.4.0"
     , "async": "=0.2.7"
-    , "bigdecimal" : "=0.6.1"
     , "azure" : "https://github.com/svmehta/azure-sdk-for-node/archive/master.tar.gz"
     , "diffbot" : "https://github.com/meetmikey/node-diffbot/archive/master.tar.gz"
     , "bluesky" : "=0.6.7"
