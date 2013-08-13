@@ -282,6 +282,8 @@ define('CONTACT_RATIO_LINK_PROMOTION_THRESHOLD', 1/100);
 
 define('MIN_DOMAIN_FAILS', 50);
 
+define('MAX_URL_LENGTH', 175);
+
 define('MIN_DOMAIN_SUCCESS_RATIO', 1/10);
 
 var linkDomainWhitelist = [
