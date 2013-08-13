@@ -189,6 +189,7 @@ var urlFilterText = [
   , 'okcupid.com'
   , 'newrelic.com'
   , 'feedburner.com'
+  , 'zerocater.com'
   , 'joingrouper.com'
   , 'toutapp.com'
   , 'alerts?'
