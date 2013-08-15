@@ -3,16 +3,16 @@ var mongoose = require('mongoose'),
 
 var ReceiveMR = new Schema ({
   _id : {
-      userId : {type: Schema.ObjectId}
-    , email: {type: String}
+      email: {type: String}
+    , userId : {type: Schema.ObjectId}
   },
   value : {type: Number}
 })
 
 var SentAndCoReceiveMR = new Schema ({
   _id : {
-      userId : {type: Schema.ObjectId}
-    , email: {type: String}
+      email: {type: String}
+    , userId : {type: Schema.ObjectId}
   },
   value : {
     sent : {type : Number},
@@ -21,8 +21,11 @@ var SentAndCoReceiveMR = new Schema ({
 })
 
 
-ReceiveMR.index({ "_id.userId": 1, "_id.email": 1 }, {unique : true});
-SentAndCoReceiveMR.index({ "_id.userId": 1, "_id.email": 1 }, {unique : true});
+ReceiveMR.index({ "_id.email": 1, "_id.userId": 1 }, {unique : true});
+ReceiveMR.index({ "_id.userId": 1 });
+
+SentAndCoReceiveMR.index({ "_id.email": 1, "_id.userId": 1 }, {unique : true});
+SentAndCoReceiveMR.index({ "_id.userId": 1});
 
 mongoose.model('ReceiveMR', ReceiveMR);
 exports.ReceiveMRModel = mongoose.model('ReceiveMR');
