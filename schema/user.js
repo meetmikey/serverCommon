@@ -134,3 +134,22 @@ User.virtual('accessToken')
 
 mongoose.model('User', User);
 exports.UserModel = mongoose.model('User');
+
+
+
+var DeletedUser = new Schema({
+    userId: {type: Schema.ObjectId, index: true}
+  , shortId : {type : String}
+  , googleID: {type: String}
+  , displayName: {type: String}
+  , firstName: {type: String}
+  , lastName: {type: String}
+  , email: {type: String, lowercase: true, index: true}
+  , userDeleted: {type: Boolean}
+  , isComplete: {type: Boolean, default: false}
+  , userTimestamp: {type: Date}
+  , deleteTimestamp: {type: Date, default: Date.now}
+});
+
+mongoose.model('DeletedUser', DeletedUser);
+exports.DeletedUserModel = mongoose.model('DeletedUser');
