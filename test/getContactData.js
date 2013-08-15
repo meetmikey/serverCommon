@@ -6,7 +6,7 @@ var mongoose = require('../lib/mongooseConnect').mongoose
   , contactUtils = require('../lib/contactUtils')
 
 var email = 'justin@mikeyteam.com';
-var userId = '5153c61713934f3811000005';
+var userId = '520313ca182f58df4b00000a';
 
 var initActions = [
   appInitUtils.CONNECT_MONGO
