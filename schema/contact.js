@@ -3,16 +3,16 @@ var mongoose = require('mongoose'),
 
 var ReceiveMR = new Schema ({
   _id : {
-      userId : {type: Schema.ObjectId}
-    , email: {type: String}
+      email: {type: String}
+    , userId : {type: Schema.ObjectId}
   },
   value : {type: Number}
 })
 
 var SentAndCoReceiveMR = new Schema ({
   _id : {
-      userId : {type: Schema.ObjectId}
-    , email: {type: String}
+      email: {type: String}
+    , userId : {type: Schema.ObjectId}
   },
   value : {
     sent : {type : Number},
