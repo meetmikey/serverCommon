@@ -51,7 +51,9 @@ define ('MAX_INDEXING_ATTEMPTS', 4);
 
 define ('MAX_NGINX_TIMEOUTS', 3);
 
-define('MAX_STREAM_TO_BUFFER', 31457280);
+//define('MAX_STREAM_TO_BUFFER', 31457280);
+
+define('MAX_STREAM_TO_BUFFER', 314572);
 
 define('ERROR_TYPE_404', '404');
 
