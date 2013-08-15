@@ -51,6 +51,8 @@ define ('MAX_INDEXING_ATTEMPTS', 4);
 
 define ('MAX_NGINX_TIMEOUTS', 3);
 
+define('MAX_STREAM_TO_BUFFER', 31457280);
+
 define('ERROR_TYPE_404', '404');
 
 define('DEFAULT_FIELDS_ATTACHMENT', 'userId filename contentType sentDate sender recipients image isImage hash fileSize isDeleted gmMsgId gmMsgHex docType attachmentThumbExists isPromoted mailCleanSubject isFavorite isLiked gmThreadId');
@@ -134,7 +136,8 @@ define ('IMAGE_TAB_MIN_HEIGHT', 100);
 var urlFilterRegex = [
   'github.com/.*/.*/commit',
   'github.com/.*/.*/tree',
-  'github.com/.*/.*/blob'
+  'github.com/.*/.*/blob',
+  'github.com/.*/.*/pull'
 ]
 
 define('URL_FILTER_REGEX', urlFilterRegex);
@@ -165,7 +168,6 @@ var urlFilterText = [
   , 'schemas.microsoft.com'
   , 'microsoft.com/sharepoint'
   , 'microsoft.com/officenet'
-  , 'magicnotebook.com'
   , 'simoncast/prodpad'
   , 'meetmikey.com'
   , 'email.launchrock.com'
@@ -190,6 +192,7 @@ var urlFilterText = [
   , 'okcupid.com'
   , 'newrelic.com'
   , 'feedburner.com'
+  , 'zerocater.com'
   , 'joingrouper.com'
   , 'toutapp.com'
   , 'alerts?'
@@ -280,9 +283,11 @@ define('BAD_SENDER_MINIMUM_RECEIEVED', 200);
 
 define('CONTACT_RATIO_LINK_PROMOTION_THRESHOLD', 1/100);
 
-define('MIN_DOMAIN_FAILS', 500);
+define('MIN_DOMAIN_FAILS', 50);
 
-define('MIN_DOMAIN_SUCCESS_RATIO', 1/20);
+define('MAX_URL_LENGTH', 175);
+
+define('MIN_DOMAIN_SUCCESS_RATIO', 1/10);
 
 var linkDomainWhitelist = [
   'docs.google.com',

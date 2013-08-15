@@ -13,12 +13,14 @@ var LinkInfo = new Schema({
   , title: {type: String}
   , summary: {type: String}
   , lastFollowDate: {type: Date}
-  , followType: {type: String, enum: ['fail', 'diffbot', 'pdf', 'googleDoc', 'direct', 'ignore']}
+  , followType: {type: String, enum: ['fail', 'diffbot', 'pdf', 'googleDoc', 'direct', 'ignore', 'stub']}
+  , failReason : {type : String}
   , imageFollowFailed : {type : Boolean}
   , isBadDomain: {type : Boolean}
   , followJobCreated: {type: Boolean}
   , origImageUrl : {type : String}
   , timestamp: {type: Date, default: Date.now}
+  , abortedWebGet : {type : Boolean}
   , index : {type : [indexStateSchema], default :[]}
 });
 
