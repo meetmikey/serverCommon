@@ -21,8 +21,11 @@ var SentAndCoReceiveMR = new Schema ({
 })
 
 
-ReceiveMR.index({ "_id.userId": 1, "_id.email": 1 }, {unique : true});
-SentAndCoReceiveMR.index({ "_id.userId": 1, "_id.email": 1 }, {unique : true});
+ReceiveMR.index({ "_id.email": 1, "_id.userId": 1 }, {unique : true});
+ReceiveMR.index({ "_id.userId": 1 });
+
+SentAndCoReceiveMR.index({ "_id.email": 1, "_id.userId": 1 }, {unique : true});
+SentAndCoReceiveMR.index({ "_id.userId": 1});
 
 mongoose.model('ReceiveMR', ReceiveMR);
 exports.ReceiveMRModel = mongoose.model('ReceiveMR');
