@@ -10,6 +10,7 @@ var Referral = new Schema({
       constants.REFERRAL_SOURCE_TWITTER
     , constants.REFERRAL_SOURCE_FACEBOOK
     , constants.REFERRAL_SOURCE_DIRECT
+    , constants.REFERRAL_SOURCE_LIKE
     ]}
   , originURL: {type: String}
 });
