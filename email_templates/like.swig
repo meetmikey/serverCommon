@@ -178,7 +178,7 @@
                       <div style="font-size:18px; line-height:18px; font-weight:bold;">
                         <a href="#" style="color:#2c75ab; text-decoration:none;">{{filename}}</a>
                       </div>
-                      <span style="color:#77777; font-size:13px; margin-left: 16px;">{{fileSize}} bytes</span>
+                      <span style="color:#77777; font-size:13px; margin-left: 16px;">{{fileSize}}</span>
                     </td>
                     <td width="3%"></td>
                     <td>
@@ -199,7 +199,7 @@
                   </tr>
                   <tr>
                     <td align="center">
-                      <a href="{{referralLink}}" style="color:#222222; text-transform:uppercase;">Sent by Mikey for Gmail</a>
+                      <a href="{{referralLink}}" style="color:#222222; text-transform:uppercase; text-decoration: none;">Sent by Mikey for Gmail</a>
                     </td>
                   </tr>
                   <tr height="10px">
