@@ -199,7 +199,7 @@
                   </tr>
                   <tr>
                     <td align="center">
-                      <a href="bit.ly/mikeybeta" style="color:#222222; text-transform:uppercase;">Sent by Mikey for Gmail</a>
+                      <a href="{{referralLink}}" style="color:#222222; text-transform:uppercase;">Sent by Mikey for Gmail</a>
                     </td>
                   </tr>
                   <tr height="10px">
