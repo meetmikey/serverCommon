@@ -333,3 +333,5 @@ define('INDEX_HANDLER_LOCK_CHECK_TIMEOUT', 1000*30); // 30 seconds
 define('INDEX_LOCK_TIMEOUT', 1000*60*4);
 
 define ('MAX_EXCEL_INDEX_SIZE', 4194304); // 4 megabytes
+
+define('CLOUD_FRONT_BASE_URL', 'http://d2i23yl88vtt8s.cloudfront.net/cdn/')
