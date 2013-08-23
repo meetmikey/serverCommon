@@ -15,13 +15,8 @@
       .ExternalClass {
       width: 100%;
       }
-      span{
-      font-family:'Segoe UI', Arial, sans-serif;
-      font-size:15px;
-      line-height:20px;
-      color:#555;
-      }
-      @media only screen and (max-width: 600px) {
+    
+      @media only screen and (max-width: 640px) {
       table[class="content_wrap"] {
       width: 94%!important;
       }
@@ -54,8 +49,8 @@
     <!--////////////////////////////////////////////////////////////////////////////////////////////////////
       Preheader text will only appear in certain client inboxes but are an excellent way of engaging the user.
       /////////////////////////////////////////////////////////////////////////////////////////////////////-->
-    <span style="display: none;font-size: 0px; color:#222; line-height: 0;">{{senderName}} likes {% if isLink %}{{title}}{% else %}{{filename}}{% endif %}</span>
-    <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="font-family: Arial, sans-serif;font-size:15px;line-height:18px;color:#222;">
+    <span style="display: none; color:#222; line-height: 0;">{{senderName}} likes {% if isLink %}{{title}}{% else %}{{filename}}{% endif %}</span>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="font-family: Arial, sans-serif; color:#222;">
       <tr>
         <td bgcolor="#f5f5f5" width="100%">
           <!--Content wrapper-->
@@ -80,7 +75,7 @@
               <td width="100%">
 
                 <!--Header-->
-                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#f5f5f5;">
+                <table width="90%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#f5f5f5;">
                   <tr>
                     <td class="profile-box" width="8%">
                       <img style="width:100%; height:auto; overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;" class="profile-pic" src="{{senderImage}}"></img>
@@ -103,7 +98,7 @@
                 
                 <!--Link-->
                 {% if isLink %}
-                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
+                <table width="90%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
                   <tr>
                     <td colspan="5" height="18px" width="100%"></td>
                   </tr>
@@ -130,7 +125,7 @@
 
                 <!--Attachment-->
                 {% if isAttachment %}
-                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
+                <table width="90%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
                   <tr>
                     <td colspan="5" height="18px" width="100%"></td>
                   </tr>
@@ -141,7 +136,7 @@
                     </td>
                     <td width="3%"></td>
                     <td>
-                      <div style="font-size:18px; line-height:22px; font-weight:bold;">
+                      <div style="font-size:18px; line-height:22px; font-weight:bold; display:inline-block;">
                         <a href="#" style="color:#2c75ab; text-decoration:none;">{{filename}}</a>
                       </div>
                       <span style="color:#77777; font-size:13px;">{{fileSize}} bytes</span>
@@ -175,7 +170,7 @@
                   <tr>
                     <td  width="3%"></td>
                     <td class="profile-box">
-                      <div style="font-size:18px; line-height:18px; font-weight:bold;">
+                      <div style="font-size:18px; line-height:18px; font-weight:bold; display:inline-block;">
                         <a href="#" style="color:#2c75ab; text-decoration:none;">{{filename}}</a>
                       </div>
                       <span style="color:#77777; font-size:13px; margin-left: 16px;">{{fileSize}}</span>
