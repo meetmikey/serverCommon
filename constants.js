@@ -303,6 +303,8 @@ define('REFERRAL_SOURCE_FACEBOOK', 'f');
 
 define('REFERRAL_SOURCE_DIRECT', 'd');
 
+define('REFERRAL_SOURCE_LIKE', 'l');
+
 define('BASE_DAYS_LIMIT', 90);
 
 define('BASE_DAYS_LIMIT_BASIC_PLAN', 365);
