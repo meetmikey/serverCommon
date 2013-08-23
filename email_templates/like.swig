@@ -1,49 +1,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Responsive email template</title>
-	<style>
-	
-	body {
-    width:100%!important;
-    -webkit-text-size-adjust:100%;
-    -ms-text-size-adjust:100%;
-    margin:0;
-    padding:0;
-	}
-  
-  .ExternalClass {
-    width: 100%;
-  }
-  
-  span{
-    font-family:'Segoe UI', Arial, sans-serif;
-    font-size:15px;
-    line-height:20px;
-    color:#555;
-  }
-	
-	@media only screen and (max-width: 600px) {
-
-    table[class="content_wrap"] {
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Responsive email template</title>
+    <style>
+      body {
+      width:100%!important;
+      -webkit-text-size-adjust:100%;
+      -ms-text-size-adjust:100%;
+      margin:0;
+      padding:0;
+      }
+      .ExternalClass {
+      width: 100%;
+      }
+      span{
+      font-family:'Segoe UI', Arial, sans-serif;
+      font-size:15px;
+      line-height:20px;
+      color:#555;
+      }
+      @media only screen and (max-width: 600px) {
+      table[class="content_wrap"] {
       width: 94%!important;
-    }
-    
-    table[class="full_width"] {
+      }
+      table[class="full_width"] {
       width: 100%!important;
-    }
-    
-		table[class="hide"], img[class="hide"], td[class="hide"] {
+      }
+      table[class="hide"], img[class="hide"], td[class="hide"] {
       display: none !important;
-    }
-    
-    td[class="text-center"] {
+      }
+      td[class="text-center"] {
       text-align: center!important;
-    }
-    
-    a[class="button"] {
+      }
+      a[class="button"] {
       border-radius:2px;
       -moz-border-radius:2px;
       -webkitborder-radius:2px;
@@ -54,225 +45,181 @@
       text-decoration: none;
       text-transform: uppercase;
       margin: 0 0 10px 0;
-    }
-    
-	}
-   @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
-	</style>
-</head>
-
-<body bgcolor="#f5f5f5" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" style="-webkit-font-smoothing:antialiased;width:100% !important;background-color:#f5f5f5;background-image:none;background-repeat:repeat;background-position:top left;background-attachment:scroll;-webkit-text-size-adjust:none;">
-
-  <!--////////////////////////////////////////////////////////////////////////////////////////////////////
-  Preheader text will only appear in certain client inboxes but are an excellent way of engaging the user.
-  /////////////////////////////////////////////////////////////////////////////////////////////////////-->
-  <span style="display: none;font-size: 0px; color:#222; line-height: 0;">{{senderName}} likes {{title}}</span>
-  
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="font-family: Arial, sans-serif;font-size:15px;line-height:18px;color:#222;">
-    <tr>
-      <td bgcolor="#f5f5f5" width="100%">
-        
-
-	
-        <!--Content wrapper-->
-        <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="content_wrap">
-          <tr>
-            <td width="100%" height="20" bgcolor="#f5f5f5"></td>
-          </tr>
-          <tr>
-            <td bgcolor="#f5f5f5">
-              
-              <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                 
-                  <td bgcolor="#f5f5f5" width="200" class="hide">
-                
-                   
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td width="100%" height="10" bgcolor="#f5f5f5"></td>
-          </tr>
-          <tr>
-            <td width="100%">
-            
-              <!--Profile + Statement-->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#f5f5f5;">
-               
-                
-                <tr>
-                  <td class="profile-box" width="8%">
-                    <img style="width:100%; height:auto; overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;" class="profile-pic" src="{{senderImage}}"></img>
-                  </td>
-                  <td width="4%"></td>
-                  <td><strong>{{senderName}}</strong> likes <strong>
-                  	  {% if isLink %}
-				    <strong><a style="color:#2c75ab; text-decoration:none;" href="{{ url }}">{{title}}</a></strong>
-						{% else %}
-					    <strong>{{filename}}</strong>
-					  {% endif %}
-                  </td>
-                  <td width="4%"></td>
-                </tr>
-                <td colspan="5" height="14px">
-                </td>
-                <tr>
-                </tr>
-              </table>
-
-
-              <!--Link preview format-->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
-               
-                
-                <tr>
-                  <td colspan="5" height="18px" width="100%"></td>
-                </tr>
-
-                <tr>
-                  <td  width="3%"></td>
-                  <td class="profile-box" width="16%">
-                    <img style="width:100%; height:auto; overlow:hidden;" class="profile-pic" src="{{linkImage}}"></img>
-                  </td>
-                  <td width="3%"></td>
-                  <td>
-                    
-                    <div style="font-size:18px; line-height:28px; font-weight:bold;"><a href="#" style="color:#2c75ab; text-decoration:none;">Here is the title of the article</a></div>
-                    <div style="v-align:top; height: 68px; color: #44444;">{{summary}}
-                    </div>
-                  </td>
-                  <td width="3%"></td>
+      }
+      }
+      @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+    </style>
+  </head>
+  <body bgcolor="#f5f5f5" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" style="-webkit-font-smoothing:antialiased;width:100% !important;background-color:#f5f5f5;background-image:none;background-repeat:repeat;background-position:top left;background-attachment:scroll;-webkit-text-size-adjust:none;">
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////////
+      Preheader text will only appear in certain client inboxes but are an excellent way of engaging the user.
+      /////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <span style="display: none;font-size: 0px; color:#222; line-height: 0;">{{senderName}} likes {% if isLink %}{{title}}{% else %}{{filename}}{% endif %}</span>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="font-family: Arial, sans-serif;font-size:15px;line-height:18px;color:#222;">
+      <tr>
+        <td bgcolor="#f5f5f5" width="100%">
+          <!--Content wrapper-->
+          <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="content_wrap">
+            <tr>
+              <td width="100%" height="20" bgcolor="#f5f5f5"></td>
+            </tr>
+            <tr>
+              <td bgcolor="#f5f5f5">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td bgcolor="#f5f5f5" width="200" class="hide">
+                    </td>
                   </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%" height="10" bgcolor="#f5f5f5"></td>
+            </tr>
+            <tr>
+              <td width="100%">
 
+                <!--Header-->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#f5f5f5;">
+                  <tr>
+                    <td class="profile-box" width="8%">
+                      <img style="width:100%; height:auto; overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;" class="profile-pic" src="{{senderImage}}"></img>
+                    </td>
+                    <td width="4%"></td>
+                    <td><strong>{{senderName}}</strong> likes <strong>
+                      {% if isLink %}
+                      <strong><a style="color:#2c75ab; text-decoration:none;" href="{{ url }}">{{title}}</a></strong>
+                      {% else %}
+                      <strong>{{filename}}</strong>
+                      {% endif %}
+                    </td>
+                    <td width="4%"></td>
+                  </tr>
+                  <td colspan="5" height="14px">
+                  </td>
+                  <tr>
+                  </tr>
+                </table>
+                
+                <!--Link-->
+                {% if isLink %}
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
                   <tr>
                     <td colspan="5" height="18px" width="100%"></td>
                   </tr>
-              </table>
-              
-
-
-              <!--Mikey footer-->
-
-               <table align="center"  width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Open Sans',sans-serif;font-size: 10px;font-weight: bold;letter-spacing: 1px;line-height: 24px;text-transform: uppercase;">
-               
-                <tr align="center"  height="14px">
-                  <td>
-                  
-                  </td>
-                </tr>
-
-                <tr>
-                  <td align="center">
-                  <a href="bit.ly/mikeybeta" style="color:#222222; text-transform:uppercase;">Sent by Mikey for Gmail</a>
-                  </td>
-                </tr>
-
-                <tr height="10px">
-                  <td>
-                 
-                  </td>
-                </tr>
-              </table>
-
-
-<table>
-  <tr>
-    <td height="40px">
-    </td>
-  </tr>
-</table>
-
-
-                 <!--File preview-->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
-               
-                
-                <tr>
-                  <td colspan="5" height="18px" width="100%"></td>
-                </tr>
-
-                <tr>
-                  <td  width="3%"></td>
-                  <td class="profile-box" width="6%">
-                    <img style="width:100%; height:auto;" class="profile-pic" src="{{fileIcon}}"></img>
-                  </td>
-                  <td width="3%"></td>
-                  <td>
-                    
-                    <div style="font-size:18px; line-height:22px; font-weight:bold;"><a href="#" style="color:#2c75ab; text-decoration:none;">{{title}}</a></div><span style="color:#77777; font-size:13px;">{{fileSize}}</span>
-                  </td>
-                  <td width="3%"></td>
+                  <tr>
+                    <td  width="3%"></td>
+                    <td class="profile-box" width="16%">
+                      <img style="width:100%; height:auto; overlow:hidden;" class="profile-pic" src="{{linkImage}}"></img>
+                    </td>
+                    <td width="3%"></td>
+                    <td>
+                      <div style="font-size:18px; line-height:28px; font-weight:bold;">
+                        <a href="#" style="color:#2c75ab; text-decoration:none;">{{title}}</a>
+                      </div>
+                      <div style="v-align:top; height: 68px; color: #44444;">{{summary}}</div>
+                    </td>
+                    <td width="3%"></td>
                   </tr>
-
                   <tr>
                     <td colspan="5" height="18px" width="100%"></td>
                   </tr>
-              </table>
-
-
-<table>
-  <tr>
-    <td height="40px">
-    </td>
-  </tr>
-</table>
-
-              
-                 <!--Image Preview-->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
-               
+                </table>
+                {% endif %}
                 
-                <tr>
-                  <td colspan="5" height="18px" width="100%"></td>
-                </tr>
 
-                <tr>
-                  <td  width="3%"></td>
-                  <td class="profile-box">
-                    <img style="width:100%; height:auto;" class="profile-pic" src="{{image}}"></img>
-                  </td>
-                  <td width="3%"></td>
-                  <td>
-                </tr>
-              
+                <!--Attachment-->
+                {% if isAttachment %}
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
+                  <tr>
+                    <td colspan="5" height="18px" width="100%"></td>
+                  </tr>
+                  <tr>
+                    <td  width="3%"></td>
+                    <td class="profile-box" width="6%">
+                      <img style="width:100%; height:auto;" class="profile-pic" src="{{fileIcon}}"></img>
+                    </td>
+                    <td width="3%"></td>
+                    <td>
+                      <div style="font-size:18px; line-height:22px; font-weight:bold;">
+                        <a href="#" style="color:#2c75ab; text-decoration:none;">{{filename}}</a>
+                      </div>
+                      <span style="color:#77777; font-size:13px;">{{fileSize}} bytes</span>
+                    </td>
+                    <td width="3%"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="5" height="18px" width="100%"></td>
+                  </tr>
+                </table>
+                {% endif %}
 
+
+                <!--Image-->
+                {% if isImage %}
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
+                  <tr>
+                    <td colspan="5" height="18px" width="100%"></td>
+                  </tr>
+                  <tr>
+                    <td  width="3%"></td>
+                    <td class="profile-box">
+                      <img style="width:100%; height:auto;" class="profile-pic" src="{{image}}"></img>
+                    </td>
+                    <td width="3%"></td>
+                    <td>
+                  </tr>
                   <tr>
                     <td colspan="3" height="18px" width="100%"></td>
                   </tr>
                   <tr>
-                  <td  width="3%"></td>
-                  <td class="profile-box">
-                    <div style="font-size:18px; line-height:18px; font-weight:bold;"><a href="#" style="color:#2c75ab; text-decoration:none;">file-underscore-name.pdf</a><span style="color:#77777; font-size:13px; margin-left: 16px;">224 KB</span></div>
-                  </td>
-                  <td width="3%"></td>
-                  <td>
-                </tr>
+                    <td  width="3%"></td>
+                    <td class="profile-box">
+                      <div style="font-size:18px; line-height:18px; font-weight:bold;">
+                        <a href="#" style="color:#2c75ab; text-decoration:none;">{{filename}}</a>
+                      </div>
+                      <span style="color:#77777; font-size:13px; margin-left: 16px;">{{fileSize}} bytes</span>
+                    </td>
+                    <td width="3%"></td>
+                    <td>
+                  </tr>
                   <tr>
                     <td colspan="3" height="18px" width="100%"></td>
                   </tr>
-              </table>
+                </table>
+                {% endif %}
 
-<table>
-  <tr>
-    <td height="40px">
-    </td>
-  </tr>
-</table>
-          
 
-        </table>
-        <!--end Content wrapper-->
-      </td>
-    </tr>
-  </table>
-</body>
+
+                <!--Footer-->
+                <table align="center"  width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Open Sans',sans-serif;font-size: 10px;font-weight: bold;letter-spacing: 1px;line-height: 24px;text-transform: uppercase;">
+                  <tr align="center"  height="14px">
+                    <td>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <a href="bit.ly/mikeybeta" style="color:#222222; text-transform:uppercase;">Sent by Mikey for Gmail</a>
+                    </td>
+                  </tr>
+                  <tr height="10px">
+                    <td>
+                    </td>
+                  </tr>
+                </table>
+                <table>
+                  <tr>
+                    <td height="40px">
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+            </tr>
+          </table>
+          <!--end Content wrapper-->
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
-
-
-
-
-
-
