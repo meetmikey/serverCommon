@@ -49,7 +49,7 @@
     <!--////////////////////////////////////////////////////////////////////////////////////////////////////
       Preheader text will only appear in certain client inboxes but are an excellent way of engaging the user.
       /////////////////////////////////////////////////////////////////////////////////////////////////////-->
-    <span style="display: none; color:#222; line-height: 0;">{{senderName}} likes {% if isLink %}{{title}}{% else %}{{filename}}{% endif %}</span>
+    <!-- <span style="display: none; color:#222; line-height: 0;">{{senderName}} likes {% if isLink %}{{title}}{% else %}{{filename}}{% endif %}</span> -->å
     <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="font-family: Arial, sans-serif; color:#222;">
       <tr>
         <td bgcolor="#f5f5f5" width="100%">
