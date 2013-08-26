@@ -49,7 +49,7 @@
     <!--////////////////////////////////////////////////////////////////////////////////////////////////////
       Preheader text will only appear in certain client inboxes but are an excellent way of engaging the user.
       /////////////////////////////////////////////////////////////////////////////////////////////////////-->
-    <!-- <span style="display: none; color:#222; line-height: 0;">{{senderName}} likes {% if isLink %}{{title}}{% else %}{{filename}}{% endif %}</span> -->å
+    <!-- <span style="display: none; color:#222; line-height: 0;">{{senderName}} likes {% if isLink %}{{title}}{% else %}{{filename}}{% endif %}</span> -->
     <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="font-family: Arial, sans-serif; color:#222;">
       <tr>
         <td bgcolor="#f5f5f5" width="100%">
@@ -109,7 +109,7 @@
                       <img style="height:auto; width:100%;" src="{{linkImage}}"></img>
                     </td>
                     <td  width="3%"></td>
-                    <td style="font-size:18px; width:100%; line-height:28px; font-weight:bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    <td style="font-size:18px; line-height:28px; font-weight:bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                       <a href="{{URL}}" style="color:#2c75ab; text-decoration:none;">{{title}}</a>
                     </td>
                     <td width="3%"></td>
@@ -152,7 +152,7 @@
                   </tr>
                   <tr>
                     <td  width="3%"></td>
-                    <td width="6%">
+                    <td width="4%">
                       <img style="width:100%; height:auto;" class="profile-pic" src="{{fileIcon}}"></img>
                     </td>
                     <td width="3%"></td>
