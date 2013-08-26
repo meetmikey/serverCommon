@@ -13,7 +13,7 @@
     , "mongoose": "=3.6.12"
     , "crypto": "=0.0.3"
     , "request": "=2.16.6"
-    , "elasticsearchclient": "=0.4.0"
+    , "elasticsearchclient" : "https://github.com/meetmikey/node-elasticsearch-client/archive/master.tar.gz"
     , "async": "=0.2.7"
     , "azure" : "https://github.com/svmehta/azure-sdk-for-node/archive/master.tar.gz"
     , "diffbot" : "https://github.com/meetmikey/node-diffbot/archive/master.tar.gz"
