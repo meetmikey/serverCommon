@@ -263,6 +263,7 @@ var urlFilterText = [
   , 'craigslist.org/mf'
   , 'google.com/google-d-s/terms'
   , 'google.com/intl/en/policies/terms'
+  , 'gmailw.in'
 ];
 
 define ('ES_HARD_FAILS', [
