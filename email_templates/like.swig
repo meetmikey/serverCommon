@@ -234,6 +234,7 @@
             </tr>
           </table>
           <!--end Content wrapper-->
+          <img src="{{mixpanelPixelURL}}"></img>
         </td>
       </tr>
     </table>
