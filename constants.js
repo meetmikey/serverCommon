@@ -312,7 +312,13 @@ define('BASE_DAYS_LIMIT_BASIC_PLAN', 365);
 
 define('REFERRAL_EXTRA_DAYS', 30);
 
+define('PROMOTION_TYPE_CHROMESTORE_REVIEW', 'chromeStoreReview');
+
+define('PROMOTION_TYPE_FACEBOOK_LIKE', 'facebookLike');
+
 define('CHROMESTORE_REVIEW_EXTRA_DAYS', 15);
+
+define('FACEBOOK_LIKE_EXTRA_DAYS', 15);
 
 define('PLAN_BASIC', 'basic');
 define('PLAN_PRO', 'pro');
