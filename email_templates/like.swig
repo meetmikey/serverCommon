@@ -79,7 +79,9 @@
                 <table width="90%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#f5f5f5;">
                   <tr>
                     <td class="profile-box" width="8%">
-                      <img style="width:100%; height:auto; overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;" class="profile-pic" src="{{senderImage}}"></img>
+                      {{#if senderImage}}
+                        <img style="width:100%; height:auto; overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;" class="profile-pic" src="{{senderImage}}"></img>
+                      {{/if}}
                     </td>
                     <td width="4%"></td>
                     <td><strong>{{senderName}}</strong> likes <strong>
@@ -237,7 +239,9 @@
             </tr>
           </table>
           <!--end Content wrapper-->
-          <img src="{{mixpanelPixelURL}}"></img>
+          {{#if mixpanelPixelURL}}
+            <img src="{{mixpanelPixelURL}}"></img>
+          {{/if}}
         </td>
         <td bgcolor="#f5f5f5" width="3%">
         </td>
