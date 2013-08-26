@@ -51,7 +51,7 @@ if ( process.env.LOCAL_QUEUE_PREFIX ) {
 
 if (environment == 'production') {
   domain = 'api.meetmikey.com';
-  elasticSearchNodes = [{ host : 'esa.meetmikey.com', port : 9201 }, { host : 'esb.meetmikey.com', port : 9201 }];
+  elasticSearchNodes = [{ host : 'esa.meetmikey.com', port : 9201, secure : true}, { host : 'esb.meetmikey.com', port : 9201, secure : true }];
   elasticSearchIsSecure = true;
   awsBucket = 'mikeymail';
   queuePrefix = 'prod';
