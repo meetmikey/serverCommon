@@ -52,8 +52,7 @@
     <!-- <span style="display: none; color:#222; line-height: 0;">{{senderName}} likes {% if isLink %}{{title}}{% else %}{{filename}}{% endif %}</span> -->
     <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="font-family: Arial, sans-serif; color:#222;">
       <tr>
-        <td bgcolor="#f5f5f5" width="3%">
-        <td bgcolor="#f5f5f5" width="94%">
+        <td bgcolor="#f5f5f5" width="100%">
           <!--Content wrapper-->
           <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="content_wrap">
             <tr>
@@ -122,19 +121,18 @@
                   
                   <tr>
                     <td width="3%"></td>
-                    <td colspan="3" style="v-align:top; color: #44444; overflow:hidden; font-size: 14px;">
-                       <!-- <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff; margin-top:10px;">
+                    <td colspan="3">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff; margin-top:10px;">
                           <tr>
                             <td style="overlow:hidden; height:68px;" width="16%">
                               <img style="width:100%; height:auto;" src="{{diffImage}}"></img>
                             </td>
                             <td width="3%"></td>
                             <td style="v-align:top; height: 68px; color: #44444; overflow:hidden; font-size: 14px;">
-                                                       
+                              {{summary}}                          
                             </td>
                           </tr>
-                        </table> -->
-                      {{summary}} 
+                        </table>
                     </td>
                     <td width="3%"></td>
                   </tr>
@@ -233,13 +231,10 @@
                 </table>
 
               </td>
-
             </tr>
           </table>
           <!--end Content wrapper-->
           <img src="{{mixpanelPixelURL}}"></img>
-        </td>
-        <td bgcolor="#f5f5f5" width="3%">
         </td>
       </tr>
     </table>
