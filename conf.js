@@ -27,7 +27,6 @@ var azureStorageAccount = 'mikeymaillocal';
 var azureStorageAccessKey = 'aQHFv+BS2/K920hRjtjrfWggqD1/liGGiKiNWdqfyuN18De7P106Vq/g8KKuz07QNczM+YmRzwVDUshpjcxVaA==';
 
 var elasticSearchNodes = [{host : 'localhost', port : 9200}];
-var elasticSearchIsSecure = false;
 
 var cryptoAESSecret = 'M45Iksu09349)(*$(jsdL:KD';
 
@@ -52,7 +51,6 @@ if ( process.env.LOCAL_QUEUE_PREFIX ) {
 if (environment == 'production') {
   domain = 'api.meetmikey.com';
   elasticSearchNodes = [{ host : 'esa.meetmikey.com', port : 9201, secure : true}, { host : 'esb.meetmikey.com', port : 9201, secure : true }];
-  elasticSearchIsSecure = true;
   awsBucket = 'mikeymail';
   queuePrefix = 'prod';
   var secureConf = require('./secureConf');
@@ -171,7 +169,6 @@ module.exports = {
   , domain: domain
   , elasticSearch: {
       nodes: elasticSearchNodes
-    , useSSL: elasticSearchIsSecure
     , indexName: 'v3'
     , indexAlias : 'v3'
     , mappingConfigs: [
