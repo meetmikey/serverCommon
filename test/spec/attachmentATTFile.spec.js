@@ -32,5 +32,7 @@ describe('attachmentATTFile', function() {
     expect( attachmentUtils.isATTFile( 'ATT00001..html' ) ).toBe( true );
     expect( attachmentUtils.isATTFile( 'ATT00001.html' ) ).toBe( true );
     expect( attachmentUtils.isATTFile( 'ATT01537.html' ) ).toBe( true );
+
+    expect( attachmentUtils.isATTFile( 'ATT00005.htm' ) ).toBe( true );
   });
 })
