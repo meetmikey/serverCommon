@@ -52,7 +52,8 @@
     <!-- <span style="display: none; color:#222; line-height: 0;">{{senderName}} likes {% if isLink %}{{title}}{% else %}{{filename}}{% endif %}</span> -->
     <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="font-family: Arial, sans-serif; color:#222;">
       <tr>
-        <td bgcolor="#f5f5f5" width="100%">
+        <td bgcolor="#f5f5f5" width="3%">
+        <td bgcolor="#f5f5f5" width="94%">
           <!--Content wrapper-->
           <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="content_wrap">
             <tr>
@@ -78,7 +79,9 @@
                 <table width="90%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#f5f5f5;">
                   <tr>
                     <td class="profile-box" width="8%">
-                      <img style="width:100%; height:auto; overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;" class="profile-pic" src="{{senderImage}}"></img>
+                      {% if senderImage %}
+                        <img style="width:100%; height:auto; overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;" class="profile-pic" src="{{senderImage}}"></img>
+                      {% endif %}
                     </td>
                     <td width="4%"></td>
                     <td><strong>{{senderName}}</strong> likes <strong>
@@ -121,18 +124,19 @@
                   
                   <tr>
                     <td width="3%"></td>
-                    <td colspan="3">
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff; margin-top:10px;">
+                    <td colspan="3" style="v-align:top; color: #44444; overflow:hidden; font-size: 14px;">
+                       <!-- <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff; margin-top:10px;">
                           <tr>
                             <td style="overlow:hidden; height:68px;" width="16%">
                               <img style="width:100%; height:auto;" src="{{diffImage}}"></img>
                             </td>
                             <td width="3%"></td>
                             <td style="v-align:top; height: 68px; color: #44444; overflow:hidden; font-size: 14px;">
-                              {{summary}}                          
+                                                       
                             </td>
                           </tr>
-                        </table>
+                        </table> -->
+                      {{summary}} 
                     </td>
                     <td width="3%"></td>
                   </tr>
@@ -208,7 +212,7 @@
 
 
                 <!--Footer-->
-                <table align="center"  width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Open Sans',sans-serif;font-size: 10px;font-weight: bold;letter-spacing: 1px;line-height: 24px;text-transform: uppercase;">
+                <table align="center"  width="90%" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Open Sans',sans-serif;font-size: 10px;font-weight: bold;letter-spacing: 1px;line-height: 24px;text-transform: uppercase;">
                   <tr align="center"  height="14px">
                     <td>
                     </td>
@@ -231,10 +235,15 @@
                 </table>
 
               </td>
+
             </tr>
           </table>
           <!--end Content wrapper-->
-          <img src="{{mixpanelPixelURL}}"></img>
+          {% if mixpanelPixelURL %}
+            <img src="{{mixpanelPixelURL}}"></img>
+          {% endif %}
+        </td>
+        <td bgcolor="#f5f5f5" width="3%">
         </td>
       </tr>
     </table>
