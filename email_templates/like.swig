@@ -184,7 +184,7 @@
                   <tr>
                     <td  width="3%"></td>
                     <td>
-                      <img style="width:100%; height:auto;" class="profile-pic" src="{{image}}"></img>
+                      <img style="width:100%; height:auto;" class="profile-pic" src="{{attachmentImage}}"></img>
                     </td>
                     <td width="3%"></td>
                     <td>
