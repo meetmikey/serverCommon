@@ -84,7 +84,7 @@
                       {% endif %}
                     </td>
                     <td width="4%"></td>
-                    <td><strong>{{senderName}}</strong> likes <strong>
+                    <td><strong>{{senderName}}</strong> just liked <strong>
                       {% if isLink %}
                       <strong><a style="color:#2c75ab; text-decoration:none;" href="{{ url }}">{{title}}</a></strong>
                       {% else %}
@@ -110,7 +110,6 @@
                     <td  width="3%"></td>
                     <td width="6%" style="overlow:hidden; height:auto;">
                       <img style="height:auto; width:100%;" src="{{linkFavicon}}"></img>
-                      <img style="height:auto; width:100%;" src="{{linkImage}}"></img>
                     </td>
                     <td  width="3%"></td>
                     <td style="font-size:18px; line-height:28px; font-weight:bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
@@ -126,18 +125,18 @@
                   <tr>
                     <td width="3%"></td>
                     <td colspan="3" style="v-align:top; color: #44444; overflow:hidden; font-size: 14px;">
-                       <!-- <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff; margin-top:10px;">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff; margin-top:10px;">
                           <tr>
                             <td style="overlow:hidden; height:68px;" width="16%">
-                              <img style="width:100%; height:auto;" src="{{diffImage}}"></img>
+                              <img style="height:auto; width:100%;" src="{{linkImage}}"></img>
                             </td>
                             <td width="3%"></td>
                             <td style="v-align:top; height: 68px; color: #44444; overflow:hidden; font-size: 14px;">
-                                                       
+                              {{summary}}                          
                             </td>
                           </tr>
-                        </table> -->
-                      {{summary}} 
+                        </table> 
+                      
                     </td>
                     <td width="3%"></td>
                   </tr>
