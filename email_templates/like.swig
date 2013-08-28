@@ -80,22 +80,16 @@
                   <tr>
                     <td width="3%"></td>
                     <td class="profile-box" width="8%">
-                      <!-- AJL trying to sub in the avatar image. Still needs to properly connected in -->
-                      {% if senderImage %}
-                        <img style="width:100%; height:auto; overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;" class="profile-pic" src="{{senderImage}}"></img>
-                      {% else %}
-                        <img style="width:100%; height:auto; overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;" class="profile-pic" src="http://meetmikey.com/cdn/img/avatar.png"></img>
-                      {% endif %}
+                      <img style="width:100%; height:auto; overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;" class="profile-pic" src="{{senderImage}}"></img>
                     </td>
                     <td width="2%"></td>
                     <td width="82%">
-                      <!-- AJL Want this to say Andrew just liked Justin's link -->
-                      <strong>{{senderName}}</strong> just liked <strong>{{originName}}'s {{resourceType}}. 
-                      <!-- {% if isLink %}
-                      <strong><a style="color:#2c75ab; text-decoration:none;" href="{{ url }}">{{title}}</a></strong>
+                      <strong>{{senderName}}</strong> just liked <strong>
+                      {% if originalSenderName %}
+                        {{originalSenderName}}'s
                       {% else %}
-                      <strong>{{filename}}</strong>
-                      {% endif %} -->
+                        a{% if resourceTypeBeginsWithAVowel %}n{% endif %}
+                      {% endif %} {{resourceType}}.
                     </td>
                     <td width="3%"></td>
                   </tr>
@@ -131,22 +125,19 @@
                   <tr>
                     <td width="3%"></td>
                     <td colspan="3" width="94%" style="v-align:top; color: #44444; overflow:hidden; font-size: 14px;">
-                        <!-- AJL Was trying to make it so that if there was no linkImage, just the summary would appear -->
-                        {{% if has linkImage %}}
                         <table width="94%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff; margin-top:10px;">
                           <tr>
+                            {% if linkImage %}
                             <td style="overlow:hidden;" width="15%">
                               <img style="height:auto; width:100%" src="{{linkImage}}"></img>
                             </td>
                             <td width="2%"></td>
+                            {% endif %}
                             <td width="77%" style="v-align:top; height: 80px; color: #44444; overflow:hidden; font-size: 14px;">
                               {{summary}}                          
                             </td>
                           </tr>
                         </table>
-                        {{% else %}}
-                          {{summary}}  
-                        {% endif %}
                     </td>
                     <td width="3%"></td>
                   </tr>
