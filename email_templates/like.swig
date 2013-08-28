@@ -52,7 +52,7 @@
     <!-- <span style="display: none; color:#222; line-height: 0;">{{senderName}} likes {% if isLink %}{{title}}{% else %}{{filename}}{% endif %}</span> -->
     <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="font-family: Arial, sans-serif; color:#222;">
       <tr>
-        <td bgcolor="#f5f5f5" width="3%">
+        <td bgcolor="#f5f5f5" width="3%"></td>
         <td bgcolor="#f5f5f5" width="94%">
           <!--Content wrapper-->
           <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="content_wrap">
@@ -76,22 +76,23 @@
               <td width="100%">
 
                 <!--Header-->
-                <table width="90%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#f5f5f5;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#f5f5f5;">
                   <tr>
-                    <td class="profile-box" width="8%">
+                    <td width="20px"></td>
+                    <td class="profile-box" width="60px">
                       {% if senderImage %}
                         <img style="width:100%; height:auto; overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;" class="profile-pic" src="{{senderImage}}"></img>
                       {% endif %}
                     </td>
-                    <td width="4%"></td>
-                    <td><strong>{{senderName}}</strong> just liked <strong>
+                    <td width="20px"></td>
+                    <td width="480px"><strong>{{senderName}}</strong> just liked <strong>
                       {% if isLink %}
                       <strong><a style="color:#2c75ab; text-decoration:none;" href="{{ url }}">{{title}}</a></strong>
                       {% else %}
                       <strong>{{filename}}</strong>
                       {% endif %}
                     </td>
-                    <td width="4%"></td>
+                    <td width="20px"></td>
                   </tr>
                   <td colspan="5" height="14px">
                   </td>
@@ -101,21 +102,21 @@
                 
                 <!--Link-->
                 {% if isLink %}
-                <table width="90%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
                   <tr>
                     <td colspan="5" height="18px" width="100%"></td>
                   </tr>
                   
                   <tr>
-                    <td  width="3%"></td>
-                    <td width="6%" style="overlow:hidden; height:auto;">
-                      <img style="height:auto; width:100%;" src="{{linkFavicon}}"></img>
+                    <td  width="20px"></td>
+                    <td width="20px" style="overlow:hidden; height:auto;">
+                      <img style="height:auto; width:20px;" src="{{linkFavicon}}"></img>
                     </td>
-                    <td  width="3%"></td>
-                    <td style="font-size:18px; line-height:28px; font-weight:bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    <td  width="10px"></td>
+                    <td width="530px" style="font-size:18px; line-height:28px; font-weight:bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                       <a href="{{URL}}" style="color:#2c75ab; text-decoration:none;">{{title}}</a>
                     </td>
-                    <td width="3%"></td>
+                    <td width="20px"></td>
                   </tr>
 
                   <tr>
@@ -123,22 +124,22 @@
                   </tr>
                   
                   <tr>
-                    <td width="3%"></td>
-                    <td colspan="3" style="v-align:top; color: #44444; overflow:hidden; font-size: 14px;">
+                    <td width="20px"></td>
+                    <td colspan="3" width="560px" style="v-align:top; color: #44444; overflow:hidden; font-size: 14px;">
                         <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff; margin-top:10px;">
                           <tr>
-                            <td style="overlow:hidden; height:68px;" width="16%">
-                              <img style="height:auto; width:100%;" src="{{linkImage}}"></img>
+                            <td style="overlow:hidden;" width="100px">
+                              <img style="height:auto; width:100%" src="{{linkImage}}"></img>
                             </td>
-                            <td width="3%"></td>
-                            <td style="v-align:top; height: 68px; color: #44444; overflow:hidden; font-size: 14px;">
+                            <td width="10px"></td>
+                            <td width="450px" style="v-align:top; height: 80px; color: #44444; overflow:hidden; font-size: 14px;">
                               {{summary}}                          
                             </td>
                           </tr>
                         </table> 
                       
                     </td>
-                    <td width="3%"></td>
+                    <td width="20px"></td>
                   </tr>
                   
                   <tr>
@@ -150,23 +151,23 @@
 
                 <!--Attachment-->
                 {% if isAttachment %}
-                <table width="90%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
                   <tr>
                     <td colspan="5" height="18px" width="100%"></td>
                   </tr>
                   <tr>
-                    <td  width="3%"></td>
-                    <td width="4%">
-                      <img style="width:100%; height:auto;" class="profile-pic" src="{{fileIcon}}"></img>
+                    <td  width="20px"></td>
+                    <td width="40px">
+                      <img style="width:100%; height:auto;" src="{{fileIcon}}"></img>
                     </td>
-                    <td width="3%"></td>
-                    <td>
+                    <td width="10px"></td>
+                    <td width="510px">
                       <div style="max-width:80%; font-size:18px; line-height:22px; font-weight:bold; display:inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                         <a href="#" style="color:#2c75ab; text-decoration:none;">{{filename}}</a>
                       </div>
-                      <span style="color:#77777; font-size:13px;">{{fileSize}}</span>
+                      <span style="color:#77777; font-size:13px; margin-left:6px;">{{fileSize}}</span>
                     </td>
-                    <td width="3%"></td>
+                    <td width="20px"></td>
                   </tr>
                   <tr>
                     <td colspan="5" height="18px" width="100%"></td>
@@ -177,30 +178,30 @@
 
                 <!--Image-->
                 {% if isImage %}
-                <table width="90%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff;">
                   <tr>
                     <td colspan="5" height="18px" width="100%"></td>
                   </tr>
                   <tr>
-                    <td  width="3%"></td>
-                    <td>
+                    <td  width="20px"></td>
+                    <td width="560px">
                       <img style="width:100%; height:auto;" class="profile-pic" src="{{attachmentImage}}"></img>
                     </td>
-                    <td width="3%"></td>
+                    <td width="20px"></td>
                     <td>
                   </tr>
                   <tr>
                     <td colspan="3" height="10px" width="100%"></td>
                   </tr>
                   <tr>
-                    <td  width="3%"></td>
+                    <td  width="20px"></td>
                     <td>
                       <div style="max-width:80%; font-size:18px; line-height:22px; font-weight:bold; display:inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                         <a href="#" style="color:#2c75ab; text-decoration:none;">{{filename}}</a>
                       </div>
-                      <span style="color:#77777; font-size:13px; margin-left: 16px;">{{fileSize}}</span>
+                      <span style="color:#77777; font-size:13px; margin-left: 6px;">{{fileSize}}</span>
                     </td>
-                    <td width="3%"></td>
+                    <td width="20px"></td>
                     <td>
                   </tr>
                   <tr>
@@ -212,7 +213,7 @@
 
 
                 <!--Footer-->
-                <table align="center"  width="90%" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Open Sans',sans-serif;font-size: 10px;font-weight: bold;letter-spacing: 1px;line-height: 24px;text-transform: uppercase;">
+                <table align="center"  width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Open Sans',sans-serif;font-size: 10px;font-weight: bold;letter-spacing: 1px;line-height: 24px;text-transform: uppercase;">
                   <tr align="center"  height="14px">
                     <td>
                     </td>
@@ -235,6 +236,7 @@
                 </table>
 
               </td>
+              <td bgcolor="#f5f5f5" width="3%"></td>
 
             </tr>
           </table>
