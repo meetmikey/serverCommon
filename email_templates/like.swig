@@ -109,6 +109,7 @@
                   <tr>
                     <td  width="3%"></td>
                     <td width="6%" style="overlow:hidden; height:auto;">
+                      <img style="height:auto; width:100%;" src="{{linkFavicon}}"></img>
                       <img style="height:auto; width:100%;" src="{{linkImage}}"></img>
                     </td>
                     <td  width="3%"></td>
@@ -184,7 +185,7 @@
                   <tr>
                     <td  width="3%"></td>
                     <td>
-                      <img style="width:100%; height:auto;" class="profile-pic" src="{{image}}"></img>
+                      <img style="width:100%; height:auto;" class="profile-pic" src="{{attachmentImage}}"></img>
                     </td>
                     <td width="3%"></td>
                     <td>

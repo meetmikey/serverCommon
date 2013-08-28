@@ -348,3 +348,5 @@ define('CLOUD_FRONT_BASE_URL', 'http://d2i23yl88vtt8s.cloudfront.net/cdn/');
 define('FAVICON_BASE_URL', 'https://www.google.com/s2/u/0/favicons?domain=');
 
 define('MIXPANEL_TOKEN', '4025d8a58a875ce9a39db05bcf86fd71');
+
+define('DEFAULT_SIGNED_URL_EXPIRE_TIME_MINUTES', 1440);
