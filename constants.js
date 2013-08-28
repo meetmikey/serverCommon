@@ -5,6 +5,12 @@ function define(name, value) {
   });
 }
 
+
+define('KILOBYTE', 1024);
+define('MEGABYTE', 1024*1024);
+define('GIGABYTE', 1024*1024*1024);
+define('TERABYTE', 1024*1024*1024*1024);
+
 define ('ONE_DAY_IN_MS', 24*60*60*1000);
 
 define ('ELASTIC_SEARCH_POLL_INTERVAL', 30000);
