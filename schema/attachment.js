@@ -53,10 +53,9 @@ var Attachment = new Schema({
   , indexLockTS : {type : Date}
 });
 
-Attachment.index({ userId: 1, hash : 1, fileSize : 1, gmThreadId: 1 }, {unique : true});
 Attachment.index({ userId: 1, isPromoted: 1, isImage: 1, isDeleted : 1, isFavorite :1, sentDate: -1 });
-Attachment.index({ hash: 1, fileSize: 1 });
 Attachment.index({ userId: 1, gmThreadId: 1, isPromoted: 1, isDeleted : 1 });
+Attachment.index({ hash : 1, fileSize : 1, userId: 1, gmThreadId: 1 }, {unique : true});
 
 mongoose.model('Attachment', Attachment);
 exports.AttachmentModel = mongoose.model('Attachment');
