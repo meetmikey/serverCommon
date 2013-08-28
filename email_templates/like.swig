@@ -204,9 +204,9 @@
                   </tr>
                   <tr>
                     <td  width="3%"></td>
-                    <td>
-                      <div style="max-width:80%; font-size:18px; line-height:22px; font-weight:bold; display:inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                        <div style="display:inline-block; text-decoration:none;">{{filename}}</div>
+                    <td width="94%">
+                      <div style="max-width:80%; display:inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        <div style="display:inline-block; text-decoration:none; font-size:18px; line-height:22px; font-weight:bold;">{{filename}}</div>
                       </div>
                       <span style="color:#77777; font-size:13px; margin-left: 6px;">{{fileSize}}</span>
                     </td>
