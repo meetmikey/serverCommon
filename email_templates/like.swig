@@ -80,6 +80,7 @@
                   <tr>
                     <td width="3%"></td>
                     <td class="profile-box" width="8%">
+                      <!-- AJL trying to sub in the avatar image. Still needs to properly connected in -->
                       {% if senderImage %}
                         <img style="width:100%; height:auto; overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;" class="profile-pic" src="{{senderImage}}"></img>
                       {% else %}
@@ -87,12 +88,14 @@
                       {% endif %}
                     </td>
                     <td width="2%"></td>
-                    <td width="82%"><strong>{{senderName}}</strong> just liked <strong>
-                      {% if isLink %}
+                    <td width="82%">
+                      <!-- AJL Want this to say Andrew just liked Justin's link -->
+                      <strong>{{senderName}}</strong> just liked <strong>{{originName}}'s {{resourceType}}. 
+                      <!-- {% if isLink %}
                       <strong><a style="color:#2c75ab; text-decoration:none;" href="{{ url }}">{{title}}</a></strong>
                       {% else %}
                       <strong>{{filename}}</strong>
-                      {% endif %}
+                      {% endif %} -->
                     </td>
                     <td width="3%"></td>
                   </tr>
@@ -128,18 +131,22 @@
                   <tr>
                     <td width="3%"></td>
                     <td colspan="3" width="94%" style="v-align:top; color: #44444; overflow:hidden; font-size: 14px;">
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff; margin-top:10px;">
+                        <!-- AJL Was trying to make it so that if there was no linkImage, just the summary would appear -->
+                        {{% if has linkImage %}}
+                        <table width="94%" cellpadding="0" cellspacing="0" border="0" align="left" style="background:#ffffff; margin-top:10px;">
                           <tr>
-                            <td style="overlow:hidden;" width="10%">
+                            <td style="overlow:hidden;" width="15%">
                               <img style="height:auto; width:100%" src="{{linkImage}}"></img>
                             </td>
                             <td width="2%"></td>
-                            <td width="88%" style="v-align:top; height: 80px; color: #44444; overflow:hidden; font-size: 14px;">
+                            <td width="77%" style="v-align:top; height: 80px; color: #44444; overflow:hidden; font-size: 14px;">
                               {{summary}}                          
                             </td>
                           </tr>
-                        </table> 
-                      
+                        </table>
+                        {{% else %}}
+                          {{summary}}  
+                        {% endif %}
                     </td>
                     <td width="3%"></td>
                   </tr>
@@ -186,24 +193,24 @@
                   </tr>
                   <tr>
                     <td  width="3%"></td>
-                    <td width="">
+                    <td width="94%">
                       <img style="width:100%; height:auto;" class="profile-pic" src="{{attachmentImage}}"></img>
                     </td>
-                    <td width="20px"></td>
+                    <td width="3%"></td>
                     <td>
                   </tr>
                   <tr>
                     <td colspan="3" height="10px" width="100%"></td>
                   </tr>
                   <tr>
-                    <td  width="20px"></td>
+                    <td  width="3%"></td>
                     <td>
                       <div style="max-width:80%; font-size:18px; line-height:22px; font-weight:bold; display:inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                         <div style="display:inline-block; text-decoration:none;">{{filename}}</div>
                       </div>
                       <span style="color:#77777; font-size:13px; margin-left: 6px;">{{fileSize}}</span>
                     </td>
-                    <td width="20px"></td>
+                    <td width="3%"></td>
                     <td>
                   </tr>
                   <tr>
