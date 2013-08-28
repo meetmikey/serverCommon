@@ -50,7 +50,8 @@ var User = new Schema({
   billingPlan: {type: String, enum: ['free', 'basic', 'pro', 'team'], default: 'free'},
   billingPlanStartDate: {type: Date},
   billingPlanEndDate: {type: Date},
-  lastResumeJobEndDate : {type : Date, default: Date.now}
+  lastResumeJobEndDate : {type : Date, default: Date.now},
+  lastLogin : {type : Date}
 }, schemaOptions );
 
 // virtual fields for specialized links
