@@ -167,7 +167,6 @@ var user = { __v: 0,
   invalidToken: false,
   gmailScrapeRequested: true }
 
-/*
 emailTemplates.getLikeEmail( user, linkModel, 'link', false, function (err, emailText, emailHTML, attachments) {
   if (err) {
     console.log (err);
@@ -176,12 +175,11 @@ emailTemplates.getLikeEmail( user, linkModel, 'link', false, function (err, emai
       if (err) {
         console.log (err)
       } else {
-        console.log ('success!')
+        console.log ('success link!')
       }
     });
   }
 });
-*/
 
 
 emailTemplates.getLikeEmail( user, imageModel, 'image', false, function (err, emailText, emailHTML, attachments) {
@@ -192,14 +190,13 @@ emailTemplates.getLikeEmail( user, imageModel, 'image', false, function (err, em
       if (err) {
         console.log (err)
       } else {
-        console.log ('success!')
+        console.log ('success image!')
       }
     });
   }
 });
 
 
-/*
 emailTemplates.getLikeEmail( user, attachmentModel, 'attachment', false, function (err, emailText, emailHTML, attachments) {
   if (err) {
     console.log (err);
@@ -208,8 +205,8 @@ emailTemplates.getLikeEmail( user, attachmentModel, 'attachment', false, functio
       if (err) {
         console.log (err)
       } else {
-        console.log ('success!')
+        console.log ('success attachment!')
       }
     });
   }
-});*/
+});
