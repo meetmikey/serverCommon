@@ -6,6 +6,7 @@
       "aws-lib" : "=0.2.1"
     , "underscore" : "=1.5.1"
     , "swig" : "=0.14.0"
+    , "mimelib" : "=0.2.12"
     , "bases" : "=0.1.1"
     , "winston" : "=0.6.2"
     , "knox": "=0.7.0"
