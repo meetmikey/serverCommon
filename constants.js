@@ -51,7 +51,7 @@ define( 'MAX_RETRY_WAIT_TIME_MS', 20000);
 
 define ('SQS_RETRIES', 5);
 
-define ('CLOUD_STORAGE_RETRIES', 5);
+define ('CLOUD_STORAGE_RETRIES', 6);
 
 define('RESPONSE_MAX_WAIT_MS', 5000);
 

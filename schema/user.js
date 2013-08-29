@@ -51,7 +51,8 @@ var User = new Schema({
   billingPlanStartDate: {type: Date},
   billingPlanEndDate: {type: Date},
   lastResumeJobEndDate : {type : Date, default: Date.now},
-  lastLogin : {type : Date}
+  lastLogin : {type : Date},
+  imapDomainError : {type : Boolean}
 }, schemaOptions );
 
 // virtual fields for specialized links

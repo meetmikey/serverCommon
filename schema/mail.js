@@ -31,12 +31,12 @@ var Mail = new Schema({
   , uid : {type : Number, required : true}
   , seqNo : {type : Number}
   , mailboxId : {type : Schema.ObjectId}
-  , s3Path : {type : String}
-  , mmDone : {type : Boolean}
-  , failUpload : {type : Boolean}
+  , s3Path : {type : String} // note this is more generically azure path
+  , inAzure : {type : Boolean}
+  , mmDone : { type : Boolean }
   , bodyInS3 : {type : Boolean}
   , size : {type : Number}
-  , tries : {type : Number, default : 0}
+  , tries : {type : Number, default : 0} // this is tries for mailReader
   , mailReaderState: {type: String, enum: ['started', 'softFail', 'hardFail', 'done']}
   , linkExtractorState: {type: String, enum: ['tooManyLinks', 'tooMuchHTML', 'ignored', 'noLinks', 'started', 'done']}
   , gmDate : {type: Date}
