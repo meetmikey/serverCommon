@@ -13,6 +13,7 @@
     table[class=w15], td[class=w15], img[class=w15] { width:15px !important; }
     table[class=w30], td[class=w30], img[class=w30] { width:10px !important; }
     table[class=w60], td[class=w60], img[class=w60] { width:40px !important; }
+    table[class=w80], td[class=w80], img[class=w80] { width:80px !important; }
     table[class=w125], td[class=w125], img[class=w125] { width:80px !important; }
     table[class=w130], td[class=w130], img[class=w130] { width:55px !important; }
     table[class=w140], td[class=w140], img[class=w140] { width:90px !important; }
@@ -36,9 +37,9 @@
     table[class=h0], td[class=h0] { height: 0 !important; }
     p[class=footer-content-left] { text-align: center !important; }
     #headline p { font-size: 20px !important; }
-    .article-content, #left-sidebar{ -webkit-text-size-adjust: 70% !important; -ms-text-size-adjust: 70% !important; }
-    .header-content, .footer-content-left {-webkit-text-size-adjust: 70% !important; -ms-text-size-adjust: 70% !important;}
-    .footer-text {-webkit-text-size-adjust: 50% !important; -ms-text-size-adjust: 50% !important;}
+    .article-content, #left-sidebar{ -webkit-text-size-adjust: 60% !important; -ms-text-size-adjust: 70% !important; }
+    .header-content, .article-title, .footer-content-left {-webkit-text-size-adjust: 70% !important; -ms-text-size-adjust: 70% !important;}
+    .footer-text {-webkit-text-size-adjust: 50% !important; -ms-text-size-adjust: 70% !important;}
     img { height: auto; line-height: 100%;}
     } 
     /* Client-specific Styles */
@@ -79,7 +80,7 @@
     .header-content a { font-weight: bold; color: #ffffff; text-decoration: none; }
     #headline p { color: #444444; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; font-size: 20px; text-align: left; display: inline-block; margin-top:0px; margin-bottom:20px; }
     #headline p a { color: #444444; text-decoration: none; }
-    .article-title { font-size: 18px !important; line-height:20px; color: #888888; margin-top:18px; margin-bottom:0px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; }
+    .article-title { font-size: 18px !important; line-height:20px; color: #888888; margin-top:0px; margin-bottom:0px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; }
     .article-title a { color: #888888; text-decoration: none !important; }
     .article-title.with-meta {margin-bottom: 0;}
     .article-meta { font-size: 13px; line-height: 20px; color: #ccc; font-weight: bold; margin-top: 0;}
@@ -168,7 +169,7 @@
                                                                   
                                                                 <td>
                                                                     <div id="headline" style=
-                                                                    "color: #444444; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; margin-top:0px; margin-bottom:20px; display:inline-block;">
+                                                                    "color: #444444; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; margin-top:0px; margin-bottom:20px; display:inline-block; font-size:18px;">
                                                                     <strong>{{senderName}}</strong> just liked <strong>
                                                                       {% if originalSenderName %}
                                                                         {{originalSenderName}}'s
@@ -232,12 +233,12 @@
                                                                    
                                                                       
                                                                                 <td>
-                                                                                   <p class=
-                                                                                    "article-title"
-                                                                                    style=
-                                                                                    "text-align: left; font-size: 18px; line-height:20px; color: #888888; margin-top:0px; margin-bottom:18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;">
-                                                                                    <strong>{{filename}}</strong>&nbsp;&nbsp;{{fileSize}}
-                                                                                    </p>
+                                                                                   <div class="article-title" style=
+                                                                                        "text-align: left; font-size: 18px; line-height:20px; color: #888888; margin-top:0px; margin-bottom:18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;">
+                                                                                     <strong>{{filename}}</strong>&nbsp;&nbsp;{{fileSize}}
+                                                                                    </div>
+
+                                                                                    
                                                                                 </td>
                                                                             </tr>
                                                                         </tbody>
@@ -268,12 +269,12 @@
                                                                 <td class=
                                                                 "w580" width=
                                                                 "580">
-                                                                    <p class=
+                                                                    <div class=
                                                                     "article-title"
                                                                     style=
                                                                     "text-align: left; font-size: 18px; line-height:20px; color: #888888; margin-top:0px; margin-bottom:18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;">
                                                                     <strong>{{filename}}</strong>&nbsp;&nbsp;{{fileSize}}
-                                                                    </p>
+                                                                    </div>
                                                                 </td>
                                                             </tr>
 
@@ -337,12 +338,12 @@
                                                                                 <td class=
                                                                                     "article-title" style=
                                                                                     "text-align: left; margin-top: 0px; color: #888888;  margin-bottom:18px; font-family: 'Helvetica Neue', text-decoration: none !important; Arial, Helvetica, Geneva, sans-serif;">
-                                                                                    <p class=
+                                                                                    <div class=
                                                                                     "article-title"><a class=
                                                                                     "article-title" href="{{linkURL}}" style="text-decoration: none; color: #888888; font-size: 18px !important;"> 
                                                                                     <strong>{{linkTitle}}</strong>  
                                                                                     </a>
-                                                                                    </p>
+                                                                                    </div>
                                                                                 </td>
                                                                             </tr>
                                                                         </tbody>
@@ -370,40 +371,33 @@
 
                                                             <tr>
                                                                 <td class=
-                                                                "w140" valign=
+                                                                "w80" valign=
                                                                 "top" width=
-                                                                "140">
+                                                                "80">
                                                                     <table border="0"
                                                                     cellpadding="0"
                                                                     cellspacing="0"
                                                                     class=
-                                                                    "w140"
+                                                                    "w80"
                                                                     width=
-                                                                    "140">
+                                                                    "80">
                                                                         <tbody>
-
                                                                             <tr>
-                                                                            <td class="w140"
-                                                                                height="10"
-                                                                                width="140">
-                                                                                </td>
+                                                                                <td height="4"></td>
                                                                             </tr>
 
+                                                                            
+
                                                                             <tr>
-                                                                            <td class="w140"
-                                                                                width="140">
+                                                                            <td class="w80"
+                                                                                width="80">
                                                                                 <div class="article-content" style="text-align: left">
                                                                                     <img style="height:auto; width:100%; border: 1px solid #f7f7f7;" src="{{linkImage}}"></img>
                                                                                 </div>
                                                                                 </td>
                                                                             </tr>
 
-                                                                            <tr>
-                                                                            <td class="w140"
-                                                                                height="10"
-                                                                                width="140">
-                                                                                </td>
-                                                                            </tr>
+                                                                           
                                                                         </tbody>
                                                                     </table>
                                                                 </td>
@@ -419,10 +413,7 @@
                                                                     >
                                                                         <tbody>
 
-                                                                            <tr>
-                                                                            <td height="10">
-                                                                                </td>
-                                                                            </tr>
+                                                                           
 
                                                                             <tr>
                                                                             <td>
@@ -434,26 +425,22 @@
                                                                             </td>
                                                                             </tr>
 
-                                                                            <tr>
-                                                                            <td height="10">
-                                                                                </td>
-                                                                            </tr>
+                                                                            
                                                                         </tbody>
                                                                     </table>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
+                                                    
                                                     {% else %}
+                                                    
                                                     <table border="0"
                                                     cellpadding="0"
                                                     cellspacing="0" class=
                                                     "w580" width="580">
                                                         <tbody>
-                                                            <tr>
-                                                                <td class="w580" width="580" height="10">
-                                                                </td>
-                                                            </tr>
+                                                            
                                                             <tr>
                                                                 <td class=
                                                                 "w580" valign=
@@ -466,10 +453,7 @@
                                                                     </div>
                                                                 </td>
                                                             </tr>
-                                                            <tr>
-                                                                <td class="w580" width="580" height="10">
-                                                                </td>
-                                                            </tr>
+                                                            
                                                         </tbody>                 
                                                     </table>
                                                     {% endif %}
@@ -483,6 +467,7 @@
                                     </table>
                                 </td>
                             </tr>
+                            
 
                             <tr>
                                 <td class="w640" height="15" style=
