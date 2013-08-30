@@ -79,8 +79,8 @@
     .header-content a { font-weight: bold; color: #ffffff; text-decoration: none; }
     #headline p { color: #444444; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; font-size: 20px; text-align: left; display: inline-block; margin-top:0px; margin-bottom:20px; }
     #headline p a { color: #444444; text-decoration: none; }
-    .article-title { font-size: 18px; line-height:20px; color: #888888; margin-top:0px; margin-bottom:18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; }
-    .article-title a { color: #888888; text-decoration: none; }
+    .article-title { font-size: 18px !important; line-height:20px; color: #888888; margin-top:18px; margin-bottom:0px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; }
+    .article-title a { color: #888888; text-decoration: none !important; }
     .article-title.with-meta {margin-bottom: 0;}
     .article-meta { font-size: 13px; line-height: 20px; color: #ccc; font-weight: bold; margin-top: 0;}
     .article-content { font-size: 15px; line-height: 20px; color: #444444; margin-top: 0px; margin-bottom: 18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; }
@@ -89,7 +89,7 @@
     .article-content ol, .article-content ul { margin-top:0px; margin-bottom:18px; margin-left:19px; padding:0; }
     .article-content li { font-size: 13px; line-height: 18px; color: #444444; }
     .article-content li a { color: #2c75ab; text-decoration:underline; }
-    .article-content p {margin-bottom: 15px;}
+    .article-content p {margin-bottom: 15px; margin-top: 0px;}
     .footer-content-left { font-size: 12px; line-height: 15px; color: #ededed; margin-top: 0px; margin-bottom: 15px; }
     .footer-content-left a { color: #ffffff; font-weight: bold; text-decoration: none; }
     .footer-content-right { font-size: 11px; line-height: 16px; color: #ededed; margin-top: 0px; margin-bottom: 15px; }
@@ -327,18 +327,21 @@
                                                                         <tbody>
                                                                             <tr>
                                                                                
-                                                                               <td style="vertical-align:top;" class="w15" width="15">   
+                                                                               <td class="w15" width="15">   
                                                                                     <img style="height:auto; width:100%;" src="{{linkFavicon}}"></img>
                                                                                </td> 
                                                                                 <td class="w15" width="15">
                                                                                 </td>
                                                                    
                                                                       
-                                                                                <td>
-                                                                                   <p class=
-                                                                                    "article-title">
-                                                                                    <strong><a style=
-                                                                                    "text-align: left; font-size: 15px; line-height:15px; margin-top: 0px; color: #888888;  margin-bottom:18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;" href="{{linkURL}}">{{linkTitle}}</a></strong>  
+                                                                                <td class=
+                                                                                    "article-title" style=
+                                                                                    "text-align: left; margin-top: 0px; color: #888888;  margin-bottom:18px; font-family: 'Helvetica Neue', text-decoration: none !important; Arial, Helvetica, Geneva, sans-serif;">
+                                                                                    <p class=
+                                                                                    "article-title"><a class=
+                                                                                    "article-title" href="{{linkURL}}" style="text-decoration: none; color: #888888; font-size: 18px !important;"> 
+                                                                                    <strong>{{linkTitle}}</strong>  
+                                                                                    </a>
                                                                                     </p>
                                                                                 </td>
                                                                             </tr>
@@ -492,7 +495,7 @@
                             </tr>
                             <tr>
                                 <td class="w640" width="640" align="center">
-                                    <div class="footer-text"><a href="{{referralLink}}" style="color:#222222; text-transform:uppercase; text-decoration: none; font-family: 'Open Sans',sans-serif; font-weight: bold; font-size:11px; letter-spacing: 1px;line-height: 24px;text-transform: uppercase;">Sent by Mikey for Gmail</a></div>
+                                    <div class="footer-text"><a href="{{referralLink}}" style="color:#444444; text-transform:uppercase; text-decoration: none; font-family: 'Open Sans',sans-serif; font-weight: bold; font-size:11px; letter-spacing: 1px;line-height: 24px;text-transform: uppercase;">Sent by Mikey for Gmail</a></div>
                                     {% if mixpanelPixelURL %}
                                         <img src="{{mixpanelPixelURL}}"></img>
                                     {% endif %}
