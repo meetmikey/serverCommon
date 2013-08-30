@@ -326,7 +326,7 @@
                                                                             <tr>
                                                                                
                                                                                <td style="vertical-align:top;" class="w15" width="15">   
-                                                                                    <img style="height:auto; width:100%; margin-top:14px;" src="{{linkFavicon}}"></img>
+                                                                                    <img style="height:auto; width:100%;" src="{{linkFavicon}}"></img>
                                                                                </td> 
                                                                                 <td class="w15" width="15">
                                                                                 </td>
@@ -336,7 +336,7 @@
                                                                                    <p class=
                                                                                     "article-title"
                                                                                     style=
-                                                                                    "text-align: left; font-size: 18px; line-height:20px; color: #888888; margin-top:10px; margin-bottom:18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;">
+                                                                                    "text-align: left; font-size: 15px; line-height:15px; margin-top: 0px; color: #888888;  margin-bottom:18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;">
                                                                                     <strong><a href="{{URL}}">{{title}}</a></strong>  
                                                                                     </p>
                                                                                 </td>
