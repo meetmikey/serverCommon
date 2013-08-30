@@ -12,7 +12,7 @@
     table[class=w10], td[class=w10], img[class=w10] { width:10px !important; }
     table[class=w15], td[class=w15], img[class=w15] { width:15px !important; }
     table[class=w30], td[class=w30], img[class=w30] { width:10px !important; }
-    table[class=w60], td[class=w60], img[class=w60] { width:60px !important; }
+    table[class=w60], td[class=w60], img[class=w60] { width:40px !important; }
     table[class=w125], td[class=w125], img[class=w125] { width:80px !important; }
     table[class=w130], td[class=w130], img[class=w130] { width:55px !important; }
     table[class=w140], td[class=w140], img[class=w140] { width:90px !important; }
@@ -224,7 +224,7 @@
                                                                             <tr>
                                                                                
                                                                                <td class="w60" width="60">   
-                                                                                    <img style="width:100%; height:auto;" src="{{fileIcon}}"></img>
+                                                                                    <img style="width:60px; height:auto;" src="{{fileIcon}}"></img>
                                                                                </td> 
                                                                                 <td class="w15" width="15">
                                                                                 </td>
@@ -283,13 +283,6 @@
                                                                 <img border="0"
                                                                 class="w580"
                                                                 width=
-                                                                "580"></td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td class=
-                                                                "w580" height=
-                                                                "15" width=
                                                                 "580"></td>
                                                             </tr>
 
