@@ -61,6 +61,8 @@ define ('MAX_NGINX_TIMEOUTS', 3);
 
 define('MAX_STREAM_TO_BUFFER', 31457280);
 
+define ('AZURE_UPLOAD_TIMEOUT', 60000);
+
 define('ERROR_TYPE_404', '404');
 
 define('DEFAULT_FIELDS_ATTACHMENT', 'userId filename contentType sentDate sender recipients image isImage hash fileSize isDeleted gmMsgId gmMsgHex docType attachmentThumbExists isPromoted mailCleanSubject isFavorite isLiked gmThreadId');
