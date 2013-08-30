@@ -35,9 +35,10 @@
     table[class*=hide], td[class*=hide], img[class*=hide], p[class*=hide], span[class*=hide] { display:none !important; }
     table[class=h0], td[class=h0] { height: 0 !important; }
     p[class=footer-content-left] { text-align: center !important; }
-    #headline p { font-size: 30px !important; }
-    .article-content, #left-sidebar{ -webkit-text-size-adjust: 90% !important; -ms-text-size-adjust: 90% !important; }
-    .header-content, .footer-content-left {-webkit-text-size-adjust: 80% !important; -ms-text-size-adjust: 80% !important;}
+    #headline p { font-size: 20px !important; }
+    .article-content, #left-sidebar{ -webkit-text-size-adjust: 70% !important; -ms-text-size-adjust: 70% !important; }
+    .header-content, .footer-content-left {-webkit-text-size-adjust: 70% !important; -ms-text-size-adjust: 70% !important;}
+    .footer-text {-webkit-text-size-adjust: 50% !important; -ms-text-size-adjust: 50% !important;}
     img { height: auto; line-height: 100%;}
     } 
     /* Client-specific Styles */
@@ -119,7 +120,7 @@
                     "w640" style="margin:0 10px;" width="640">
                         <tbody>
                             <tr>
-                                <td class="w640" height="20" width="640"></td>
+                                <td class="w640" height="15" width="640"></td>
                             </tr>
 
                             <tr>
@@ -141,7 +142,7 @@
                                                 <td class="w30" width="30">
                                                 </td>
 
-                                                <td class="w580" height="30"
+                                                <td class="w580" height="15"
                                                 width="580"></td>
 
                                                 <td class="w30" width="30">
@@ -167,7 +168,7 @@
                                                                   
                                                                 <td>
                                                                     <div id="headline" style=
-                                                                    "color: #444444; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; font-size: 20px; text-align: center; margin-top:0px; margin-bottom:20px; display:inline-block;">
+                                                                    "color: #444444; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; margin-top:0px; margin-bottom:20px; display:inline-block;">
                                                                     <strong>{{senderName}}</strong> just liked <strong>
                                                                       {% if originalSenderName %}
                                                                         {{originalSenderName}}'s
@@ -290,8 +291,8 @@
                                                                 <td class=
                                                                 "w580" width=
                                                                 "580">
-                                                                    <div class="article-content" style="text-align: left">
-                                                                    <img style="width:100%; height:auto; border: 1px solid #f7f7f7;" class="profile-pic" src="{{attachmentImage}}"></img>
+                                                                    <div class="article-content" style="text-align: center">
+                                                                    <img style="width:250px; height:auto; border: 1px solid #f7f7f7; margin-left: auto; margin-right: auto;" class="profile-pic" src="{{attachmentImage}}"></img>
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -321,6 +322,7 @@
                                                                 <td class=
                                                                 "w580" width=
                                                                 "580">
+                                                                    
                                                                     <table border="0" cellpadding="0" cellspacing="0" class="w580" width="580">
                                                                         <tbody>
                                                                             <tr>
@@ -334,15 +336,15 @@
                                                                       
                                                                                 <td>
                                                                                    <p class=
-                                                                                    "article-title"
-                                                                                    style=
-                                                                                    "text-align: left; font-size: 15px; line-height:15px; margin-top: 0px; color: #888888;  margin-bottom:18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;">
-                                                                                    <strong><a href="{{URL}}">{{title}}</a></strong>  
+                                                                                    "article-title">
+                                                                                    <strong><a style=
+                                                                                    "text-align: left; font-size: 15px; line-height:15px; margin-top: 0px; color: #888888;  margin-bottom:18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;" href="{{linkURL}}">{{linkTitle}}</a></strong>  
                                                                                     </p>
                                                                                 </td>
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
+                                                                    
                                                                 </td>
 
                                                             </tr>
@@ -356,6 +358,7 @@
                                                         </tbody>
                                                     </table>
 
+                                                    {% if linkImage %}
                                                     <table border="0"
                                                     cellpadding="0"
                                                     cellspacing="0" class=
@@ -364,35 +367,28 @@
 
                                                             <tr>
                                                                 <td class=
-                                                                "w180" valign=
+                                                                "w140" valign=
                                                                 "top" width=
-                                                                "180">
+                                                                "140">
                                                                     <table border="0"
                                                                     cellpadding="0"
                                                                     cellspacing="0"
                                                                     class=
-                                                                    "w180"
+                                                                    "w140"
                                                                     width=
-                                                                    "180">
+                                                                    "140">
                                                                         <tbody>
-                                                                            <tr>
-                                                                            <td class="w180"
-                                                                                width="180">
-                                                                                <img border="0"
-                                                                                class="w180"
-                                                                                width="180"></td>
-                                                                            </tr>
 
                                                                             <tr>
-                                                                            <td class="w180"
+                                                                            <td class="w140"
                                                                                 height="10"
-                                                                                width="180">
+                                                                                width="140">
                                                                                 </td>
                                                                             </tr>
 
                                                                             <tr>
-                                                                            <td class="w180"
-                                                                                width="180">
+                                                                            <td class="w140"
+                                                                                width="140">
                                                                                 <div class="article-content" style="text-align: left">
                                                                                     <img style="height:auto; width:100%; border: 1px solid #f7f7f7;" src="{{linkImage}}"></img>
                                                                                 </div>
@@ -400,60 +396,43 @@
                                                                             </tr>
 
                                                                             <tr>
-                                                                            <td class="w180"
+                                                                            <td class="w140"
                                                                                 height="10"
-                                                                                width="180">
+                                                                                width="140">
                                                                                 </td>
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
                                                                 </td>
 
-                                                                <td width="20">
+                                                                <td class="w15" width="15">
                                                                 </td>
 
-                                                                <td class=
-                                                                "w360" valign=
-                                                                "top" width=
-                                                                "360">
+                                                                <td valign=
+                                                                "top">
                                                                     <table border="0"
                                                                     cellpadding="0"
                                                                     cellspacing="0"
-                                                                    class=
-                                                                    "w360"
-                                                                    width=
-                                                                    "360">
+                                                                    >
                                                                         <tbody>
-                                                                            <tr>
-                                                                            <td class="w360"
-                                                                                width="360">
-                                                                                <img border="0"
-                                                                                class="w360"
-                                                                                width="360"></td>
-                                                                            </tr>
 
                                                                             <tr>
-                                                                            <td class="w360"
-                                                                                height="10"
-                                                                                width="360">
+                                                                            <td height="10">
                                                                                 </td>
                                                                             </tr>
 
                                                                             <tr>
-                                                                            <td class="w360"
-                                                                                width="360">
+                                                                            <td>
                                                                                 <div class="article-content"
                                                                                     style="text-align: left; font-size: 15px; line-height: 20px; color: #444444; margin-top: 0px; margin-bottom: 18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;">
                                                                                     {{summary}}  
                                                                                     
                                                                                     </div>
-                                                                                </td>
+                                                                            </td>
                                                                             </tr>
 
                                                                             <tr>
-                                                                            <td class="w360"
-                                                                                height="10"
-                                                                                width="360">
+                                                                            <td height="10">
                                                                                 </td>
                                                                             </tr>
                                                                         </tbody>
@@ -462,6 +441,35 @@
                                                             </tr>
                                                         </tbody>
                                                     </table>
+                                                    {% else %}
+                                                    <table border="0"
+                                                    cellpadding="0"
+                                                    cellspacing="0" class=
+                                                    "w580" width="580">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="w580" width="580" height="10">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class=
+                                                                "w580" valign=
+                                                                "top" width=
+                                                                "580">
+                                                                    <div class="article-content"
+                                                                        style="text-align: left; font-size: 15px; line-height: 20px; color: #444444; margin-top: 0px; margin-bottom: 18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;">
+                                                                        {{summary}}  
+                                                                        
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w580" width="580" height="10">
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>                 
+                                                    </table>
+                                                    {% endif %}
                                                     {% endif %}
                                                 </td>
 
@@ -484,7 +492,7 @@
                             </tr>
                             <tr>
                                 <td class="w640" width="640" align="center">
-                                    <a href="{{referralLink}}" style="color:#222222; text-transform:uppercase; text-decoration: none; font-family: 'Open Sans',sans-serif;font-size: 10px;font-weight: bold;letter-spacing: 1px;line-height: 24px;text-transform: uppercase;">Sent by Mikey for Gmail</a>
+                                    <div class="footer-text"><a href="{{referralLink}}" style="color:#222222; text-transform:uppercase; text-decoration: none; font-family: 'Open Sans',sans-serif; font-weight: bold; font-size:11px; letter-spacing: 1px;line-height: 24px;text-transform: uppercase;">Sent by Mikey for Gmail</a></div>
                                     {% if mixpanelPixelURL %}
                                         <img src="{{mixpanelPixelURL}}"></img>
                                     {% endif %}
