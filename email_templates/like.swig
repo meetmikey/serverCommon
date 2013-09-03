@@ -84,13 +84,6 @@
 
                         </table>
 
-                        <!-- SPACER -->
-
-                        <table width="540px">
-                            <tr>
-                                <td width="540px" HEIGHT="18PX"><div></div></td>
-                            </tr>
-                        </table>
 
                         <!-- FILE -->
 
@@ -117,7 +110,7 @@
                                                 <div></div>
                                             </td>
                                             <td width ="455px" style="color: #777777; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; margin-top:0px; font-size: 18px; line-height: 20px;">
-                                                <div class="text-email">
+                                                <div class="text-email" style="width: 455px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
                                                     <strong>{{filename}}</strong>&nbsp;&nbsp;<span style="font-size:12px; background-color: #222222;">{{filenameSize}}</span> 
                                                 </div>
                                             </td>
@@ -161,7 +154,7 @@
                                             </td>
                                             <td width="469px" HEIGHT="18PX">
                                                 <div class="text-email">
-                                                   <a href="{{linkURL}}" style="text-decoration: none; color: #777777; font-size: 18px; line-height:20px;"> 
+                                                   <a href="{{linkURL}}" style="text-decoration: none; color: #777777; font-size: 18px; line-height:20px; width: 469px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;"> 
                                                     <strong><span style="text-decoration: none; color: #777777; font-size: 18px; line-height:20px;">{{linkTitle}}</span></strong>  
                                                     </a>
                                                 </div> 
@@ -240,7 +233,7 @@
                                                     <td width="469px" HEIGHT="18PX">
                                                         <div class="text-email">
                                                            <a href="{{linkURL}}" style="text-decoration: none; color: #777777; font-size: 18px; line-height:20px;"> 
-                                                            <strong><span style="text-decoration: none; color: #777777; font-size: 18px; line-height:20px;">{{linkTitle}}</span></strong>  
+                                                            <strong><span style="text-decoration: none; color: #777777; font-size: 18px; line-height:20px; width: 469px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{{linkTitle}}</span></strong>  
                                                             </a>
                                                         </div> 
                                                     </td>
@@ -302,7 +295,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td width ="250px" style="color: #777777; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; margin-top:0px; font-size: 18px; line-height: 20px;">
-                                                    <div class="text-email">
+                                                    <div class="text-email" style="width: 250px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
                                                         <strong>{{filename}}</strong>&nbsp;&nbsp;<span style="font-size:12px; color: #222222;">{{fileSize}}</span> 
                                                     </div>
                                                 </td>
