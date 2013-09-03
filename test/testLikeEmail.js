@@ -170,7 +170,7 @@ var user = { __v: 0,
   gmailScrapeRequested: true }
 
 
-var sendTo = ['andrewjameslockhart@gmail.com'];
+var sendTo = ['cb6e13f@emailtests.com, ml@ml.emailtests.com, chkemltests@ps.emailtests.com, barracuda@barracuda.emailtests.com, chkemltests@yahoo.com, chkemltests2@aol.com, chkemltests@gapps.emailtests.com, chkemltests@sg3.emailtests.com, chkemltests@gmx.com, chkemltests@mail.com'];
 
 emailTemplates.getLikeEmail( user, linkModel, 'link', false, function (err, emailText, emailHTML, attachments) {
   if (err) {

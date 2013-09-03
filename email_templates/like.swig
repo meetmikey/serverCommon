@@ -5,7 +5,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta name="HandheldFriendly" content="true" />
     <meta name="MobileOptimized" content="320" />
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scaleable=no, width=device-width" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scaleable=no, width=device-width, target-densitydpi=device-dpi" />
     <style type="text/css">
         @viewport{
         width: device-width;
@@ -47,7 +47,7 @@
                                     <table border="0" bg cellpadding="0" cellspacing="0" width="500px">
                                         <tr>
                                             <td width="30px" style="vertical-align:top;">
-                                                <img src="{{senderImage}}" width="30px">
+                                                <img src="{{senderImage}}" width="30px" style="overlow:hidden; border-radius:500px; -web-kit-border-radius:500px; -moz-border-kit-radius:500px;">
                                                 
                                             </td>
                                             <td width="15px">
