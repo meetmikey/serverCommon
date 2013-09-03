@@ -167,11 +167,14 @@ var user = { __v: 0,
   invalidToken: false,
   gmailScrapeRequested: true }
 
+
+var sendTo = ['andrewjameslockhart@gmail.com'];
+
 emailTemplates.getLikeEmail( user, linkModel, 'link', false, function (err, emailText, emailHTML, attachments) {
   if (err) {
     console.log (err);
   } else {
-    smtpUtils.sendEmail (user, 'messageId', ['andrewjameslockhart@gmail.com'], 'mikeytesting1@gmail.com', emailText, emailHTML, 'RE: coolest!', attachments, function (err) {
+    smtpUtils.sendEmail (user, 'messageId', sendTo, 'mikeytesting1@gmail.com', emailText, emailHTML, 'RE: coolest!', attachments, function (err) {
       if (err) {
         console.log (err)
       } else {
@@ -186,7 +189,7 @@ emailTemplates.getLikeEmail( user, imageModel, 'image', false, function (err, em
   if (err) {
     console.log (err);
   } else {
-    smtpUtils.sendEmail (user, 'messageId', ['andrewjameslockhart@gmail.com'], 'mikeytesting1@gmail.com', emailText, emailHTML, 'RE: coolest!', attachments, function (err) {
+    smtpUtils.sendEmail (user, 'messageId', sendTo, 'mikeytesting1@gmail.com', emailText, emailHTML, 'RE: coolest!', attachments, function (err) {
       if (err) {
         console.log (err)
       } else {
@@ -201,7 +204,7 @@ emailTemplates.getLikeEmail( user, attachmentModel, 'attachment', false, functio
   if (err) {
     console.log (err);
   } else {
-    smtpUtils.sendEmail (user, 'messageId', ['andrewjameslockhart@gmail.com'], 'mikeytesting1@gmail.com', emailText, emailHTML, 'RE: coolest!', attachments, function (err) {
+    smtpUtils.sendEmail (user, 'messageId', sendTo, 'mikeytesting1@gmail.com', emailText, emailHTML, 'RE: coolest!', attachments, function (err) {
       if (err) {
         console.log (err)
       } else {
