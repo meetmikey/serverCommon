@@ -360,3 +360,8 @@ define('FAVICON_BASE_URL', 'https://www.google.com/s2/u/0/favicons?domain=');
 define('MIXPANEL_TOKEN', '4025d8a58a875ce9a39db05bcf86fd71');
 
 define('DEFAULT_SIGNED_URL_EXPIRE_TIME_MINUTES', 1440);
+
+define('USER_MESSAGING_MASK_BIT_CHROME_STORE_REVIEW', ( 1 << 0 ) );
+define('USER_MESSAGING_MASK_BIT_FACEBOOK_LIKE', ( 1 << 1 ) );
+define('USER_MESSAGING_MASK_BIT_SOCIAL_SHARE', ( 1 << 2 ) );
+define('USER_MESSAGING_MASK_BIT_UPGRADE_TO_PREMIUM', ( 1 << 3 ) );
