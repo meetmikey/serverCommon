@@ -47,6 +47,7 @@ var User = new Schema({
   clickedFacebookLike : {type : Boolean}, // flag to indicate that this user clicked the facebook 'like' button
   stripeCustomerId: {type: String},
   stripeCardToken: {type: String},
+  messagingMask: {type: Number}, //bit mask to track what messages we've given a user
   billingPlan: {type: String, enum: ['free', 'basic', 'pro', 'team'], default: 'free'},
   billingPlanStartDate: {type: Date},
   billingPlanEndDate: {type: Date},
