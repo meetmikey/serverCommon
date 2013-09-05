@@ -16,6 +16,8 @@ var Referral = new Schema({
 });
 
 Referral.index({oldUserId: 1, newUserId: 1}, {unique: true});
+Referral.index({oldUserId: 1});
+Referral.index({newUserId: 1}, {unique: true});
 
 mongoose.model('Referral', Referral);
 exports.ReferralModel = mongoose.model('Referral');
