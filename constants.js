@@ -365,3 +365,19 @@ define('USER_MESSAGING_MASK_BIT_CHROME_STORE_REVIEW', ( 1 << 0 ) );
 define('USER_MESSAGING_MASK_BIT_FACEBOOK_LIKE', ( 1 << 1 ) );
 define('USER_MESSAGING_MASK_BIT_SOCIAL_SHARE', ( 1 << 2 ) );
 define('USER_MESSAGING_MASK_BIT_UPGRADE_TO_PREMIUM', ( 1 << 3 ) );
+
+//the key is the threshold, the value is the number of days earned at that threshold
+define('USER_ACTION_FAVORITE_THRESHOLDS', {
+    1: 5
+  , 5: 5
+  , 20: 5
+  , 50: 5
+});
+
+//the key is the threshold, the value is the number of days earned at that threshold
+define('USER_ACTION_LIKE_THRESHOLDS', {
+    1: 5
+  , 5: 5
+  , 20: 5
+  , 50: 5
+});
